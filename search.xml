@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[markdown使用github添加图片]]></title>
+    <url>%2F2017%2F10%2F25%2Fmarkdown%E4%BD%BF%E7%94%A8github%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%2F</url>
+    <content type="text"><![CDATA[github markdown(readme.md)添加图片步骤:1.将图片上传至github仓库中(先建立一个项目,专门用来存放图片)2.复制图片在github的地址例如:https://github.com/yuhongjing/img-folder/blob/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png3.注意将地址中的blob改为raw(github解析图片的方式，否则不显示图片)例如:https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png4.在readme.md中输入! [image ] (图片地址) —取消空格 试试效果吧!]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>md,github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[BAT fighting]]></title>
+    <url>%2F2017%2F10%2F24%2FBAT-fighting%2F</url>
+    <content type="text"><![CDATA[第一篇文章hexo搭建的博客第一篇文章 以此明志 坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!! 为此定几个小目标 time:2017-10-24(程序员节) 1.熟练几门前端语言(html5+javascript+css3)2.熟练几门后台语言(php7+python5)3.熟练几门框架(vue.js+bootstrap3+Thinkphp5+laravel5.4)4.数据库设计(mysql)5.看《数据结构及算法分析第二版》《剑指offer》《编码:隐匿在计算机软硬件背后的语言》《深入理解计算机系统》6.了解(Jquery,sass,微信,Go语言,Java,C++,.net)7.有多的时间就看看TCP/IP还有操作系统的死锁，银行家算法，哲学家思想什么的8.嗯哼。。。。就这样吧！！加油吧!!]]></content>
+      <categories>
+        <category>鸡汤</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+</search>
