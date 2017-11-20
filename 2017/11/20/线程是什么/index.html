@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="余鸿靖博客">
 <meta property="og:description" content="作者：pansz链接：https://www.zhihu.com/question/19901763/answer/13299543 来源：知乎 著作权归作者所有。线程解释 单进程单线程：一个人在一个桌子上吃菜。 单进程多线程：多个人在同一个桌子上一起吃菜。 多进程单线程：多个人每个人在自己的桌子上吃菜。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-11-20T12:04:02.434Z">
+<meta property="og:updated_time" content="2017-11-20T12:05:01.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单线程？多线程？">
 <meta name="twitter:description" content="作者：pansz链接：https://www.zhihu.com/question/19901763/answer/13299543 来源：知乎 著作权归作者所有。线程解释 单进程单线程：一个人在一个桌子上吃菜。 单进程多线程：多个人在同一个桌子上一起吃菜。 多进程单线程：多个人每个人在自己的桌子上吃菜。">
@@ -422,7 +422,10 @@
 <li>单进程单线程：一个人在一个桌子上吃菜。</li>
 <li>单进程多线程：多个人在同一个桌子上一起吃菜。</li>
 <li>多进程单线程：多个人每个人在自己的桌子上吃菜。<a id="more"></a>
-<h3 id="多线程的问题"><a href="#多线程的问题" class="headerlink" title="多线程的问题"></a>多线程的问题</h3>典型的银行家算法，哲学家进餐都是有关进程的问题。多线程的问题是多个人同时吃一道菜的时候容易发生争抢。<br>例如两个人同时夹一个菜，一个人刚伸出筷子，结果伸到的时候已经被夹走菜了。。。<br>此时就必须等一个人夹一口之后，在还给另外一个人夹菜，也就是说资源共享就会发生冲突争抢。<h3 id="windows与Linux的区别"><a href="#windows与Linux的区别" class="headerlink" title="windows与Linux的区别"></a>windows与Linux的区别</h3></li>
+</li>
+</ol>
+<h3 id="多线程的问题"><a href="#多线程的问题" class="headerlink" title="多线程的问题"></a>多线程的问题</h3><p>典型的银行家算法，哲学家进餐都是有关进程的问题。多线程的问题是多个人同时吃一道菜的时候容易发生争抢。<br>例如两个人同时夹一个菜，一个人刚伸出筷子，结果伸到的时候已经被夹走菜了。。。<br>此时就必须等一个人夹一口之后，在还给另外一个人夹菜，也就是说资源共享就会发生冲突争抢。</p>
+<h3 id="windows与Linux的区别"><a href="#windows与Linux的区别" class="headerlink" title="windows与Linux的区别"></a>windows与Linux的区别</h3><ol>
 <li>对于 Windows 系统来说,【开桌子】的开销很大,因此Windows鼓励大家在一个桌子上吃菜。<br>因此Windows多线程学习重点是要大量面对资源争抢与同步方面的问题。</li>
 <li>对于 Linux 系统来说,【开桌子】的开销很小,因此Linux鼓励大家尽量每个人都开自己的桌子吃菜。<br>这带来新的问题是:坐在两张不同的桌子上说话不方便。因此Linux下的学习重点大家要学习进程间通讯的方法。<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3>开桌子的意思是指创建进程。开销这里主要指的是时间开销。<br>可以做个实验:创建一个进程,在进程中往内存写若干数据,然后读出该数据,然后退出.<br>此过程重复 1000 次，相当于创建/销毁进程1000次。<br>在我机器上的测试结果是:</li>
 <li>UbuntuLinux:耗时0.8秒</li>
