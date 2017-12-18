@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C,C++,动态规划,算法" />
+  <meta name="keywords" content="C,C++,递归回溯,算法" />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Description一天，MM陪佳佳逛街，看到有许多漂亮的衣服，佳佳要让MM给她买衣服，但是MM发现衣服的价格实在高的令人胆寒，MM当然不愿意买这么贵的衣服。因此她就想着从街头逛到街尾买到的衣服价格总要比前一件购买的价格低，绝不回头购买，但是他又想让佳佳高兴，所以他想尽可能的多买几件衣服，你能帮帮她吗？">
-<meta name="keywords" content="C,C++,动态规划,算法">
+<meta name="description" content="题目第一行输入 迷宫x轴，y轴，门几秒开一次。输入S为你的起点，小数点.为可以通过的地方。D为门的位置，X是不能通过的位置。当输入 0 0 0时结束。">
+<meta name="keywords" content="C,C++,递归回溯,算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="美女购物(动态规划)">
-<meta property="og:url" content="https://yuhongjing.github.io/2017/12/07/美女购物-动态规划/index.html">
+<meta property="og:title" content="迷宫逃脱算法">
+<meta property="og:url" content="https://yuhongjing.github.io/2017/12/18/迷宫逃脱算法/index.html">
 <meta property="og:site_name" content="余鸿靖博客">
-<meta property="og:description" content="Description一天，MM陪佳佳逛街，看到有许多漂亮的衣服，佳佳要让MM给她买衣服，但是MM发现衣服的价格实在高的令人胆寒，MM当然不愿意买这么贵的衣服。因此她就想着从街头逛到街尾买到的衣服价格总要比前一件购买的价格低，绝不回头购买，但是他又想让佳佳高兴，所以他想尽可能的多买几件衣服，你能帮帮她吗？">
+<meta property="og:description" content="题目第一行输入 迷宫x轴，y轴，门几秒开一次。输入S为你的起点，小数点.为可以通过的地方。D为门的位置，X是不能通过的位置。当输入 0 0 0时结束。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-07T14:49:07.417Z">
+<meta property="og:updated_time" content="2017-12-18T03:13:37.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="美女购物(动态规划)">
-<meta name="twitter:description" content="Description一天，MM陪佳佳逛街，看到有许多漂亮的衣服，佳佳要让MM给她买衣服，但是MM发现衣服的价格实在高的令人胆寒，MM当然不愿意买这么贵的衣服。因此她就想着从街头逛到街尾买到的衣服价格总要比前一件购买的价格低，绝不回头购买，但是他又想让佳佳高兴，所以他想尽可能的多买几件衣服，你能帮帮她吗？">
+<meta name="twitter:title" content="迷宫逃脱算法">
+<meta name="twitter:description" content="题目第一行输入 迷宫x轴，y轴，门几秒开一次。输入S为你的起点，小数点.为可以通过的地方。D为门的位置，X是不能通过的位置。当输入 0 0 0时结束。">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yuhongjing.github.io/2017/12/07/美女购物-动态规划/"/>
+  <link rel="canonical" href="https://yuhongjing.github.io/2017/12/18/迷宫逃脱算法/"/>
 
 
 
 
 
-  <title>美女购物(动态规划) | 余鸿靖博客</title>
+  <title>迷宫逃脱算法 | 余鸿靖博客</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2017/12/07/美女购物-动态规划/">
+    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2017/12/18/迷宫逃脱算法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="余鸿靖">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">美女购物(动态规划)</h1>
+          <h1 class="post-title" itemprop="name headline">迷宫逃脱算法</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T22:41:03+08:00">
-                2017-12-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-18T11:04:07+08:00">
+                2017-12-18
               </time>
             
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  366 字
+                  531 字
                 </span>
               
 
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2 分钟
+                  3 分钟
                 </span>
               
             </div>
@@ -417,12 +417,12 @@
       
 
       
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一天，MM陪佳佳逛街，看到有许多漂亮的衣服，佳佳要让MM给她买衣服，但是MM发现衣服的价格实在高的令人胆寒，MM当然不愿意买这么贵的衣服。<br>因此她就想着从街头逛到街尾买到的衣服价格总要比前一件购买的价格低，绝不回头购买，但是他又想让佳佳高兴，所以他想尽可能的多买几件衣服，你能帮帮她吗？<br><a id="more"></a></p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>测试数据包括两行:<br>第一行输入一个整数N（N&lt;10000）<br>第二行输入N个整数，表示从街头到街尾的衣服的价格（按从头到尾的顺序）。</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>测试数据的输出只占一行，输出佳佳最多能买到多少件衣服。</p>
-<h2 id="Example-Input"><a href="#Example-Input" class="headerlink" title="Example Input"></a>Example Input</h2><p>16<br>300 250 275 252 200 138 245 130 300 128 244 243 242 241 240 239</p>
-<h2 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h2><p>10</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#define N 100</div><div class="line">using namespace std;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[N],b[N];</div><div class="line">    int n,i,j;</div><div class="line">    int max;</div><div class="line">    while(cin&gt;&gt;n)</div><div class="line">    &#123;</div><div class="line">        for(i=0;i&lt;n;i++)</div><div class="line">        cin&gt;&gt;a[i];</div><div class="line">        b[0]=1;//初始化，以a[0]结尾的最长递增子序列长度为1      </div><div class="line">for(i=1;i&lt;n;i++)</div><div class="line">        &#123;</div><div class="line">            b[i]=1;</div><div class="line">            for(j=0;j&lt;i;j++)</div><div class="line">            if(a[i]&lt;a[j]&amp;&amp;b[j]+1&gt;b[i])//关键算法，每次调用上一级的b[i];</div><div class="line">            b[i]=b[j]+1;</div><div class="line">        &#125;</div><div class="line">        for(i=max=0;i&lt;n;i++)//求出整个数列的最长递增子序列的长度       </div><div class="line">if(max&lt;b[i])</div><div class="line">        max=b[i];</div><div class="line">        cout&lt;&lt;max;</div><div class="line">        cout&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>第一行输入 迷宫x轴，y轴，门几秒开一次。输入S为你的起点，小数点.为可以通过的地方。<br>D为门的位置，X是不能通过的位置。当输入 0 0 0时结束。<br><a id="more"></a></p>
+<h3 id="示例输入"><a href="#示例输入" class="headerlink" title="示例输入"></a>示例输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">4 4 5</div><div class="line">S . X .</div><div class="line">. . X .</div><div class="line">. . X D</div><div class="line">. . . .</div><div class="line">3 4 5</div><div class="line">S . X .</div><div class="line">. . X .</div><div class="line">. . . D</div><div class="line">0 0 0</div></pre></td></tr></table></figure>
+<h3 id="示例输出"><a href="#示例输出" class="headerlink" title="示例输出"></a>示例输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NO</div><div class="line">YES</div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;string.h&gt; </div><div class="line">#include &lt;stdlib.h&gt; </div><div class="line">using namespace std;//命名空间  </div><div class="line"></div><div class="line">char map[9][9]; </div><div class="line">int n,m,t,di,dj; </div><div class="line">bool escape; </div><div class="line">int dir[4][2]=&#123;&#123;0,-1&#125;,&#123;0,1&#125;,&#123;1,0&#125;,&#123;-1,0&#125;&#125;; </div><div class="line"></div><div class="line">void dfs(int si,int sj,int cnt) //起点以及行走的时间(可根据递归改变) </div><div class="line">&#123;    int i,temp; </div><div class="line">   if(si&gt;n||sj&gt;m||si&lt;=0||sj&lt;=0) return; //不能走出地图之外 </div><div class="line">   if(cnt==t&amp;&amp;si==di&amp;&amp;sj==dj)    escape=1;//如果起点的坐标和门的位置相同，并且此时行走的步数和门的开启时间吻合  就能逃脱 </div><div class="line">   if(escape) return; //逃脱退出循环 </div><div class="line">  </div><div class="line">   temp=(t-cnt)-abs(si-di)-abs(sj-dj); //</div><div class="line">   if(temp&lt;0||temp&amp;1) return;  </div><div class="line">   for(i=0;i&lt;4;i++)&#123; </div><div class="line">      if(map[si+dir[i][0]][sj+dir[i][1]]!=&apos;X&apos;)</div><div class="line">	  &#123; </div><div class="line">         map[si+dir[i][0]][sj+dir[i][1]]=&apos;X&apos;; </div><div class="line">         dfs(si+dir[i][0],sj+dir[i][1],cnt+1); </div><div class="line">         map[si+dir[i][0]][sj+dir[i][1]]=&apos;.&apos;; //递归回溯 </div><div class="line">      &#125; </div><div class="line">   &#125; </div><div class="line">   return; </div><div class="line">&#125; </div><div class="line"></div><div class="line">int main() </div><div class="line">&#123; </div><div class="line">	int i,j,si,sj; </div><div class="line">	while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;t)//行列时间 </div><div class="line">	&#123; </div><div class="line">	  if(n==0&amp;&amp;m==0&amp;&amp;t==0) break; //输入000时退出 </div><div class="line">	  int wall=0;//墙的个数 </div><div class="line">	  for(i=1;i&lt;=n;i++) </div><div class="line">         for(j=1;j&lt;=m;j++) //输入地图 </div><div class="line">		 &#123; </div><div class="line">            cin&gt;&gt;map[i][j]; </div><div class="line">            if(map[i][j]==&apos;S&apos;) &#123; si=i; sj=j; &#125; //起点位置  这里没有判断起点是否唯一 </div><div class="line">            else if(map[i][j]==&apos;D&apos;) &#123; di=i; dj=j; &#125; //门的坐标位置 </div><div class="line">            else if(map[i][j]==&apos;X&apos;) wall++; //墙的数量 </div><div class="line">         &#125; </div><div class="line">       if(n * m - wall &lt;= t) //如果行列个数  比墙还少 有误！ </div><div class="line">	   &#123;</div><div class="line">		   cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;</div><div class="line">		   continue;</div><div class="line">	   &#125;</div><div class="line">	   escape=0; //逃脱标记 </div><div class="line">       map[si][sj]=&apos;X&apos;; //起点默认为X  因为起点走了 不可能在回来了！！而且必须从起点开始出发 相当于起点是必经点 </div><div class="line">       dfs(si,sj,0); //递归判断 </div><div class="line">       if(escape) cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl; //如果标记为1说明逃脱了 </div><div class="line">       else cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl; </div><div class="line">   &#125; </div><div class="line">   return 0; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>典型的迷宫问题，熟练此题，能够掌握递归回溯的搜索问题。</p>
+
       
     </div>
     
@@ -452,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/04/Php魔术方法/" rel="next" title="Php魔术方法">
-                <i class="fa fa-chevron-left"></i> Php魔术方法
+              <a href="/2017/12/18/C-文件读入/" rel="next" title="C++文件读入">
+                <i class="fa fa-chevron-left"></i> C++文件读入
               </a>
             
           </div>
@@ -461,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/18/C-文件读入/" rel="prev" title="C++文件读入">
-                C++文件读入 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,7 +604,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Input"><span class="nav-number">4.</span> <span class="nav-text">Example Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-Output"><span class="nav-number">5.</span> <span class="nav-text">Example Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">6.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例输入"><span class="nav-number">2.</span> <span class="nav-text">示例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例输出"><span class="nav-number">3.</span> <span class="nav-text">示例输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
