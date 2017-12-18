@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言C++文件流入流出，iostream流，fstream流。 单行文件读入123456789101112131415161718192021222324252627using namespace std; int main()&amp;#123;    int cnt=0;    int i;    ifstream fin;    ofstream fout;    	fin.open(&amp;quot;D">
+<meta name="description" content="前言C++文件流入流出，iostream流，fstream流。">
 <meta name="keywords" content="C,C++,文件读入,文件流出">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++文件读入">
 <meta property="og:url" content="https://yuhongjing.github.io/2017/12/18/C-文件读入/index.html">
 <meta property="og:site_name" content="余鸿靖博客">
-<meta property="og:description" content="前言C++文件流入流出，iostream流，fstream流。 单行文件读入123456789101112131415161718192021222324252627using namespace std; int main()&amp;#123;    int cnt=0;    int i;    ifstream fin;    ofstream fout;    	fin.open(&amp;quot;D">
+<meta property="og:description" content="前言C++文件流入流出，iostream流，fstream流。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2017-12-18T02:53:43.503Z">
+<meta property="og:updated_time" content="2017-12-18T02:56:47.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++文件读入">
-<meta name="twitter:description" content="前言C++文件流入流出，iostream流，fstream流。 单行文件读入123456789101112131415161718192021222324252627using namespace std; int main()&amp;#123;    int cnt=0;    int i;    ifstream fin;    ofstream fout;    	fin.open(&amp;quot;D">
+<meta name="twitter:description" content="前言C++文件流入流出，iostream流，fstream流。">
 
 
 
@@ -417,7 +417,7 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>C++文件流入流出，iostream流，fstream流。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>C++文件流入流出，iostream流，fstream流。<br><a id="more"></a></p>
 <h3 id="单行文件读入"><a href="#单行文件读入" class="headerlink" title="单行文件读入"></a>单行文件读入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">using namespace std;</div><div class="line"> </div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int cnt=0;</div><div class="line">    int i;</div><div class="line">    ifstream fin;</div><div class="line">    ofstream fout;</div><div class="line">    </div><div class="line">	fin.open(&quot;D:\\homework--net\\test.txt&quot;, ios::in);</div><div class="line">    fout.open(&quot;D:\\homework--net\\test1.txt&quot;, ios::app);</div><div class="line">    </div><div class="line">    if(!fin)&#123;</div><div class="line">        printf(&quot;The file is not exist!&quot;);</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">    while(!fin.eof())</div><div class="line">    &#123;</div><div class="line">        fin &gt;&gt; i;</div><div class="line">        int sum = i;</div><div class="line">        fout&lt;&lt;sum&lt;&lt;&quot;\n&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    fin.close();</div><div class="line">    fout.close();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="多行文件流出"><a href="#多行文件流出" class="headerlink" title="多行文件流出"></a>多行文件流出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;fstream&gt;</div><div class="line"> </div><div class="line">using namespace std;</div><div class="line"> </div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int cnt=0;</div><div class="line">    int a[20][3];</div><div class="line">    ifstream fin;</div><div class="line">    ofstream fout;</div><div class="line">    </div><div class="line">	fin.open(&quot;D:\\test.txt&quot;, ios::in);</div><div class="line">    fout.open(&quot;D:\\test1.txt&quot;, ios::app);</div><div class="line">    </div><div class="line">    if(!fin)&#123;</div><div class="line">        printf(&quot;The file is not exist!&quot;);</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">    while(!fin.eof())</div><div class="line">    &#123;</div><div class="line">        fin &gt;&gt; a[cnt][0]&gt;&gt;a[cnt][1]&gt;&gt;a[cnt][2];</div><div class="line">        int sum = a[cnt][0] + a[cnt][1] + a[cnt][2];</div><div class="line">        fout&lt;&lt;sum&lt;&lt;&quot;\n&quot;;</div><div class="line">        cnt++;</div><div class="line">    &#125;</div><div class="line">    fin.close();</div><div class="line">    fout.close();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
