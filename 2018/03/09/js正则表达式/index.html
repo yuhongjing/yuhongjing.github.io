@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。 ##贪婪匹配默认情况下，正则表达式使用最长的匹配原则，即贪婪匹配原则。举个例子：123源字符">
+<meta name="description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。">
 <meta name="keywords" content="js,javascript,正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js正则表达式">
 <meta property="og:url" content="https://yuhongjing.github.io/2018/03/09/js正则表达式/index.html">
 <meta property="og:site_name" content="余鸿靖博客">
-<meta property="og:description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。 ##贪婪匹配默认情况下，正则表达式使用最长的匹配原则，即贪婪匹配原则。举个例子：123源字符">
+<meta property="og:description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-03-09T06:20:00.926Z">
+<meta property="og:updated_time" content="2018-03-09T06:21:02.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js正则表达式">
-<meta name="twitter:description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。 ##贪婪匹配默认情况下，正则表达式使用最长的匹配原则，即贪婪匹配原则。举个例子：123源字符">
+<meta name="twitter:description" content="本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。 #贪婪匹配与非贪婪匹配贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。">
 
 
 
@@ -418,7 +418,7 @@
 
       
         <p>本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。</p>
-<p>#贪婪匹配与非贪婪匹配<br>贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，<br>而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。</p>
+<p>#贪婪匹配与非贪婪匹配<br>贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，<br>而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。<br><a id="more"></a></p>
 <p>##贪婪匹配<br>默认情况下，正则表达式使用最长的匹配原则，即贪婪匹配原则。<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">源字符串：aa &lt;div&gt;test1&lt;/div&gt; bb &lt;div&gt;test2&lt;/div&gt;cc</div><div class="line">贪婪模式的正则表达式:&lt;div&gt;.*&lt;/div&gt;</div><div class="line">匹配结果:&lt;div&gt;test1&lt;/div&gt;bb&lt;div&gt;test2&lt;/div&gt;</div></pre></td></tr></table></figure></p>
 <p>这就是贪婪匹配的结果，当第一个div结束后，依旧会向右匹配直到字符串结束。<br>仅从应用角度分析，可以这样认为，贪婪模式，就是在整个表达式匹配成功的前提下，尽可能多的匹配，也就是所谓的“贪婪”，通俗点讲，就是看到想要的，有多少就捡多少，除非再也没有想要的了。</p>
 <p>##惰性匹配<br>在一些使用NFA引擎的语言中，在匹配优先量词后加上“?”，即变成属于非贪婪模式的量词，也叫做忽略优先量词。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">源字符串：aa &lt;div&gt;test1&lt;/div&gt; bb &lt;div&gt;test2&lt;/div&gt;cc</div><div class="line">惰性模式的正则表达式:&lt;div&gt;.*&lt;/div&gt;</div><div class="line">匹配结果:&lt;div&gt;test1&lt;/div&gt;</div></pre></td></tr></table></figure></p>
