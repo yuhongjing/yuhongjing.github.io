@@ -3,7 +3,7 @@ title: Java开发环境的搭建
 date: 2017-11-01 20:35:32
 tags: Java
 keywords: Java,java环境配置
-categories: "技术"
+categories: "环境"
 ---
 ### 一、安装JDK
 下载地址:[http://www.oracle.com/technetwork/java/javase/downloads/index.html](http://www.oracle.com/technetwork/java/javase/downloads/index.html)  
@@ -19,7 +19,7 @@ win10系统:
 1. 右键"计算机"->"高级系统设置"->"高级"->"环境变量"
 2. 新建->变量名"JAVA_HOME"，变量值"C:\Java\jdk1.8.0_05"（即JDK的安装路径） 
 3. 编辑->变量名"Path"，在原变量值的最后面加上“;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin” 
-4. 新建->变量名“CLASSPATH”,变量值“.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar”
+4. 新建->变量名"CLASSPATH",变量值".;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar"
 5. 变量可以添加在用户变量里，也可以添加在系统变量中(后者全用户都可以用)。
 ![](https://github.com/yuhongjing/img-folder/raw/master/img/hjbl.png)
 ### 三、确认环境是否正确

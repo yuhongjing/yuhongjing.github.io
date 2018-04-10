@@ -3,7 +3,7 @@ title: js文件应该放置于何处
 date: 2017-10-29 16:09:55
 tags: WEB
 keywords: javascript脚本位置区别,javascript
-categories: "技术"
+categories: "研究"
 ---
 ## 如何使用js代码
 一般来说使用js代码可以通过两种方式  
