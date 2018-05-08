@@ -18,9 +18,9 @@ Github: https://github.com/yuhongjing
 
 目前技术栈:
 > 
-    【前端】：html5,css3,javascript,jquery,vue全家桶,bootstrap3
+    【前端】：Html5,Css3,Javascript,Jquery,Vue全家桶,Bootstrap
     【后端】：php,python3,Thinkphp5
-    【数据库】：mysql,sql server
-    【语言】：C,C#,C++,Java,go
-    【其他】：数据结构，算法分析，网络通信，操作系统，计算机原理
-    【版本管理】：gitbash
+    【数据库】：Mysql
+    【其他相关】：Git,Github,微信小程序
+    【相关尝试】: Laravel5,Python3,Golang
+    【校园课程】：C,C++,C#,Java,Andriod,数据结构,算法分析,网络通信,计算机原理,操作系统,数据库设计,计算机病毒,网络安全,Sql server
