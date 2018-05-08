@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>vue项目总结</title>
+      <link href="/2018/05/08/vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
+      <url>/2018/05/08/vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>本项目是一个翻新版本，第一版的记账本完全由Thinkphp完成（功能已经完善）。<br>本项目前端由Vue,Vue-cli,Vue-Router,axios完成,后端由Thinkphp5+Mysql+linux完成。<br>本项目完成了一款基础的记账本功能，主要包括用户的资料修改，记账，查账。<br>未完成的功能，用户注册，账本删除，种类新增等。  </p><h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><p>前端分为了3个模块:用户登录模块,主页模块,功能模块(主要)<br>后端三个控制器对应三个模块:Login,Home,Index完成相应功能  </p><h1 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h1><p>前后端分离请求API跨域：因为我可以处理后台，所以直接从后台添加header即可，否则需要配置ngnix反向解析。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_initialize</span><span class="params">()</span></span>&#123;  </div><div class="line">    header(<span class="string">'Access-Control-Allow-Origin:*'</span>); </div><div class="line">    header(<span class="string">'Access-Control-Allow-Methods:GET,POST,PATCH,PUT,OPTIONS'</span>);</div><div class="line">    header(<span class="string">'Access-Control-Allow-Headers:x-requested-with, content-type'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>Centos文件权限777：因为云服务器的系统为linux，忘了设置文件权限777，导致无法写日志，出现code500的错误，困扰了我很久。唉。<br>Thinkphp模型：一直使用Thinkphp的Db类，现在第一次接触模型来操作数据库，但是此次并没有使用模型的数据自动化和关联模型。<br>Vue-build：用vue-cli打包出来的程序，如果直接build会导致图片的地址出现错误，需要手动改变。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  首先修改config文件下的index.js中的build方法</div><div class="line">  assetsPublicPath: <span class="string">'./'</span></div><div class="line"></div><div class="line">  再修改build文件下的utils.js</div><div class="line">  <span class="keyword">if</span> (options.extract) &#123;</div><div class="line">    <span class="keyword">return</span> ExtractTextPlugin.extract(&#123;</div><div class="line">      use: loaders,</div><div class="line">      publicPath:<span class="string">'../../'</span>,</div><div class="line">      fallback: <span class="string">'vue-style-loader'</span></div><div class="line">    &#125;)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> [<span class="string">'vue-style-loader'</span>].concat(loaders)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>vue图片位置:如果图片放入assets中，会被编译打包，所以不能通过地址的方式动态引入，如果放在static中，不会被打包，但是必须通过data的方法引入才能显示。<br>vue全局变量的几种方法: vuex，新建一个js然后export出来引入main.js(全局注入)，也可以按需import进入,变量为webpack的global方式，当然还可以更改原型链<code>Vue.prototype.XXX = XXX</code><br>vue引入一些组件或UI：main.js中直接全局引入在Vue.use使用即可，css也是如此。也可以在各个组件中单独引入。例如axios也是如此.<br>vue安装插件:<code>npm install 插件名 -- save</code>不能在方便<br>vueUI的样式打包失效:main.js将引入的uiCSS放在vue之前即可<br>vue返回上一页:this.$router.back(-1)<br>vue图片的引入:import图片地址然后放入data中<br>后台用json方式传送数据到前端:因为json的键名和键值都是字符型，所以需要特别注意键值类型。<br>filter管道:可以格式化一些特定的数据，例如日期格式化  </p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>多总结，多温习。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>js数组常用方法</title>
       <link href="/2018/04/21/js%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
       <url>/2018/04/21/js%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
