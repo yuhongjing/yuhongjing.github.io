@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>Laravel配置</title>
+      <link href="/2018/05/17/Laravel%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/05/17/Laravel%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/Laravel/top.png" alt=""><br>作为只接触过Thinkphp框架的我，每次看见Github上被Laravel刷屏的趋势榜单，终于仍不住来研究一下传说中优雅的Laravel。<br><a id="more"></a></p><h3 id="安装的苦恼"><a href="#安装的苦恼" class="headerlink" title="安装的苦恼"></a>安装的苦恼</h3><p>安装Laravel的第一道门槛就是“墙”！在我上大一的时候，就经常听学姐说安装Laravel花费了很久很久时间。<br>所以安装Laravel前，请先准备“梯子”。这样仅需1分钟就能搞定Laravel的配置。<br>幸运的是，我所在的学校的校园网是可以访问外网的，所以我最终仅花费就了一分钟，搞定了Laravel的配置。 </p><h3 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装Composer</h3><p>进入Laravel的官网，直接下载Composer的安装包即可，下载后进行安装。<br>以默认地址安装会自动配置PATH变量，否则需手动配置PATH变量。<br>其中有一项需要选择自己电脑上的PHP.exe的支持文件。<br>安装完毕后打开命令行输入<code>Composer</code>出现提示，即说明安装成功！</p><h3 id="通过Laravel安装器安装"><a href="#通过Laravel安装器安装" class="headerlink" title="通过Laravel安装器安装"></a>通过Laravel安装器安装</h3><p>安装Composer后通过以下代码即可全局安装Laravel安装器。<br><code>composer global require &quot;laravel/installer&quot;</code><br>安装成功后，然后进入你想创建项目的地址，输入以下命令即可创建项目。<br><code>laravel new 项目名</code><br>出现如下图片就OK。<br> <img src="https://github.com/yuhongjing/img-folder/raw/master/img/Laravel/start.png" alt="">  </p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>之前一直听说安装Laravel很麻烦，其实只是“墙”的问题。<br>我一直很疑惑一款优雅的框架，怎么会安装这么麻烦，原来只是方法不对罢了。  </p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Laravel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>PHPstorm Xdebug工具安装</title>
       <link href="/2018/05/16/Xdebug%E5%AE%89%E8%A3%85/"/>
       <url>/2018/05/16/Xdebug%E5%AE%89%E8%A3%85/</url>
