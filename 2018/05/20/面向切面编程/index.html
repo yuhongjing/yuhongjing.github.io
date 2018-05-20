@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="AOP,面向切面编程" />
 
 
 
@@ -79,17 +79,22 @@
 
 
 
-<meta name="description" content="个人文章">
-<meta name="keywords" content="余鸿靖个人博客,余鸿靖技术博客,余鸿靖,yuhongjing">
-<meta property="og:type" content="website">
-<meta property="og:title" content="余鸿靖博客">
-<meta property="og:url" content="https://yuhongjing.github.io/archives/index.html">
+<meta name="description" content="一句话总结spring-AOP:这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。AOP不一定都像Spring AOP那样，是在运行时生成代理对象来织入的，还可以在编译期、类加载期织入，比如AspectJ。">
+<meta name="keywords" content="AOP,面向切面编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向切面编程">
+<meta property="og:url" content="https://yuhongjing.github.io/2018/05/20/面向切面编程/index.html">
 <meta property="og:site_name" content="余鸿靖博客">
-<meta property="og:description" content="个人文章">
+<meta property="og:description" content="一句话总结spring-AOP:这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。AOP不一定都像Spring AOP那样，是在运行时生成代理对象来织入的，还可以在编译期、类加载期织入，比如AspectJ。">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop1.png">
+<meta property="og:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop2.png">
+<meta property="og:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop3.png">
+<meta property="og:updated_time" content="2018-05-20T09:36:45.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="余鸿靖博客">
-<meta name="twitter:description" content="个人文章">
+<meta name="twitter:title" content="面向切面编程">
+<meta name="twitter:description" content="一句话总结spring-AOP:这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。AOP不一定都像Spring AOP那样，是在运行时生成代理对象来织入的，还可以在编译期、类加载期织入，比如AspectJ。">
+<meta name="twitter:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop1.png">
 
 
 
@@ -119,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://yuhongjing.github.io/archives/"/>
+  <link rel="canonical" href="https://yuhongjing.github.io/2018/05/20/面向切面编程/"/>
 
 
 
 
 
-  <title>归档 | 余鸿靖博客</title>
+  <title>面向切面编程 | 余鸿靖博客</title>
   
 
 
@@ -144,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,410 +287,214 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 32 篇日志。 继续努力。
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2018/05/20/面向切面编程/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="余鸿靖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="余鸿靖博客">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">面向切面编程</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T17:15:17+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/20/面向切面编程/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">面向切面编程</span>
+                <span class="post-meta-item-text">分类于</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/研究/" itemprop="url" rel="index">
+                    <span itemprop="name">研究</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-20T17:15:17+08:00"
-              content="2018-05-20" >
-          05-20
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/05/20/面向切面编程/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/05/20/面向切面编程/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
 
+          
+          
 
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  371 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/17/Laravel配置/" itemprop="url">
-              
-                <span itemprop="name">Laravel配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-17T16:14:45+08:00"
-              content="2018-05-17" >
-          05-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/16/Xdebug安装/" itemprop="url">
-              
-                <span itemprop="name">PHPstorm Xdebug工具安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-16T00:22:17+08:00"
-              content="2018-05-16" >
-          05-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <h3 id="一句话总结"><a href="#一句话总结" class="headerlink" title="一句话总结"></a>一句话总结</h3><p>spring-AOP:这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。<br>AOP不一定都像<code>Spring AOP</code>那样，是在运行时生成代理对象来织入的，还可以在编译期、类加载期织入，比如AspectJ。<br><a id="more"></a></p>
+<h3 id="简要概论-为什么需要"><a href="#简要概论-为什么需要" class="headerlink" title="简要概论-为什么需要"></a>简要概论-为什么需要</h3><p>现在的编程基本上都是基于面向对象编程–继承，封装，多态。这些能够使代码的复用性大大的提高。然后复用性的提高却会使代码有很多重复的模块。<br>所以我们需要将重复的模块单独提出，统一处理，这就是AOP的工作。下面举个例子。</p>
+<h3 id="小栗子"><a href="#小栗子" class="headerlink" title="小栗子"></a>小栗子</h3><p>我们接下来执行两个操作，第一个功能查询用户的金额。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop1.png" alt=""><br>第二个功能修改用户的资料。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop2.png" alt=""><br>他们都需要进行登录账户的操作，如果每一个地方都有判断登录用户的代码，那就是明显的重复。<br>所以我们可以将登录账户的模块，单独提出来，然后再插入到需要的地方。这样对于代码的维护，性能都有提升。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/aop/aop3.png" alt="">  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>AOP只是一种编程的思想或者说设计的模式，可以将我们的代码梳理的清楚，维护更轻松。<br>所以AOP的善用，可以大大的提高我们的代码质量。</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/08/vue项目总结/" itemprop="url">
-              
-                <span itemprop="name">vue项目总结</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-08T16:42:17+08:00"
-              content="2018-05-08" >
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/21/js数组常用方法/" itemprop="url">
-              
-                <span itemprop="name">js数组常用方法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-21T10:20:31+08:00"
-              content="2018-04-21" >
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/04/07/git常用命令/" itemprop="url">
-              
-                <span itemprop="name">git常用命令</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-07T22:26:00+08:00"
-              content="2018-04-07" >
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/16/闭包/" itemprop="url">
-              
-                <span itemprop="name">闭包</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-16T21:18:37+08:00"
-              content="2018-03-16" >
-          03-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/15/W3c盒子模型/" itemprop="url">
-              
-                <span itemprop="name">W3c盒子模型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-15T16:42:21+08:00"
-              content="2018-03-15" >
-          03-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/15/Jsonp/" itemprop="url">
-              
-                <span itemprop="name">Jsonp</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-15T15:39:57+08:00"
-              content="2018-03-15" >
-          03-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/10/Ajax是什么/" itemprop="url">
-              
-                <span itemprop="name">Ajax是什么?</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-10T22:07:00+08:00"
-              content="2018-03-10" >
-          03-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/Laravel配置/" rel="next" title="Laravel配置">
+                <i class="fa fa-chevron-left"></i> Laravel配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -693,6 +502,12 @@
 
 
           
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+  
+
 
         </div>
         
@@ -713,8 +528,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -788,6 +612,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一句话总结"><span class="nav-number">1.</span> <span class="nav-text">一句话总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简要概论-为什么需要"><span class="nav-number">2.</span> <span class="nav-text">简要概论-为什么需要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小栗子"><span class="nav-number">3.</span> <span class="nav-text">小栗子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -918,6 +758,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
