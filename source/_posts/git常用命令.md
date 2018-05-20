@@ -8,7 +8,8 @@ categories: "技术"
 # Git的常用命令
 配置全局用户NAME和E-mail  
 > $ git config --global user.name "Your Name"  
-> $ git config --global user.email "email@example.com"  
+> $ git config --global user.email "email@example.com"   
+   
 <!--more-->
 
 仓库初始化  
