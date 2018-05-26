@@ -1,7 +1,7 @@
 ---
 title: vue项目总结
 date: 2018-05-08 16:42:17
-tags:  WEB
+tags:  Vue
 keywords: IE盒子模型,W3C盒子模型
 categories: "技术"
 ---
