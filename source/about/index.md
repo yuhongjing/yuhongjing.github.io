@@ -1,4 +1,4 @@
----
+﻿---
 title: about
 date: 2017-10-24 23:27:47
 ---
@@ -19,7 +19,7 @@ Github: https://github.com/yuhongjing
 目前技术栈:
 > 
     【前端】：Html5,Css3,Javascript,Jquery,Vue全家桶,Bootstrap3
-    【后端】：php,python3,Thinkphp5,Laravel5
+    【后端】：php,python3,Thinkphp5,Laravel5，phpcmsV9
     【数据库】：Mysql
     【其他相关】：Git,Github,微信小程序
     【相关尝试】: Python3,Golang,beego,node.js,webpack

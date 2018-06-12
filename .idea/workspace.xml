@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/10/24/BAT-fighting/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/10/25/markdown使用github添加图片/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/10/29/js脚本位置/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/01/Java开发环境的搭建/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/02/gitbash配置/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/04/本地项目与远程git仓库连接/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/05/int-main还是void-main/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/06/梅花落/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/20/hexo常用命令/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/20/线程是什么/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/27/设计模式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/11/28/Vue环境搭建/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/01/Thinkphp基于linux的坑/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/02/一些我看的书/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/04/Php魔术方法/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/07/美女购物-动态规划/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/18/C-文件读入/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2017/12/18/迷宫逃脱算法/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/02/02/5年的计划/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/02/09/额叶切除手术/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/02/17/流逝的风/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/03/09/js正则表达式/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/03/10/Ajax是什么/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/03/15/Jsonp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/03/15/W3c盒子模型/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/03/16/闭包/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/04/03/js原型链/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/04/07/git常用命令/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/04/21/js数组常用方法/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/08/vue项目总结/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/16/Xdebug安装/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/17/Laravel配置/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/20/面向切面编程/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/21/Get-Post-Put-Delete/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018/05/26/单电脑管理多github账户/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/about/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/about/index.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +51,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf>
+      <file leaf-file-name="PHPCMS.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/PHPCMS.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="400">
+                <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -30,6 +82,7 @@
         <option value="$PROJECT_DIR$/source/about/index.md" />
         <option value="$PROJECT_DIR$/source/_posts/面向切面编程.md" />
         <option value="$PROJECT_DIR$/source/_posts/Get-Post-Put-Delete.md" />
+        <option value="$PROJECT_DIR$/source/_posts/PHPCMS.md" />
       </list>
     </option>
   </component>
@@ -42,25 +95,23 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+      <path value="$PROJECT_DIR$/themes/anatole/package.json" />
+      <path value="$PROJECT_DIR$/themes/landscape/package.json" />
+      <path value="$PROJECT_DIR$/themes/next/package.json" />
+      <path value="$PROJECT_DIR$/themes/package.json" />
+    </packageJsonPaths>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2394" />
-    <option name="y" value="235" />
+    <option name="x" value="538" />
+    <option name="y" value="282" />
     <option name="width" value="1160" />
     <option name="height" value="734" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -70,30 +121,29 @@
           <expand>
             <path>
               <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="source" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="_posts" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_interpreter_path" value="D:/nodejs/node" />
     <property name="last_opened_file_path" value="D:/www" />
+    <property name="nodejs_interpreter_path" value="node" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,8 +157,8 @@
       </list>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -125,32 +175,36 @@
       <workItem from="1526823828664" duration="14000" />
       <workItem from="1526915364547" duration="907000" />
       <workItem from="1526983663848" duration="30000" />
+      <workItem from="1528810659662" duration="487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4531000" />
+    <option name="totallyTimeSpent" value="5018000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1909" y="-11" width="1942" height="1062" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19816415" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906976" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19791667" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32906976" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,18 +213,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/source/_posts/Get-Post-Put-Delete.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-            <folding />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
@@ -178,9 +225,7 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Laravel配置.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
@@ -188,9 +233,7 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/js脚本位置.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-315">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
+          <first_editor relative-caret-position="-315" />
           <second_editor />
         </state>
       </provider>
@@ -198,19 +241,7 @@
     <entry file="file://$PROJECT_DIR$/source/_posts/Vue环境搭建.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-396">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/vue项目总结.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
+          <first_editor relative-caret-position="-396" />
           <second_editor />
         </state>
       </provider>
@@ -239,7 +270,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="35">
-            <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="38" />
+            <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="38" />
           </first_editor>
           <second_editor />
         </state>
@@ -249,7 +280,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="-1516">
-            <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
+            <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>
@@ -259,7 +290,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="385">
-            <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="69" />
+            <caret line="23" selection-start-line="23" selection-end-line="23" selection-end-column="69" />
           </first_editor>
           <second_editor />
         </state>
@@ -268,7 +299,7 @@
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/post.swig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
-          <caret line="65" column="25" lean-forward="false" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -276,7 +307,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="304">
-            <caret line="17" column="72" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="72" />
+            <caret line="17" column="72" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="72" />
           </first_editor>
           <second_editor />
         </state>
@@ -292,14 +323,14 @@
     <entry file="file://$PROJECT_DIR$/themes/next/layout/_layout.swig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-350">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="697" column="18" lean-forward="false" selection-start-line="697" selection-start-column="12" selection-end-line="697" selection-end-column="18" />
+          <caret line="697" column="18" selection-start-line="697" selection-start-column="12" selection-end-line="697" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -307,7 +338,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="105">
-            <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="16" />
+            <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>
@@ -317,8 +348,27 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="479">
-            <caret line="25" column="24" lean-forward="false" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
-            <folding />
+            <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/vue项目总结.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="16" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/PHPCMS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="400">
+            <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           </first_editor>
           <second_editor />
         </state>
