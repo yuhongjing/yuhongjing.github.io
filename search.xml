@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>PHPCMS</title>
+      <link href="/2018/06/12/PHPCMS/"/>
+      <url>/2018/06/12/PHPCMS/</url>
+      <content type="html"><![CDATA[<h3 id="PHPCMS与Thinkphp框架有何不同"><a href="#PHPCMS与Thinkphp框架有何不同" class="headerlink" title="PHPCMS与Thinkphp框架有何不同"></a>PHPCMS与Thinkphp框架有何不同</h3><p>之前也接触过，类似织梦CMS，帝国CMS。但是从来没有系统的了解过，这种几年前火遍大江南北的CMS和现在的框架有何不同。<br>好吧，现在简单的说一下。CMS是一个已经制作完毕的程序，所有的功能已经齐全可以直接使用，当然我们也可以替换模板二次开发。<br>而现在的框架，只是把一些功能，库封装好了，我们还需要直接编写功能，逻辑等。<br>所以说，CMS是已经完成了80%的程序，而Thinkphp只是搭了一个架构。<br><a id="more"></a></p><h3 id="几乎不需要编写代码的CMS"><a href="#几乎不需要编写代码的CMS" class="headerlink" title="几乎不需要编写代码的CMS"></a>几乎不需要编写代码的CMS</h3><p>CMS可以直接安装好，然后替换模板即可使用。几乎无需直接编写代码。<br>在PHPCMSV9中，模板在template下，数据库逻辑在model中，控制器在moudle中。<br>文件扔进去即可。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>因为CMS已经开发完毕，所以你需要添加自定义功能就特别的麻烦。而Thinkphp这样的框架自由度就更高了，这也就是为什么现在的CMS不那么火了的原因。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHPCMS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Win10激活</title>
       <link href="/2018/05/31/Win10%E6%BF%80%E6%B4%BB/"/>
       <url>/2018/05/31/Win10%E6%BF%80%E6%B4%BB/</url>
