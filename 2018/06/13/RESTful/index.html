@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="个人博文" />
+  <meta name="keywords" content="Api接口规范" />
 
 
 
@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="第一篇文章hexo搭建的博客第一篇文章   以此明志    坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!!    为此定几个小目标     time:2017-10-24(程序员节)    1.熟练几门前端语言(html5+javascript+css3)2.熟练几门后台语言(php7+python5)3.熟练几门框架(vue.js+bootstrap3+Thinkphp5">
-<meta name="keywords" content="个人博文">
+<meta name="description" content="前后端完全分离的现状目前这个阶段，大多数的项目的前后端都是完全分离的，他们的沟通都通过API来实现。所以API的设计是否科学，是否易于前后端沟通，成了一个很重要的话题。于是乎RESTful这种API接口的设计风格，逐渐被广大接受了起来。">
+<meta name="keywords" content="Api接口规范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BAT fighting">
-<meta property="og:url" content="https://yuhongjing.github.io/2017/10/24/BAT-fighting/index.html">
+<meta property="og:title" content="RESTful">
+<meta property="og:url" content="https://yuhongjing.github.io/2018/06/13/RESTful/index.html">
 <meta property="og:site_name" content="余鸿靖博客">
-<meta property="og:description" content="第一篇文章hexo搭建的博客第一篇文章   以此明志    坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!!    为此定几个小目标     time:2017-10-24(程序员节)    1.熟练几门前端语言(html5+javascript+css3)2.熟练几门后台语言(php7+python5)3.熟练几门框架(vue.js+bootstrap3+Thinkphp5">
+<meta property="og:description" content="前后端完全分离的现状目前这个阶段，大多数的项目的前后端都是完全分离的，他们的沟通都通过API来实现。所以API的设计是否科学，是否易于前后端沟通，成了一个很重要的话题。于是乎RESTful这种API接口的设计风格，逐渐被广大接受了起来。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png">
-<meta property="og:updated_time" content="2018-05-31T12:47:30.041Z">
+<meta property="og:updated_time" content="2018-06-13T03:03:36.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BAT fighting">
-<meta name="twitter:description" content="第一篇文章hexo搭建的博客第一篇文章   以此明志    坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!!    为此定几个小目标     time:2017-10-24(程序员节)    1.熟练几门前端语言(html5+javascript+css3)2.熟练几门后台语言(php7+python5)3.熟练几门框架(vue.js+bootstrap3+Thinkphp5">
-<meta name="twitter:image" content="https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png">
+<meta name="twitter:title" content="RESTful">
+<meta name="twitter:description" content="前后端完全分离的现状目前这个阶段，大多数的项目的前后端都是完全分离的，他们的沟通都通过API来实现。所以API的设计是否科学，是否易于前后端沟通，成了一个很重要的话题。于是乎RESTful这种API接口的设计风格，逐渐被广大接受了起来。">
 
 
 
@@ -122,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://yuhongjing.github.io/2017/10/24/BAT-fighting/"/>
+  <link rel="canonical" href="https://yuhongjing.github.io/2018/06/13/RESTful/"/>
 
 
 
 
 
-  <title>BAT fighting | 余鸿靖博客</title>
+  <title>RESTful | 余鸿靖博客</title>
   
 
 
@@ -299,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2017/10/24/BAT-fighting/">
+    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2018/06/13/RESTful/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="余鸿靖">
@@ -316,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BAT fighting</h1>
+          <h1 class="post-title" itemprop="name headline">RESTful</h1>
         
 
         <div class="post-meta">
@@ -328,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T18:56:51+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T10:38:37+08:00">
+                2018-06-13
               </time>
             
 
@@ -351,8 +349,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/鸡汤/" itemprop="url" rel="index">
-                    <span itemprop="name">鸡汤</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -370,8 +368,8 @@
                 <i class="fa fa-comment-o"></i>
               </span>
               
-                <a href="/2017/10/24/BAT-fighting/#SOHUCS" itemprop="discussionUrl">
-                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/10/24/BAT-fighting/" itemprop="commentsCount"></span>
+                <a href="/2018/06/13/RESTful/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/06/13/RESTful/" itemprop="commentsCount"></span>
                 </a>
               
             
@@ -393,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  198 字
+                  1,125 字
                 </span>
               
 
@@ -409,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -430,15 +428,23 @@
       
 
       
-        <h1 id="第一篇文章"><a href="#第一篇文章" class="headerlink" title="第一篇文章"></a>第一篇文章</h1><p><strong>hexo搭建的博客第一篇文章</strong>  </p>
-<h2 id="以此明志"><a href="#以此明志" class="headerlink" title="以此明志   "></a><strong>以此明志 </strong>  </h2><blockquote>
-<p>坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!!  </p>
-<blockquote>
-<p>为此定几个小目标  </p>
-</blockquote>
-</blockquote>
-<pre><code>time:2017-10-24(程序员节)   
-</code></pre><p>1.熟练几门前端语言(html5+javascript+css3)<br>2.熟练几门后台语言(php7+python5)<br>3.熟练几门框架(vue.js+bootstrap3+Thinkphp5+laravel5.4)<br>4.数据库设计(mysql)<br><a id="more"></a><br>5.看《数据结构及算法分析第二版》《剑指offer》《编码:隐匿在计算机软硬件背后的语言》<br>《深入理解计算机系统》<br>6.了解(Jquery,sass,微信,Go语言,Java,C++,.net)<br>7.有多的时间就看看TCP/IP还有操作系统的死锁，银行家算法，哲学家思想什么的<br>8.嗯哼。。。。就这样吧！！加油吧!!<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png" alt="image"></p>
+        <h3 id="前后端完全分离的现状"><a href="#前后端完全分离的现状" class="headerlink" title="前后端完全分离的现状"></a>前后端完全分离的现状</h3><p>目前这个阶段，大多数的项目的前后端都是完全分离的，他们的沟通都通过API来实现。<br>所以API的设计是否科学，是否易于前后端沟通，成了一个很重要的话题。<br>于是乎RESTful这种API接口的设计风格，逐渐被广大接受了起来。<br><a id="more"></a></p>
+<h3 id="为什么会产生RESTful这种设计风格"><a href="#为什么会产生RESTful这种设计风格" class="headerlink" title="为什么会产生RESTful这种设计风格"></a>为什么会产生RESTful这种设计风格</h3><p>在以前，设计API没有那么多的规范，风格。大家写的API都很随意，这样导致了前端请求后端的数据的时候，不知道该从何处请求。<br>而且请求回来的数据的类型也都不一致，甚至于请求错误后，都不知道错误的原因是什么？<br>这样会导致开发的效率大打折扣。于是乎一种规范的，有层次设计风格在经验中被总结了出来。<br>这就是RESTful。</p>
+<h3 id="RESTful的特点"><a href="#RESTful的特点" class="headerlink" title="RESTful的特点"></a>RESTful的特点</h3><p>REST的原则主要有以下几个：  </p>
+<ol>
+<li>资源与URL</li>
+<li>统一资源接口</li>
+<li>资源的表述</li>
+<li>资源的链接</li>
+<li>状态的转移  <h4 id="资源与URL"><a href="#资源与URL" class="headerlink" title="资源与URL"></a>资源与URL</h4>前端从后端获取资源是通过url的方式获取，所以后端的url设计是否易懂就很有必要。<br>例如，获取某个音乐的信息的路由就可以设置为:<br><code>https://yuhongjing.com/music/32</code><br>这样的设计很明显是获取音乐栏目的id为32号的信息，方便前端获取。<br>当然这只是一个小例子，真正的url设计还需要考虑分层，分级，分类型，分权限等一系列规范。  <h4 id="统一资源接口"><a href="#统一资源接口" class="headerlink" title="统一资源接口"></a>统一资源接口</h4>RESTful架构应该遵循统一接口原则，统一接口包含了一组受限的预定义的操作，不论什么样的资源，都是通过使用相同的接口进行资源的访问。<br>接口应该使用标准的HTTP方法如GET，PUT和POST，并遵循这些方法的语义。<br>例如GET表示获取资源，POST表示修改资源，PUT表示插入资源，DELETE表示删除资源等。<br>并且还需要返回http请求的code码和错误信息等。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//例如GET请求</span><br><span class="line">GET</span><br><span class="line">* 安全且幂等</span><br><span class="line">* 获取表示</span><br><span class="line">* 变更时获取表示（缓存）</span><br><span class="line">* 200（OK） - 表示已在响应中发出</span><br><span class="line">* 204（无内容） - 资源有空表示</span><br><span class="line">* 301（Moved Permanently） - 资源的URI已被更新</span><br><span class="line">* 303（See Other） - 其他（如，负载均衡）</span><br><span class="line">* 304（not modified）- 资源未更改（缓存）</span><br><span class="line">* 400 （bad request）- 指代坏请求（如，参数错误）</span><br><span class="line">* 404 （not found）- 资源不存在</span><br><span class="line">* 406 （not acceptable）- 服务端不支持所需表示</span><br><span class="line">* 500 （internal server error）- 通用错误响应</span><br><span class="line">* 503 （Service Unavailable）- 服务端当前无法处理请求</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>当然这只是冰山一角，不同的请求有着不同的设计。  </p>
+<h4 id="资源的表述"><a href="#资源的表述" class="headerlink" title="资源的表述"></a>资源的表述</h4><p>这个就比较简单，也就是返回的资源以什么格式返回。<br>RESTful默认所有的返回资源都以JSON的格式返回。<br>所以就不要以什么字符串啊，数组啊，xml等格式返回了。  </p>
+<h4 id="在URL里边带上版本号"><a href="#在URL里边带上版本号" class="headerlink" title="在URL里边带上版本号"></a>在URL里边带上版本号</h4><p>项目的版本总要更新吧，所以需要在url带上你的版本号。<br>例如<code>http://yuhongjing.cn/blog/v1/api/token</code><br>这里是获取第一版本的token的api，假如需要更改为第二版本。直接更改为:<br><code>http://yuhongjing.cn/blog/v2/api/token</code><br>即可，设计好了就是这么简单方便。  </p>
+<h4 id="资源的链接"><a href="#资源的链接" class="headerlink" title="资源的链接"></a>资源的链接</h4><p>我们知道REST是使用标准的HTTP方法来操作资源的，但仅仅因此就理解成带CURD的Web数据库架构就太过于简单了。<br>这种反模式忽略了一个核心概念：”超媒体即应用状态引擎（hypermedia as the engine of application state）”。 超媒体是什么?<br>当你浏览Web网页时，从一个连接跳到一个页面，再从另一个连接跳到另外一个页面，就是利用了超媒体的概念：把一个个把资源链接起来.  </p>
+<h4 id="状态的转移"><a href="#状态的转移" class="headerlink" title="状态的转移"></a>状态的转移</h4><p>一句话吧，客户端不应该存有服务器资源的状态，服务器不应该存有客户端应用的状态。<br>各司其职，客户端只管理<code>应用</code>状态，服务器管理<code>资源</code>状态。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>现在的项目都是前后端分离，所以RESTful风格的API设计，变得尤为重要。不过，这个得从项目中慢慢去体会。  </p>
 
       
     </div>
@@ -456,7 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
+            <a href="/tags/RESTful/" rel="tag"># RESTful</a>
           
         </div>
       
@@ -469,15 +475,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/13/CORS/" rel="next" title="CORS">
+                <i class="fa fa-chevron-left"></i> CORS
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/25/markdown使用github添加图片/" rel="prev" title="markdown使用github添加图片">
-                markdown使用github添加图片 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -625,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一篇文章"><span class="nav-number">1.</span> <span class="nav-text">第一篇文章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以此明志"><span class="nav-number">1.1.</span> <span class="nav-text">以此明志   </span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前后端完全分离的现状"><span class="nav-number">1.</span> <span class="nav-text">前后端完全分离的现状</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么会产生RESTful这种设计风格"><span class="nav-number">2.</span> <span class="nav-text">为什么会产生RESTful这种设计风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RESTful的特点"><span class="nav-number">3.</span> <span class="nav-text">RESTful的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#资源与URL"><span class="nav-number">3.1.</span> <span class="nav-text">资源与URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#统一资源接口"><span class="nav-number">3.2.</span> <span class="nav-text">统一资源接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源的表述"><span class="nav-number">3.3.</span> <span class="nav-text">资源的表述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在URL里边带上版本号"><span class="nav-number">3.4.</span> <span class="nav-text">在URL里边带上版本号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源的链接"><span class="nav-number">3.5.</span> <span class="nav-text">资源的链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态的转移"><span class="nav-number">3.6.</span> <span class="nav-text">状态的转移</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
