@@ -14,7 +14,8 @@ From 余鸿靖
 QQ：124095408  
 Email: 124095408@qq.com  
 Github: https://github.com/yuhongjing  
-个人主页: http://yuhongjing.cn/
+个人主页: http://yuhongjing.cn/  
+好友主页: https://pxy1996.github.io  
 
 目前技术栈:
 > 
