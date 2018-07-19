@@ -3,6 +3,48 @@
   
     
     <entry>
+      <title>Git clone</title>
+      <link href="/2018/07/19/Git-clone/"/>
+      <url>/2018/07/19/Git-clone/</url>
+      <content type="html"><![CDATA[<h3 id="git-clone-下载太慢的解决方式"><a href="#git-clone-下载太慢的解决方式" class="headerlink" title="git clone 下载太慢的解决方式"></a>git clone 下载太慢的解决方式</h3><p>设置代理的命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:34828</span><br><span class="line">git config --global https.proxy https://127.0.0.1:34828</span><br></pre></td></tr></table></figure></p><p>这个不需要设置sock5<br><a id="more"></a><br>取消代理的命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure></p><p>也可以直接编辑git的设置文件，位置在用户目录下的<code>.gitconfig</code>,可能是隐藏文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">编辑如下</span><br><span class="line">[https]</span><br><span class="line">    proxy = https://127.0.0.1:34828</span><br><span class="line">[http]</span><br><span class="line">    proxy = http://127.0.0.1:34828</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gitbash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>数据结构与算法学习之路</title>
+      <link href="/2018/06/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/"/>
+      <url>/2018/06/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/</url>
+      <content type="html"><![CDATA[<h3 id="内功心法"><a href="#内功心法" class="headerlink" title="内功心法"></a>内功心法</h3><p>都说数据结构与算法是程序员的内功心法，也是一种很枯燥很难的东西。<br>曾经在参加ACM备战的时候补了一阵的数据结构和算法，但是现在也快忘得差不多了。<br>现在准备系统的学习，提升一下自己，并记录一下我的学习过程和心得吧。<br><a id="more"></a></p><h3 id="学习路线图"><a href="#学习路线图" class="headerlink" title="学习路线图"></a>学习路线图</h3><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/sjjg.png" alt="">  </p><h3 id="相关-书籍"><a href="#相关-书籍" class="headerlink" title="相关 书籍"></a>相关 书籍</h3><ol><li>《数据结构与算法分析：C语言描述》</li><li>《剑指offer》</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 数据结构 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>RESTful</title>
       <link href="/2018/06/13/RESTful/"/>
       <url>/2018/06/13/RESTful/</url>
