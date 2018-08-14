@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +11,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="前端备战-三.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-三.md">
+      <file leaf-file-name="前端备战-四.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-四.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="1863">
-                <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+              <first_editor relative-caret-position="567">
+                <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -54,6 +52,7 @@
         <option value="$PROJECT_DIR$/source/_posts/前端备战-二.md" />
         <option value="$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md" />
         <option value="$PROJECT_DIR$/source/_posts/前端备战-三.md" />
+        <option value="$PROJECT_DIR$/source/_posts/前端备战-四.md" />
       </list>
     </option>
   </component>
@@ -75,8 +74,7 @@
       <path value="$PROJECT_DIR$/themes/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
+  <component name="ProjectFrameBounds">
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -159,18 +157,17 @@
       <workItem from="1533915199263" duration="690000" />
       <workItem from="1533958068873" duration="5381000" />
       <workItem from="1534125630545" duration="14473000" />
-      <workItem from="1534208873125" duration="3966000" />
+      <workItem from="1534208873125" duration="8625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37749000" />
+    <option name="totallyTimeSpent" value="42408000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18937768" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18937768" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32857144" />
@@ -291,16 +288,6 @@
     <entry file="file://$USER_HOME$/Documents/Tencent Files/1240945408/FileRecv/MobileFile/mvvm.js" />
     <entry file="file://$PROJECT_DIR$/source/_posts/一个简单版的mvvm.md" />
     <entry file="file://$PROJECT_DIR$/source/_posts/vue项目总结.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-一.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="636">
-            <caret line="104" selection-start-line="104" selection-end-line="105" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -321,11 +308,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-一.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="636">
+            <caret line="104" selection-start-line="104" selection-end-line="105" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-三.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1863">
-            <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+          <first_editor relative-caret-position="852">
+            <caret line="69" column="16" selection-end-line="70" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-四.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="567">
+            <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
