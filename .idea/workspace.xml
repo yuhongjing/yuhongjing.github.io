@@ -73,10 +73,10 @@
       <path value="$PROJECT_DIR$/themes/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-423" />
     <option name="width" value="1944" />
-    <option name="height" value="1046" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -155,16 +155,15 @@
       <workItem from="1533561391185" duration="2549000" />
       <workItem from="1533910977349" duration="666000" />
       <workItem from="1533915199263" duration="690000" />
-      <workItem from="1533958068873" duration="5381000" />
+      <workItem from="1533958068873" duration="5981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19310000" />
+    <option name="totallyTimeSpent" value="19910000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="39" y="0" width="1296" height="697" extended-state="0" />
-    <editor active="true" />
+    <frame x="-282" y="29" width="1296" height="697" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18408737" />
       <window_info anchor="bottom" id="TODO" order="6" />
