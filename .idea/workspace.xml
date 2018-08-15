@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/前端备战-四.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/前端备战-四.md" afterDir="false" />
-    </list>
+    <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,35 +84,11 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/dj/tp5" />
+    <property name="last_opened_file_path" value="E:/qst" />
     <property name="nodejs_interpreter_path" value="node" />
   </component>
   <component name="RunDashboard">
@@ -163,12 +136,12 @@
       <workItem from="1533958068873" duration="5381000" />
       <workItem from="1534125630545" duration="14473000" />
       <workItem from="1534208873125" duration="8625000" />
-      <workItem from="1534230982771" duration="863000" />
+      <workItem from="1534230982771" duration="965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43271000" />
+    <option name="totallyTimeSpent" value="43373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="892" y="8" width="960" height="1016" extended-state="0" />
