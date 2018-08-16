@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="" />
+    <list default="true" id="fac091df-673b-47ab-99ec-192611b6e4df" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/yuhongjing.github.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/yuhongjing.github.io.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,12 +16,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="前端备战-四.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-四.md">
+      <file leaf-file-name="前端备战-六.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-六.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="632">
-                <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+              <first_editor relative-caret-position="2700">
+                <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -27,8 +32,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>changyan</find>
-      <find>github</find>
+      <find>search</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -37,22 +41,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/source/_posts/Laravel配置.md" />
-        <option value="$PROJECT_DIR$/source/_posts/面向切面编程.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Get-Post-Put-Delete.md" />
-        <option value="$PROJECT_DIR$/source/_posts/PHPCMS.md" />
-        <option value="$PROJECT_DIR$/source/about/index.md" />
-        <option value="$PROJECT_DIR$/source/_posts/CORS.md" />
-        <option value="$PROJECT_DIR$/source/_posts/RESTful.md" />
-        <option value="$PROJECT_DIR$/source/_posts/数据结构与算法学习之路.md" />
-        <option value="$PROJECT_DIR$/source/_posts/Git-clone.md" />
-        <option value="$PROJECT_DIR$/source/_posts/css绝对定位居中.md" />
-        <option value="$PROJECT_DIR$/source/_posts/一个简单版的mvvm.md" />
-        <option value="$PROJECT_DIR$/source/_posts/前端备战-一.md" />
-        <option value="$PROJECT_DIR$/source/_posts/前端备战-二.md" />
-        <option value="$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md" />
-        <option value="$PROJECT_DIR$/source/_posts/前端备战-三.md" />
-        <option value="$PROJECT_DIR$/source/_posts/前端备战-四.md" />
+        <option value="$PROJECT_DIR$/source/_posts/前端备战-五.md" />
+        <option value="$PROJECT_DIR$/source/_posts/前端备战-六.md" />
       </list>
     </option>
   </component>
@@ -75,21 +65,45 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="892" />
-    <option name="y" value="8" />
-    <option name="width" value="960" />
-    <option name="height" value="1016" />
+    <option name="x" value="376" />
+    <option name="width" value="1316" />
+    <option name="height" value="992" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yuhongjing.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yuhongjing.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/qst" />
-    <property name="nodejs_interpreter_path" value="node" />
+    <property name="last_opened_file_path" value="E:/gram_1" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -108,86 +122,46 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3370d16c-e0b6-4f91-8a81-26f2ebfc1dbd" name="Default" comment="" />
-      <created>1526544858026</created>
+      <changelist id="fac091df-673b-47ab-99ec-192611b6e4df" name="Default" comment="" />
+      <created>1534303218044</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1526544858026</updated>
-      <workItem from="1526544859465" duration="1119000" />
-      <workItem from="1526546148365" duration="12000" />
-      <workItem from="1526782650985" duration="126000" />
-      <workItem from="1526784645811" duration="13000" />
-      <workItem from="1526807726326" duration="2310000" />
-      <workItem from="1526823828664" duration="14000" />
-      <workItem from="1526915364547" duration="907000" />
-      <workItem from="1526983663848" duration="30000" />
-      <workItem from="1528810659662" duration="487000" />
-      <workItem from="1528851522014" duration="10000" />
-      <workItem from="1528853617354" duration="1252000" />
-      <workItem from="1528855441231" duration="1132000" />
-      <workItem from="1528857527151" duration="1498000" />
-      <workItem from="1529639041139" duration="398000" />
-      <workItem from="1529639472099" duration="290000" />
-      <workItem from="1532003543460" duration="414000" />
-      <workItem from="1532689568513" duration="12000" />
-      <workItem from="1533561391185" duration="2549000" />
-      <workItem from="1533910977349" duration="666000" />
-      <workItem from="1533915199263" duration="690000" />
-      <workItem from="1533958068873" duration="5381000" />
-      <workItem from="1534125630545" duration="14473000" />
-      <workItem from="1534208873125" duration="8625000" />
-      <workItem from="1534230982771" duration="965000" />
+      <updated>1534303218044</updated>
+      <workItem from="1534303220333" duration="3228000" />
+      <workItem from="1534318767035" duration="12000" />
+      <workItem from="1534324497104" duration="711000" />
+      <workItem from="1534384540268" duration="196000" />
+      <workItem from="1534386585242" duration="5099000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43373000" />
+    <option name="totallyTimeSpent" value="9246000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="892" y="8" width="960" height="1016" extended-state="0" />
+    <frame x="376" y="0" width="1316" height="992" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18937768" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.32073954" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32857144" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18669528" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32857144" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -196,93 +170,69 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-四.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="1620">
-            <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-一.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="2835">
-            <caret line="105" column="17" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/一个简单版的mvvm.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git-clone.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git-clone.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构与算法学习之路.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构与算法学习之路.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/CORS.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/5年的计划.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/PHPCMS.md" />
-    <entry file="file://$PROJECT_DIR$/source/about/index.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/PHPCMS.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Get-Post-Put-Delete.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Laravel配置.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Xdebug安装.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Laravel配置.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Java开发环境的搭建.md" />
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/_macro/post.swig">
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        <state relative-caret-position="14418">
+          <caret line="534" column="12" selection-start-line="534" selection-start-column="6" selection-end-line="534" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/面向切面编程.md" />
-    <entry file="file://$PROJECT_DIR$/_config.yml" />
-    <entry file="file://$PROJECT_DIR$/themes/next/layout/_layout.swig">
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_custom/header.swig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search.swig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="216">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search/localsearch.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="11" lean-forward="true" selection-end-line="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="697" column="18" selection-start-line="697" selection-start-column="12" selection-end-line="697" selection-end-column="18" />
+        <state relative-caret-position="14418">
+          <caret line="534" column="12" selection-start-line="534" selection-start-column="6" selection-end-line="534" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/闭包.md" />
-    <entry file="file://$PROJECT_DIR$/source/about/index.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/PHPCMS.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/W3c盒子模型.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/5年的计划.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/CORS.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Get-Post-Put-Delete.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/RESTful.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/迷宫逃脱算法.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/数据结构与算法学习之路.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/gitbash配置.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/js脚本位置.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Git-clone.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/js正则表达式.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/css绝对定位居中.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/设计模式.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Vue环境搭建.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/Thinkphp基于linux的坑.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/单电脑管理多github账户.md" />
-    <entry file="file://$USER_HOME$/Documents/Tencent Files/1240945408/FileRecv/MobileFile/mvvm.js" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/一个简单版的mvvm.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/vue项目总结.md" />
-    <entry file="file://$PROJECT_DIR$/source/_posts/TP5源码分析之Db类实现.md">
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_custom/header.swig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search/localsearch.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-六.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="721">
-            <caret line="289" column="9" selection-start-line="289" selection-start-column="9" selection-end-line="289" selection-end-column="9" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="405">
+            <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-六.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="405">
+            <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>
@@ -290,29 +240,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-二.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="613">
-            <caret line="93" selection-start-line="93" selection-end-line="94" selection-end-column="17" />
-          </first_editor>
+        <state split_layout="SPLIT">
+          <first_editor />
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-一.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-五.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="636">
-            <caret line="104" selection-start-line="104" selection-end-line="105" selection-end-column="17" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-三.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="852">
-            <caret line="69" column="16" selection-end-line="70" />
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1566">
+            <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
@@ -320,9 +258,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-四.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-2187" />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14418">
+          <caret line="534" column="12" selection-start-line="534" selection-start-column="6" selection-end-line="534" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_custom/header.swig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/next/layout/_partials/search/localsearch.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="38" lean-forward="true" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/额叶切除手术.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/前端备战-六.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="632">
-            <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+          <first_editor relative-caret-position="2700">
+            <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
