@@ -64,10 +64,24 @@
       <path value="$PROJECT_DIR$/themes/package.json" />
     </packageJsonPaths>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-423" />
+    <option name="width" value="1944" />
+    <option name="height" value="1031" />
+=======
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="376" />
     <option name="width" value="1316" />
     <option name="height" value="992" />
+=======
+    <option name="x" value="892" />
+    <option name="y" value="8" />
+    <option name="width" value="960" />
+    <option name="height" value="1016" />
+>>>>>>> 1e0651277c653bc728d0f631f0fe9d4d382381b3
+>>>>>>> f2864b31c43460bc1faa0e6a3c4cf0b57404251c
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -126,21 +140,64 @@
       <created>1534303218044</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1534303218044</updated>
       <workItem from="1534303220333" duration="3228000" />
       <workItem from="1534318767035" duration="12000" />
       <workItem from="1534324497104" duration="711000" />
       <workItem from="1534384540268" duration="196000" />
       <workItem from="1534386585242" duration="5099000" />
+=======
+      <updated>1526544858026</updated>
+      <workItem from="1526544859465" duration="1119000" />
+      <workItem from="1526546148365" duration="12000" />
+      <workItem from="1526782650985" duration="126000" />
+      <workItem from="1526784645811" duration="13000" />
+      <workItem from="1526807726326" duration="2310000" />
+      <workItem from="1526823828664" duration="14000" />
+      <workItem from="1526915364547" duration="907000" />
+      <workItem from="1526983663848" duration="30000" />
+      <workItem from="1528810659662" duration="487000" />
+      <workItem from="1528851522014" duration="10000" />
+      <workItem from="1528853617354" duration="1252000" />
+      <workItem from="1528855441231" duration="1132000" />
+      <workItem from="1528857527151" duration="1498000" />
+      <workItem from="1529639041139" duration="398000" />
+      <workItem from="1529639472099" duration="290000" />
+      <workItem from="1532003543460" duration="414000" />
+      <workItem from="1532689568513" duration="12000" />
+      <workItem from="1533561391185" duration="2549000" />
+      <workItem from="1533910977349" duration="666000" />
+      <workItem from="1533915199263" duration="690000" />
+<<<<<<< HEAD
+      <workItem from="1533958068873" duration="5981000" />
+=======
+      <workItem from="1533958068873" duration="5381000" />
+      <workItem from="1534125630545" duration="14473000" />
+      <workItem from="1534208873125" duration="8625000" />
+      <workItem from="1534230982771" duration="863000" />
+>>>>>>> 1e0651277c653bc728d0f631f0fe9d4d382381b3
+>>>>>>> f2864b31c43460bc1faa0e6a3c4cf0b57404251c
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="9246000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="19910000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-282" y="29" width="1296" height="697" extended-state="0" />
+=======
+    <option name="totallyTimeSpent" value="43271000" />
+>>>>>>> f2864b31c43460bc1faa0e6a3c4cf0b57404251c
   </component>
   <component name="ToolWindowManager">
     <frame x="376" y="0" width="1316" height="992" extended-state="0" />
     <editor active="true" />
+>>>>>>> 1e0651277c653bc728d0f631f0fe9d4d382381b3
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.32073954" />
       <window_info anchor="bottom" id="TODO" order="6" />
