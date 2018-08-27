@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="余鸿靖博客">
 <meta property="og:description" content="美团第一感觉约定了7点钟面试，一开始接到电话，是一个小姐姐的声音。我还误以为是客户小姐姐，帮我转接电话。结果，一脸懵逼。。。。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-08-25T14:02:18.978Z">
+<meta property="og:updated_time" content="2018-08-27T13:07:27.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="美团一面面经">
 <meta name="twitter:description" content="美团第一感觉约定了7点钟面试，一开始接到电话，是一个小姐姐的声音。我还误以为是客户小姐姐，帮我转接电话。结果，一脸懵逼。。。。">
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  329 字
+                  630 字
                 </span>
               
 
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -431,33 +431,35 @@
         <h3 id="美团第一感觉"><a href="#美团第一感觉" class="headerlink" title="美团第一感觉"></a>美团第一感觉</h3><p>约定了7点钟面试，一开始接到电话，是一个小姐姐的声音。<br>我还误以为是客户小姐姐，帮我转接电话。<br>结果，一脸懵逼。。。。<br><a id="more"></a></p>
 <h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><ol>
 <li>说一下项目经历</li>
-<li>Vue的数据绑定原理</li>
-<li>给数组添加一个拷贝数组的方法，例如<code>a=[1,2,3]</code>变为<code>a=[1,2,3,1,2,3]</code></li>
-<li>http请求头</li>
-<li>viewport的作用</li>
-<li>移动端适应</li>
-<li>前缀表达式</li>
-<li>深拷贝和浅拷贝</li>
-<li>rem是如何计算px的</li>
-<li>scroll滚动页面卡</li>
-<li>vue的hash路由</li>
-<li>青蛙跳台阶一次只能跳一步或两步，问有多少种方式</li>
-<li><code>loop event</code></li>
-<li>箭头操作符</li>
-<li>类的继承方式</li>
-<li>keep-alive</li>
-<li><code>cookie session localStrong sessionStrong</code></li>
-<li><code>call apply bind</code></li>
-<li>ul下的li,第一个和最后一个节点交换</li>
-<li>http状态码</li>
-<li>跨域</li>
-<li>http是如何连接的</li>
-<li>网页上输入一个url,是如何执行的。</li>
-<li>git的相关命令</li>
-<li>重绘与重排</li>
-<li>防抖与节流</li>
-<li>如何判断数据的类型<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3>小姐姐的声音真的很好听。思路老是被声音带走。<br>不过，小姐姐人很好，最后我问问题的时候还回答了我。<br>继续加油吧。   </li>
+<li>Vue的数据绑定原理 (Object.defineProperty)</li>
+<li>给数组添加一个拷贝数组的方法，例如<code>a=[1,2,3]</code>变为<code>a=[1,2,3,1,2,3]</code> (原型注册方法，concat自己)</li>
+<li>http请求头 (请求行,accept, content-type , referer, cookie)</li>
+<li>viewport的作用 (针对移动端的虚拟窗口)</li>
+<li>移动端适应   (@media, rem, vw)</li>
+<li>前缀表达式   (递归，判断子树是否为空)</li>
+<li>深拷贝和浅拷贝 (深拷贝，拷贝所有属性，json.parse(JSON.stringify(obj))如果有函数就得递归,浅拷贝只拷贝引用)</li>
+<li>rem是如何计算px的 (根据HTML元素的字体大小计算，1rem就是html的字体大小)</li>
+<li>scroll滚动页面卡    (节流)</li>
+<li>vue的hash路由 (window.localtion.hash能够获取，其实是单页网页)</li>
+<li>青蛙跳台阶一次只能跳一步或两步，问有多少种方式 (斐波拉契递归)</li>
+<li><code>loop event</code> (事件循环，针对于异步处理的)</li>
+<li>箭头操作符  (本身没有this和构造函数，继承于外围的this)</li>
+<li>类的继承方式 (原型链继承,extends, 构造函数继承, 组合继承)</li>
+<li>keep-alive </li>
+<li><code>cookie session localStrong sessionStrong</code> (cookie是客户端,session是服务端的)</li>
+<li><code>call apply bind</code>  (前两个是调用函数，bind是返回函数)</li>
+<li>ul下的li,第一个和最后一个节点交换 (insertBefore, appendChild)</li>
+<li>http状态码 (20X,成功 , 30x,重定向 , 40X客户端, 50X服务端)</li>
+<li>跨域 (Jsonp, cors, 反向代理, window.domain)</li>
+<li>http是如何连接的 (通过tcp连接)</li>
+<li>网页上输入一个url,是如何执行的。 (解析，请求，返回，渲染)</li>
+<li>git的相关命令 (add commit push pull merge checkout branch log)</li>
+<li>重绘与重排 (重绘 样式改变颜色等，重排， 重新渲染节点。 重排一定会引起重绘)</li>
+<li>防抖与节流 (防抖，用户输入完毕再执行， 节流，浏览器窗口大小缩放，滚动条)</li>
+<li>如何判断数据的类型 (typeof    Object.prototype.toString.call(Obj))</li>
+<li>meta标签内的width设置为多少   (device-width)</li>
 </ol>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>小姐姐的声音真的很好听。思路老是被声音带走。<br>不过，小姐姐人很好，最后我问问题的时候还回答了我。<br>继续加油吧。   </p>
 
       
     </div>
