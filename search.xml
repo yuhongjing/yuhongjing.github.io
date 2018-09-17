@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title>单电脑管理多github账户</title>
+      <link href="/2018/05/26/%E5%8D%95%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E5%A4%9Agithub%E8%B4%A6%E6%88%B7/"/>
+      <url>/2018/05/26/%E5%8D%95%E7%94%B5%E8%84%91%E7%AE%A1%E7%90%86%E5%A4%9Agithub%E8%B4%A6%E6%88%B7/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>有些时候，可能需要一台电脑连接两个github的账号，或者一台电脑同时需要连接两个平台，例如码云，github等。所以这个时候我们需要在一台电脑上配置多个SSH-Key。<br><a id="more"></a></p><h3 id="建立多个SSH"><a href="#建立多个SSH" class="headerlink" title="建立多个SSH"></a>建立多个SSH</h3><p>首先需要生成多个SSH-key,例如下面就生成了两个SSH-key<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;one@gmail.com&quot;</div><div class="line"></div><div class="line">$ ssh-keygen -t rsa -C &quot;two@gmail.com&quot;</div></pre></td></tr></table></figure></p><p>ps: 不要一直按enter，需要新的命名，否则会覆盖。(默认文件名为id_rsa)  </p><h3 id="添加私钥"><a href="#添加私钥" class="headerlink" title="添加私钥"></a>添加私钥</h3><h4 id="打开ssh-agent"><a href="#打开ssh-agent" class="headerlink" title="打开ssh-agent"></a>打开ssh-agent</h4><p>如果你是github官方的bash：<br><code>$ ssh-agent -s</code><br>如果你是其它，比如msysgit：<br><code>$ eval $(ssh-agent -s)</code></p><h4 id="添加私钥-1"><a href="#添加私钥-1" class="headerlink" title="添加私钥"></a>添加私钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-add ~/.ssh/id_rsa_one</div><div class="line"></div><div class="line">$ ssh-add ~/.ssh/id_rsa_two</div></pre></td></tr></table></figure><h3 id="创建config配置"><a href="#创建config配置" class="headerlink" title="创建config配置"></a>创建config配置</h3><p>在建立的config文件下添加如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Host github.com</div><div class="line">  HostName github.com</div><div class="line">  IdentityFile ~/.ssh/id_rsa</div><div class="line"></div><div class="line">Host pxy.github.com</div><div class="line">  HostName github.com</div><div class="line">  IdentityFile ~/.ssh/id_rsa_pxy</div></pre></td></tr></table></figure></p><h3 id="部署SSH-key"><a href="#部署SSH-key" class="headerlink" title="部署SSH key"></a>部署SSH key</h3><p>在网站的SSH上面把文件名为*.pub的内容复制进入即可。</p><h3 id="远程调试测试"><a href="#远程调试测试" class="headerlink" title="远程调试测试"></a>远程调试测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh –T one.github.com</div><div class="line"></div><div class="line">$ ssh –T two.github.com</div></pre></td></tr></table></figure><h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3><h4 id="注销全局用户配置"><a href="#注销全局用户配置" class="headerlink" title="注销全局用户配置"></a>注销全局用户配置</h4><p>首先注册全局用户的配置，然后进入文件单独配置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --unset --global user.name</div><div class="line">git config --unset --global user.eamil</div></pre></td></tr></table></figure></p><h4 id="使用的区别"><a href="#使用的区别" class="headerlink" title="使用的区别"></a>使用的区别</h4><p>原本的使用方式<br><code>$ git clone git@github.com: one的用户名/learngit.git</code><br>现在的使用方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com: one的用户名/learngit.git</div><div class="line"></div><div class="line">$ git clone git@pxy.github.com: two的用户名/learngit.git</div></pre></td></tr></table></figure></p><p>ps.@后面的地址为我们config配置的Host字段值。从而区分是哪一个用户的。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>好吧，还是有点坑的了。不过玩过一次后，理清楚顺序后，还是比较清晰的。</p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SSH </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Get,Post,Put,Delete</title>
+      <link href="/2018/05/21/Get-Post-Put-Delete/"/>
+      <url>/2018/05/21/Get-Post-Put-Delete/</url>
+      <content type="html"><![CDATA[<h3 id="Http请求"><a href="#Http请求" class="headerlink" title="Http请求"></a>Http请求</h3><p>从客户端到服务器端的请求消息，被称为Http请求。<br>它包括：消息首行中，对资源的请求方法、资源的标识符及使用的协议。<br>一般我们都是用GET的方式和POST的方式去请求。<br>然而，没想到除了GET和POST之外还有许多种请求方式，而且意义各不相同。。。。。<br><a id="more"></a></p><h3 id="GET方式"><a href="#GET方式" class="headerlink" title="GET方式"></a>GET方式</h3><p>GET并不安全，一般是向服务器索取信息。所以一般使用GET来执行一些查询的操作，也就是select的操作，例如查询用户资料。  </p><h3 id="POST方式"><a href="#POST方式" class="headerlink" title="POST方式"></a>POST方式</h3><p>POST相对安全,一般是向服务器发送信息。所以可以用来执行update的操作，例如修改密码什么的。  </p><p>###　PUT方式<br>PUT同POST,一般向服务器发送信息。一般用来执行insert的操作，例如增加用户，增加种类。　</p><h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>DELETE，就是用来删除数据的。一般用来执行delete的操作，例如删除用户，删除内容等。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Get为查询，Post为修改,Put为增加,Delete为删除。　　<br>其实还有许多其他的Http请求方式。我却还不知道，一直乱用，接触了RESTFul才了解到这些。　　<br>所以不学习新的东西，就永远不知道自己错在了哪里。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>面向切面编程</title>
+      <link href="/2018/05/20/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B/"/>
+      <url>/2018/05/20/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h3 id="一句话总结"><a href="#一句话总结" class="headerlink" title="一句话总结"></a>一句话总结</h3><p>spring-AOP:这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程。<br>AOP不一定都像<code>Spring AOP</code>那样，是在运行时生成代理对象来织入的，还可以在编译期、类加载期织入，比如AspectJ。<br><a id="more"></a></p><h3 id="简要概论-为什么需要"><a href="#简要概论-为什么需要" class="headerlink" title="简要概论-为什么需要"></a>简要概论-为什么需要</h3><p>现在的编程基本上都是基于面向对象编程–继承，封装，多态。这些能够使代码的复用性大大的提高。然后复用性的提高却会使代码有很多重复的模块。<br>所以我们需要将重复的模块单独提出，统一处理，这就是AOP的工作。下面举个例子。</p><h3 id="小栗子"><a href="#小栗子" class="headerlink" title="小栗子"></a>小栗子</h3><p>我们接下来执行两个操作，第一个功能查询用户的金额。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/AOP/AOP1.png" alt=""><br>第二个功能修改用户的资料。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/AOP/AOP2.png" alt=""><br>他们都需要进行登录账户的操作，如果每一个地方都有判断登录用户的代码，那就是明显的重复。<br>所以我们可以将登录账户的模块，单独提出来，然后再插入到需要的地方。这样对于代码的维护，性能都有提升。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/AOP/AOP3.png" alt="">  </p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>AOP只是一种编程的思想或者说设计的模式，可以将我们的代码梳理的清楚，维护更轻松。<br>所以AOP的善用，可以大大的提高我们的代码质量。</p>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Laravel配置</title>
+      <link href="/2018/05/17/Laravel%E9%85%8D%E7%BD%AE/"/>
+      <url>/2018/05/17/Laravel%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/Laravel/top.png" alt=""><br>作为只接触过Thinkphp框架的我，每次看见Github上被Laravel刷屏的趋势榜单，终于仍不住来研究一下传说中优雅的Laravel。<br><a id="more"></a></p><h3 id="安装的苦恼"><a href="#安装的苦恼" class="headerlink" title="安装的苦恼"></a>安装的苦恼</h3><p>安装Laravel的第一道门槛就是“墙”！在我上大一的时候，就经常听学姐说安装Laravel花费了很久很久时间。<br>所以安装Laravel前，请先准备“梯子”。这样仅需1分钟就能搞定Laravel的配置。<br>幸运的是，我所在的学校的校园网是可以访问外网的，所以我最终仅花费就了一分钟，搞定了Laravel的配置。 </p><h3 id="安装Composer"><a href="#安装Composer" class="headerlink" title="安装Composer"></a>安装Composer</h3><p>进入Laravel的官网，直接下载Composer的安装包即可，下载后进行安装。<br>以默认地址安装会自动配置PATH变量，否则需手动配置PATH变量。<br>其中有一项需要选择自己电脑上的PHP.exe的支持文件。<br>安装完毕后打开命令行输入<code>Composer</code>出现提示，即说明安装成功！</p><h3 id="通过Laravel安装器安装"><a href="#通过Laravel安装器安装" class="headerlink" title="通过Laravel安装器安装"></a>通过Laravel安装器安装</h3><p>安装Composer后通过以下代码即可全局安装Laravel安装器。<br><code>composer global require &quot;laravel/installer&quot;</code><br>安装成功后，然后进入你想创建项目的地址，输入以下命令即可创建项目。<br><code>laravel new 项目名</code><br>出现如下图片就OK。<br> <img src="https://github.com/yuhongjing/img-folder/raw/master/img/Laravel/start.png" alt="">  </p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>之前一直听说安装Laravel很麻烦，其实只是“墙”的问题。<br>我一直很疑惑一款优雅的框架，怎么会安装这么麻烦，原来只是方法不对罢了。  </p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Laravel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>PHPstorm Xdebug工具安装</title>
+      <link href="/2018/05/16/Xdebug%E5%AE%89%E8%A3%85/"/>
+      <url>/2018/05/16/Xdebug%E5%AE%89%E8%A3%85/</url>
+      <content type="html"><![CDATA[<h3 id="Xdebug介绍"><a href="#Xdebug介绍" class="headerlink" title="Xdebug介绍"></a>Xdebug介绍</h3><p>Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。<br>我们可以使用Xdebug对php代码进行断点调试，能够清楚的看清楚每个地方变量的值，不用再通过<code>echo</code>和<code>var_dump</code>来输出变量了。<br><a id="more"></a>  </p><h3 id="在PHPStorm下安装Xdebug工具"><a href="#在PHPStorm下安装Xdebug工具" class="headerlink" title="在PHPStorm下安装Xdebug工具"></a>在PHPStorm下安装Xdebug工具</h3><pre><code>1. 首先我们需要知道当前客户端的PHP版本，新建一个PHP文件，输入PHPINFO()函数即可。  2. 然后Ctrl + F搜索Xdebug，如果没有即表明的确没有安装Xdebug。  3. 浏览器输入Xdebug就能看见官网，点击Download，进入页面有一个Releases版本选项，点击进入。4. 然后回到php的info页面，点击查看源代码，全部复制进入Xdebug的文本框，即可看到当前PHP适应的Xdebug版本。  5. 根据出现的提示，将文件下载后，复制进目标文件内。  6. 然后在php.ini文件内添加如下信息，其中第一行复制于网站的代码  [xdebug];第一行需要复制网站上的代码zend_extension = D:\xampp\php\ext\php_xdebug-2.6.0-7.2-vc15.dllxdebug.remote_enable=1xdebug.remote_handler=dbgpxdebug.remote_mode=reqxdebug.remote_host=localhostxdebug.remote_port=9000xdebug.idekey=&quot;PHPSTORM&quot;7. 重新打开phpinfo文件，Ctrl+F搜索Xdebug如果存在，即表示安装成功。  8. 打开PHPStrom，点击右上角的下箭头，Edit Configurations进入配置需要调试的文件。  9. 配置里面的server，输入localhost即可。10. 点击爬虫图标即可，进行断点调试默认F8下一步。  </code></pre><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>调试工具对于寻找错误的效率有特别大的提示，因为编程从某种意义上来说，就是不断的发现错误。  </p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHP工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>vue项目总结</title>
+      <link href="/2018/05/08/vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/"/>
+      <url>/2018/05/08/vue%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/</url>
+      <content type="html"><![CDATA[<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>本项目是一个翻新版本，第一版的记账本完全由Thinkphp完成（功能已经完善）。<br><a id="more"></a><br>本项目前端由Vue,Vue-cli,Vue-Router,axios完成,后端由Thinkphp5+Mysql+linux完成。<br>本项目完成了一款基础的记账本功能，主要包括用户的资料修改，记账，查账。<br>未完成的功能，用户注册，账本删除，种类新增等。  </p><h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><p>前端分为了3个模块:用户登录模块,主页模块,功能模块(主要)<br>后端三个控制器对应三个模块:Login,Home,Index完成相应功能  </p><h1 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h1><p>前后端分离请求API跨域：因为我可以处理后台，所以直接从后台添加header即可，否则需要配置ngnix反向解析。<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_initialize</span><span class="params">()</span></span>&#123;  </div><div class="line">    header(<span class="string">'Access-Control-Allow-Origin:*'</span>); </div><div class="line">    header(<span class="string">'Access-Control-Allow-Methods:GET,POST,PATCH,PUT,OPTIONS'</span>);</div><div class="line">    header(<span class="string">'Access-Control-Allow-Headers:x-requested-with, content-type'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>Centos文件权限777：因为云服务器的系统为linux，忘了设置文件权限777，导致无法写日志，出现code500的错误，困扰了我很久。唉。<br>Thinkphp模型：一直使用Thinkphp的Db类，现在第一次接触模型来操作数据库，但是此次并没有使用模型的数据自动化和关联模型。<br>Vue-build：用vue-cli打包出来的程序，如果直接build会导致图片的地址出现错误，需要手动改变。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  首先修改config文件下的index.js中的build方法</div><div class="line">  assetsPublicPath: <span class="string">'./'</span></div><div class="line"></div><div class="line">  再修改build文件下的utils.js</div><div class="line">  <span class="keyword">if</span> (options.extract) &#123;</div><div class="line">    <span class="keyword">return</span> ExtractTextPlugin.extract(&#123;</div><div class="line">      use: loaders,</div><div class="line">      publicPath:<span class="string">'../../'</span>,</div><div class="line">      fallback: <span class="string">'vue-style-loader'</span></div><div class="line">    &#125;)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> [<span class="string">'vue-style-loader'</span>].concat(loaders)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><p>vue图片位置:如果图片放入assets中，会被编译打包，所以不能通过地址的方式动态引入，如果放在static中，不会被打包，但是必须通过data的方法引入才能显示。<br>vue全局变量的几种方法: vuex，新建一个js然后export出来引入main.js(全局注入)，也可以按需import进入,变量为webpack的global方式，当然还可以更改原型链<code>Vue.prototype.XXX = XXX</code><br>vue引入一些组件或UI：main.js中直接全局引入在Vue.use使用即可，css也是如此。也可以在各个组件中单独引入。例如axios也是如此.<br>vue安装插件:<code>npm install 插件名 -- save</code>不能在方便<br>vueUI的样式打包失效:main.js将引入的uiCSS放在vue之前即可<br>vue返回上一页:this.$router.back(-1)<br>vue图片的引入:import图片地址然后放入data中<br>后台用json方式传送数据到前端:因为json的键名和键值都是字符型，所以需要特别注意键值类型。<br>filter管道:可以格式化一些特定的数据，例如日期格式化  </p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>多总结，多温习。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>js数组常用方法</title>
+      <link href="/2018/04/21/js%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+      <url>/2018/04/21/js%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h1 id="js数组的一些常用方法"><a href="#js数组的一些常用方法" class="headerlink" title="js数组的一些常用方法"></a>js数组的一些常用方法</h1><p>本文章记录了一些js数组经常使用的方法和使用说明。<br><a id="more"></a></p><h2 id="数组添加元素和删除元素"><a href="#数组添加元素和删除元素" class="headerlink" title="数组添加元素和删除元素"></a>数组添加元素和删除元素</h2><p>push()方法<br>该方法可把一个元素或一组元素(数组)添加到当前数组的<strong><em>末尾</em></strong>并返回<strong><em>新的数组长度</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.push(newelement1,newelement2,....,newelementX)</div></pre></td></tr></table></figure></p><p>unshift()方法<br>该方法可把一个元素或更多元素添加到<strong><em>数组的开头</em></strong>并返回<strong><em>新的数组长度</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.unshift(newelement1,newelement2,....,newelementX)</div></pre></td></tr></table></figure></p><p>pop()方法<br>该方法可以删除并<strong><em>返回</em></strong>数组最后一个元素.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.pop()</div></pre></td></tr></table></figure></p><p>shift()方法<br>该方法可以删除数组第一个元素，并<strong><em>返回</em></strong>第一个元素.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.shift()</div></pre></td></tr></table></figure></p><p>splice()方法<br><strong><em>万金油方法</em></strong>,可以从数组添加/删除若干个元素，然后<strong><em>返回删除的元素</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.splice(index,howmany,item1,.....,itemX)</div></pre></td></tr></table></figure></p><p>注释:index表示添加/删除的起始位置,howmany表示删除的个数(可以为0),item表示添加的元素.  </p><h2 id="数组的基本操作方法"><a href="#数组的基本操作方法" class="headerlink" title="数组的基本操作方法"></a>数组的基本操作方法</h2><p>reverse()方法<br>该方法用于颠倒数组的顺序，<strong><em>不会产生新的数组</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.reverse()</div></pre></td></tr></table></figure></p><p>concat()方法<br>该方法可以连接两个个或多个数组，<strong><em>产生新的数组不会改变现有的数组</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.concat(arrayX,arrayX,......,arrayX)</div></pre></td></tr></table></figure></p><p>join()方法<br>该方法把所有的数组元素放进一个字符串，<strong><em>按指定的字符进行分隔</em></strong>。<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.join(separator)</div></pre></td></tr></table></figure></p><p>sort()方法<br>该方法用于对数组的元素进行排序<strong><em>默认升序</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.sort(sortby)</div></pre></td></tr></table></figure></p><p>注释:sortby为可选参数，规定函数的排序规则，必须是函数.<br>slice()方法<br>该方法可从已有的数组中返回选定的元素,返回了一个<strong><em>新的数组</em></strong>.<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.slice(start,end)</div></pre></td></tr></table></figure></p><h2 id="数组元素的查找"><a href="#数组元素的查找" class="headerlink" title="数组元素的查找"></a>数组元素的查找</h2><p>indexOf()方法<br>该方法可返回某个指定的字符串值在字符串中<strong><em>首次</em></strong>出现的位置。<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringObject.indexOf(searchvalue,fromindex)</div></pre></td></tr></table></figure></p><p>lastIndexOf()方法<br>该方法返回一个指定的字符串值<strong><em>最后</em></strong>出现的位置，在一个字符串中的指定位置从后向前搜索。<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">stringObject.lastIndexOf(searchvalue,fromindex)</div></pre></td></tr></table></figure></p><h2 id="数组的循环操作"><a href="#数组的循环操作" class="headerlink" title="数组的循环操作"></a>数组的循环操作</h2><p>forEach()方法<br>该方法用于调用数组的每个元素，并将元素传递给回调函数,该方法<strong><em>没有返回值</em></strong>。<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.forEach(function(currentValue, index, arr), thisValue)</div></pre></td></tr></table></figure></p><h2 id="数组的属性"><a href="#数组的属性" class="headerlink" title="数组的属性"></a>数组的属性</h2><p>length属性<br>该属性可设置或返回数组中元素的数目。<br>语法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arrayObject.length</div></pre></td></tr></table></figure></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>学而时习之，可以为师矣。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git常用命令</title>
+      <link href="/2018/04/07/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/04/07/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h1 id="Git的常用命令"><a href="#Git的常用命令" class="headerlink" title="Git的常用命令"></a>Git的常用命令</h1><p>配置全局用户NAME和E-mail  </p><blockquote><p>$ git config –global user.name “Your Name”<br>$ git config –global user.email “email@example.com”   </p></blockquote><a id="more"></a><p>仓库初始化  </p><blockquote><p>$ git init  </p></blockquote><p>添加文件到仓库 </p><blockquote><p>$ git add 文件名  </p></blockquote><p>提示：可反复添加。一个小数点为所有文件。 </p><p>提交到git仓库  </p><blockquote><p>$ git commit -m “注释”  </p></blockquote><p>查看仓库状态  </p><blockquote><p>$ git status  </p></blockquote><p>比较当前的文件修改  </p><blockquote><p>$ git diff 文件名  </p></blockquote><p>查看提交历史  </p><blockquote><p>$ git log  –pretty=oneline  </p></blockquote><p>回退版本  </p><blockquote><p>$ git reset –hard HEAD^  </p></blockquote><p>删除文件  </p><blockquote><p>$ rm 文件名  </p></blockquote><p>与远程仓库协作  </p><blockquote><p>$ git remote add origin git地址  </p></blockquote><p>删除本地库与远程库的关联  </p><blockquote><p>$ git remote rm origin  </p></blockquote><p>推送到远程仓库  </p><blockquote><p>$ git push origin 分支名  </p></blockquote><p>克隆一个远程库  </p><blockquote><p>$ git clone git地址  </p></blockquote><p>创建一个分支  </p><blockquote><p>$ git branch 分支名  </p></blockquote><p>切换分支  </p><blockquote><p>$ git checkout 分支名  </p></blockquote><p>创建并切换一个分支  </p><blockquote><p>$ git checkout -b 分支名  </p></blockquote><p>查看分支  </p><blockquote><p>$ git branch  </p></blockquote><p>合并分支到当前</p><blockquote><p>$ git merge 分支名  </p></blockquote><p>删除分支  </p><blockquote><p>$ git branch -d 分支名  </p></blockquote>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gitbash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>闭包</title>
+      <link href="/2018/03/16/%E9%97%AD%E5%8C%85/"/>
+      <url>/2018/03/16/%E9%97%AD%E5%8C%85/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>研究了很久，一直也没敢写下这篇文章。闭包，一个非常重要的技术概念。也经常使用，但是一直不是特别清楚它的原理，这一次算是好好的整理一下吧。<br><a id="more"></a></p><h1 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h1><p>百度百科的解释为“闭包就是能够读取其他函数内部变量的函数”。字面的意思上理解就是闭包是一个函数，能够调用其他函数的变量？但是百度百科接下来还有一句解释，闭包本质就是函数内部与函数外部连接的桥梁。<br>这一下就有一点晕了。不愧是百度，搜索的答案总是对新手这么的不友好。<br>下面是针对js的闭包解释。<br><strong>JavaScript中的函数运行在它们被定义的作用域中,而不是他们被执行的作用域里</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var foo = function()&#123;</div><div class="line">    var name = &quot;exe&quot;;</div><div class="line">    return function inner()&#123;</div><div class="line">        console.log(name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var bar = foo(); //这里得到的是函数inner的引用,相当于只返回了return后面的那一个函数，而且此时并没有执行函数。</div><div class="line">bar(); //这里才开始执行inner函数</div></pre></td></tr></table></figure></p><p>上面一段代码，有两个特点。第一，return返回的是一个函数。第二，接受函数的是一个变量foo。这就是闭包的特点。<br>这样做有什么用吗？当然有用，你可以看见，我定义了一个bar，但是这个bar却可以访问foo下面的函数inner。<br>并且，如果我继续定义一个变量bar1，也是赋值foo()，惊人的事情就会发生了,虽然引用同一个函数，但是引用的变量却各不干扰。<br>实际情况举一个例子吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var foo = function()&#123;</div><div class="line">    var i = 0;</div><div class="line">    return function add()&#123;</div><div class="line">        i = i + 1;</div><div class="line">        console.log(i);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var bar = foo();</div><div class="line">bar();// i = 1;</div><div class="line">bar();// i = 2;</div><div class="line">var bar1 = foo();</div><div class="line">bar1(); //i = 1;</div><div class="line">bar1(); //i = 2;</div></pre></td></tr></table></figure></p><p>以上就可以看见闭包的一些特点。</p><h1 id="什么时候需要使用闭包"><a href="#什么时候需要使用闭包" class="headerlink" title="什么时候需要使用闭包"></a>什么时候需要使用闭包</h1><p>还是以js为例，js有一个特别的地方就是，函数内部是可以直接获取全局变量的值，而函数外部却不可以获取函数内部的值。<br>如果你需要获取函数内部的局部变量，正常情况下是不能做到的。所以需要通过闭包，在函数内部再定义一个函数！<br>这样即可获得函数内部的值。也就是说，当你需要函数内部的局部变量的时候，即可使用闭包。  </p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>闭包的特点两个，可以取函数内局部变量，局部变量始终保持在内存中，不会因为调用被自动清除。<br>缺点也很明显，保存在内存会导致内存消耗大，而且在外部可以调用内部变量后，容易导致其他错误！<br>但是闭包总比定义很多全部变量强吧！哈哈！</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>W3c盒子模型</title>
+      <link href="/2018/03/15/W3c%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+      <url>/2018/03/15/W3c%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
+      <content type="html"><![CDATA[<h1 id="两种盒子模型"><a href="#两种盒子模型" class="headerlink" title="两种盒子模型"></a>两种盒子模型</h1><p>一种是IE的怪异盒子模型，一种是W3C的标准盒子模型。两种盒子模型的计算方式不同。目前IE高版本的浏览器已经放弃了怪异盒子模型。在此之前的前端开发者，深受此兼容困扰！庆幸我现在已经不用处理那么多的兼容。<br><a id="more"></a></p><h1 id="W3C盒子模型"><a href="#W3C盒子模型" class="headerlink" title="W3C盒子模型"></a>W3C盒子模型</h1><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/W3C_box.jpg" alt=""><br>标准盒子的计算方式为:width=border+padding+margin+content,其中content不包含其他。</p><h1 id="IE盒子模型"><a href="#IE盒子模型" class="headerlink" title="IE盒子模型"></a>IE盒子模型</h1><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/IE_box.jpg" alt=""><br>IE盒子模型又称为”怪异盒子模型”,计算方式为width=margin+content,其中content包含border+padding+content。</p><h1 id="选择哪种盒子模型？"><a href="#选择哪种盒子模型？" class="headerlink" title="选择哪种盒子模型？"></a>选择哪种盒子模型？</h1><p>目前主流的都是选择标准盒子模型，在页头加入DCOTYPE声明即可！</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一些基础的必备知识！努力学习，努力积累，日积跬步，能至千里。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Jsonp</title>
+      <link href="/2018/03/15/Jsonp/"/>
+      <url>/2018/03/15/Jsonp/</url>
+      <content type="html"><![CDATA[<h1 id="什么是Jsonp"><a href="#什么是Jsonp" class="headerlink" title="什么是Jsonp"></a>什么是Jsonp</h1><p>JSONP是应用于JSON的一种新方法,常用于服务器与客户端的跨源通信，在WEB服务中非常流行。<br><a id="more"></a></p><h1 id="同源政策"><a href="#同源政策" class="headerlink" title="同源政策"></a>同源政策</h1><p>同源政策的本意是为了保护用户信息的安全，防止恶意的网站窃取数据，所以我们传统的AJAX技术就不能直接获取到协议不同，域名不同，端口不同的网站的数据。</p><h1 id="Jsonp是如何跨域获得数据的"><a href="#Jsonp是如何跨域获得数据的" class="headerlink" title="Jsonp是如何跨域获得数据的"></a>Jsonp是如何跨域获得数据的</h1><p>虽然Ajax不能跨域，但是开发者发现script标签的src属性是可以跨域的，于是网页通过一个script元素向服务器请求JSON数据，而JSON正好被js支持(object)，服务器收到请求后，将数据放在一个指定的回调函数里传回来。</p><h1 id="为什么叫做Jsonp"><a href="#为什么叫做Jsonp" class="headerlink" title="为什么叫做Jsonp?"></a>为什么叫做Jsonp?</h1><p>当通过script元素调用数据时，响应内容必须用javascript函数名和圆括号包裹起来。而不是发送这样一段JSON数据，这就是JSONP中P的意义所在。 </p><h1 id="Jsonp与AJAX的区别"><a href="#Jsonp与AJAX的区别" class="headerlink" title="Jsonp与AJAX的区别?"></a>Jsonp与AJAX的区别?</h1><ol><li>ajax和jsonp本质上是不同的东西。</li><li>ajax的核心是通过XmlHttprequest获取<strong>非本页</strong>内容。</li><li>jsonp的核心是动态添加script标签来调用<strong>服务器</strong>的js脚本。   </li></ol><h1 id="一个小小的例子"><a href="#一个小小的例子" class="headerlink" title="一个小小的例子"></a>一个小小的例子</h1><p>文件:example.js<br>代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(&apos;我是远程文件&apos;);</div></pre></td></tr></table></figure></p><p>本地<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;跨域服务器/remote.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p><p>这就是直接引入一个js，页面弹出一个框，显示我是远程文件。  </p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>Jsonp是WEB人员经常使用的东西，但是对于原理可能不那么清楚！多学习，多积累吧!加油!</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Ajax是什么?</title>
+      <link href="/2018/03/10/Ajax%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+      <url>/2018/03/10/Ajax%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+      <content type="html"><![CDATA[<p>本篇博文是较为清晰的讲诉了什么是Ajax技术，能做什么？我结合了博客园，CSDN以及知乎的几个回答，整理总结得到的。<br><a id="more"></a></p><h1 id="Ajax是什么？"><a href="#Ajax是什么？" class="headerlink" title="Ajax是什么？"></a>Ajax是什么？</h1><p>Ajax全称Asynchronous_JavaScript_and_XML(异步的JavaScript和XML)。<br>首先Ajax不是一种新的编程语言，而是一种使用现在标准的新方法。Ajax是一种无需重新加载整个网页的情况下，就能更新部分网页的技术。  </p><h1 id="Ajax的工作原理"><a href="#Ajax的工作原理" class="headerlink" title="Ajax的工作原理"></a>Ajax的工作原理</h1><p>Ajax的工作原理是一个页面的指定位置可以加载另一个页面的所有输出内容，这样就实现了一个静态页面也能获取到数据库中返回的数据信息了。<br>所以Ajax实现了一个静态网页在不刷新整个页面的情况下与服务器通信，减少了用户等待时间，同时降低了网络流量，增强了客户体验的友好程度。<br>Ajax的核心技术是XMLHttpRequest,它是JavaScript的一个对象。</p><h1 id="Ajax的优点"><a href="#Ajax的优点" class="headerlink" title="Ajax的优点"></a>Ajax的优点</h1><ol><li>减轻了服务器端的负担。</li><li>在局部刷新的情况下更新，增加了页面的反应速度，用户体验更友好。</li><li>Ajax可使因特网应用程序更小，更快，更友好。</li><li>Ajax被广泛支持，不需要下载插件或者小程序。  </li></ol><h1 id="Ajax的缺点"><a href="#Ajax的缺点" class="headerlink" title="Ajax的缺点"></a>Ajax的缺点</h1><ol><li>不利于SEO推广优化，搜索引擎无法访问Ajax请求到的内容。</li><li>Ajax不支持浏览器back按钮。</li><li>破坏了程序的异常机制。</li><li>不容易调试。</li><li>Ajax暴露了与服务器交互的细节。 </li></ol><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总之，目前Ajax在WEB中是最常用的技术之一，也是前景非常好的技术之一。总而言之，简单实用。必备之。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>js正则表达式</title>
+      <link href="/2018/03/09/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+      <url>/2018/03/09/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<p>本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。</p><h1 id="贪婪匹配与非贪婪匹配"><a href="#贪婪匹配与非贪婪匹配" class="headerlink" title="贪婪匹配与非贪婪匹配"></a>贪婪匹配与非贪婪匹配</h1><p>贪婪与非贪婪模式影响的是被量词修饰的子表达式的匹配行为，贪婪模式在整个表达式匹配成功的前提下，尽可能多的匹配，<br>而非贪婪模式在整个表达式匹配成功的前提下，尽可能少的匹配。非贪婪模式只被部分NFA引擎所支持。<br><a id="more"></a></p><h2 id="贪婪匹配"><a href="#贪婪匹配" class="headerlink" title="贪婪匹配"></a>贪婪匹配</h2><p>默认情况下，正则表达式使用最长的匹配原则，即贪婪匹配原则。<br>举个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">源字符串：aa &lt;div&gt;test1&lt;/div&gt; bb &lt;div&gt;test2&lt;/div&gt;cc</div><div class="line">贪婪模式的正则表达式:&lt;div&gt;.*&lt;/div&gt;</div><div class="line">匹配结果:&lt;div&gt;test1&lt;/div&gt;bb&lt;div&gt;test2&lt;/div&gt;</div></pre></td></tr></table></figure></p><p>这就是贪婪匹配的结果，当第一个div结束后，依旧会向右匹配直到字符串结束。<br>仅从应用角度分析，可以这样认为，贪婪模式，就是在整个表达式匹配成功的前提下，尽可能多的匹配，也就是所谓的“贪婪”，通俗点讲，就是看到想要的，有多少就捡多少，除非再也没有想要的了。</p><h2 id="惰性匹配"><a href="#惰性匹配" class="headerlink" title="惰性匹配"></a>惰性匹配</h2><p>在一些使用NFA引擎的语言中，在匹配优先量词后加上“?”，即变成属于非贪婪模式的量词，也叫做忽略优先量词。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">源字符串：aa &lt;div&gt;test1&lt;/div&gt; bb &lt;div&gt;test2&lt;/div&gt;cc</div><div class="line">惰性模式的正则表达式:&lt;div&gt;.*&lt;/div&gt;</div><div class="line">匹配结果:&lt;div&gt;test1&lt;/div&gt;</div></pre></td></tr></table></figure></p><p>当表达式匹配成功后，即结束匹配，不再向右尝试。<br>仅从应用角度分析，可以这样认为，非贪婪模式，就是在整个表达式匹配成功的前提下，尽可能少的匹配，也就是所谓的“非贪婪”，通俗点讲，就是找到一个想要的捡起来就行了，至于还有没有没捡的就不管了。<br><strong>当然这一切的前提是”匹配成功”</strong></p><h1 id="分组组合符与反向引用符"><a href="#分组组合符与反向引用符" class="headerlink" title="分组组合符与反向引用符"></a>分组组合符与反向引用符</h1><p>分组组合符是将表达式中某部分内容组合起来的符号，反向引用符则是用于匹配分组组合捕获到的内容的标识符。<br>在正则表达式中，可以用一对（英文）圆括号创建一个分组。比如([a-z]+)(/d+)这就是两个分组。<br>分组的作用表现在两个方面，一个是同一模式后续的组件中，称之为反向引用(back_reference)，二是替换模式中引用，称之为编号组。  </p><h2 id="反向引用"><a href="#反向引用" class="headerlink" title="反向引用"></a>反向引用</h2><p>将第一个模式修改为([a-z]+)(/d+)/1之后现在就能够匹配ABC123ABC,A8A等等类似的字符串。这个修正模式后的/1就叫做方向引用，数字1表示引用模式中的第一个捕获组。<br><strong>再来一个例子:\w\w可以匹配”ac,bd,ef”等等,但是\w/1就只能匹配”aa,cc,dd,ee”等相同的字符，这个反向引用匹配的字符与捕获组是一致的。</strong><br>实际应用比如标签符&lt;(h[1-6])&gt;/w+&lt;//1&gt;这样就可以匹配h1到h6的标签符了。如果不反向引用就可以导致不对称的标签符，而反向引用是一致的。  </p><h2 id="替换模式"><a href="#替换模式" class="headerlink" title="替换模式"></a>替换模式</h2><p>编号组的概念也是建立在匹配模式中的分组之上的。它与反向引用的区别在于，编号组是在替换模式中使用的一个概念。<br>例子：([A-Z]{3})(/d{2})为例，该模式匹配ABC12,CDS56等3个字母2个数字的的字符序列。如果要在字母和数字间插入一个空格或者连字符作为分隔符，就可以在替换模式中使用编号组，比如：<br>$1-$2，其中$1就是([A-Z]{3}),$2就是(/d{2}),连字符就是-。这样就完成了需要的功能。<br>$1就相当于那一整个编号组。</p><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>有时候也将在替换模式中使用的编号组称为反向引用。所以,可以认为无论是/1还是$1还是${date},只是因地制宜地使用了不同的形式而已，在本质上它们都是反向引用。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>一遍又一遍的学习正则表达式，这些难点总是使用时候就忘了，忘了又看。一直没有总结下，这一次重新学习基础，就总结一下这非常重要的正则表达式吧。</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>流逝的风</title>
+      <link href="/2018/02/17/%E6%B5%81%E9%80%9D%E7%9A%84%E9%A3%8E/"/>
+      <url>/2018/02/17/%E6%B5%81%E9%80%9D%E7%9A%84%E9%A3%8E/</url>
+      <content type="html"><![CDATA[<h1 id="风曾来自何方"><a href="#风曾来自何方" class="headerlink" title="风曾来自何方"></a>风曾来自何方</h1><p>世间的万物都会随着时间慢慢流逝，无论宏伟的高山或是低浅的河谷。随着时间，它们终将不复从前的模样。<br>过去的已经过去，但是还有谁能记得那曾经的过去，那曾经细细研磨的过去。<br>刺破云际的高峰，曾经也是一座小土堆；平静的小溪，曾经也是一条湍急的河流。<br>一阵微风轻拂我的面容，夹杂着远方的花香，我轻轻的嗅着，感受来自远方的问候。风儿来自何处？<br>它是否也曾越过洋流，也曾翻过高山，也曾与蝴蝶起舞。如今也将越过我，去往更遥远的天河。<br>我仍在轻嗅着这微风的香气，而风已经离去……<br><a id="more"></a></p><h1 id="风欲飘向何处"><a href="#风欲飘向何处" class="headerlink" title="风欲飘向何处"></a>风欲飘向何处</h1><p>我知道风是不能挽留的，亦是不能追逐的，我只能站在原地静静的看它离去。<br>再见了！朋友！我无力的在心中哭泣。为不能挽留的一切，哭泣。  </p><h1 id="风止于我心中"><a href="#风止于我心中" class="headerlink" title="风止于我心中"></a>风止于我心中</h1><p>谁能知道风与我相遇的那一刻？波光粼粼的湖边，夕阳透过随风舞动的柳枝将一束束的光芒印在你的脸上。<br>坐在长椅上，你的目光凝视着前方，直到我的出现，甜蜜的笑容逐渐浮现在你的脸上。<br>我曾错过无数的风景，每一刻都印成照片，贴在我的心墙。如今我的小裕，我不能承受再错过美丽的你了。<br>爱你，珍惜有你的每一刻。</p><h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>怀旧，是我最大的感情波动。人说无事夏迎春，可我却时常陷入过去。<br>我心心念念的风，它的曾经包括它的未来我都未曾参与，仅在某一刻与我擦肩而过，但我却深深不忘。<br>无论风儿来自何处，无论风儿飘向何方，但是风儿永远停在了我的心中。至少那一刻，那一瞬，风儿是永远属于我一人的。</p>]]></content>
+      
+      <categories>
+          
+          <category> 心情 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>额叶切除手术</title>
+      <link href="/2018/02/09/%E9%A2%9D%E5%8F%B6%E5%88%87%E9%99%A4%E6%89%8B%E6%9C%AF/"/>
+      <url>/2018/02/09/%E9%A2%9D%E5%8F%B6%E5%88%87%E9%99%A4%E6%89%8B%E6%9C%AF/</url>
+      <content type="html"><![CDATA[<h1 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h1><p>近几个月来，在影片或游戏中，我总能接触到一个名词“额叶切除手术”。在影片《禁闭岛》、《飞跃疯人院》、《美国恐怖故事第二季》以及游戏《光之镇》中都有此手术。我不知道这种手术究竟是什么，但我能感受到此手术的黑暗与绝望。因为无论是影片还是游戏中，接受此手术的人都变成了一具行尸走肉。为此我特别困惑，这究竟是什么手术，手术效果如此恐怖，如此受人诟病。<br><a id="more"></a></p><h1 id="精神病的难题"><a href="#精神病的难题" class="headerlink" title="精神病的难题"></a>精神病的难题</h1><p>对于大脑结构和情感都是最为复杂和脆弱的人类而言，精神问题由来已久。不论是生理的改变。遗传的影响抑或是心理创伤，都很容易让人坠入精神疾病的泥潭，而数千年来，人类都对此一无所知，束手无策。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/yy4.jpg" alt=""><br>痛苦归痛苦，因为对精神疾病缺乏了解，人们对此毫无办法。患者能自行摆脱疾病困扰的少之又少，而旁人也提不出什么好的治疗方案，直到18世纪，人们依然认为精神病源于邪灵附体等外部原因，而直到20世纪初期都还只能通过监禁束缚病人身体，对其施以大量镇静剂甚至是鸦片暂时遏制其行为，得过且过。<br>这样毕竟治标不治本，病情并不能得到缓解，最后的结果是被送入精神病院的极少有康复者，新病人却源源不断涌入，以至于每家精神病院都容纳了数千名患者，人们急需找到有效的疗法。</p><h1 id="噩梦疗法"><a href="#噩梦疗法" class="headerlink" title="噩梦疗法"></a>噩梦疗法</h1><p>而后，“前脑叶白质切断术”横空出世。葡萄牙神经外科医生莫尼斯从一次动物实验报告会中获得了启发，尝试向精神病患者的前脑叶注射酒精杀死其部分脑神经。手术取得了成功——他是这样宣称的。尽管病人最终没能完全康复，但患者确实活了下来，而且精神病的程度看起来确实有所减轻。此手术还获得1949年的诺贝尔医学奖。<br>这次“成功”大大鼓舞了莫尼斯，他接下来又做了数十例这样的手术，并且向公众宣传。但这样的手术需要复杂的外科手术步骤，对手术设施也有很大的要求。<br>这时，另一个重要人物，美国医生沃尔特·弗里曼站出来，宣布了一项“重大改进”：冰锥疗法。<br>冰锥疗法所需要的设施很简单：螺丝刀、冰锥、钢针，只要是又粗又长又硬的东西就可以。手术室？不需要，直接把病人捆在床上，把冰锥从病人眼眶上方捅进去，捅到大脑前部，根据经验捣两下，捣烂了，收工，搞定。手术所需时间比拔个牙还快，疗程短，见效快，深得大众的欢迎。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/bz1.jpg" alt=""><br><em>冰锥入脑，正是当年医生们“治疗”精神病人的常见方式</em><br>效果有多好？好像还真是意外地有效。再狂躁的患者，这样一捣，也马上变成了温驯的小绵羊，变得平静而乖巧，可以任人摆布——就是有点温顺过头了。哪怕是手术成功者，也变得几乎失去了一切的感情，失去了主观意识，失去了欲望，失去了智能，变得迟钝、麻木、呆滞，成了一具具行尸走肉。对于“手术成功者”而言也不过如此，如此简陋的手术，没有任何定位，就是靠医师经验乱捣一气，“失败者”也不在少数：或是死在手术台上、或是变得极端狂躁和抑郁、或是身体的某一部分残疾无法控制……这让脑叶白质切除手术成了一项轮盘赌博运动。  　然而当时确实没有什么更好的疗法，大家都病急乱投医，再加上平静温顺的木偶人正合院方和病人家属的愿望，这项手术居然得以顺利开展数十年，而其发明者甚至还获得了1949年的诺贝尔生理学或医学奖，更加助推了这场热潮。偶有反对的声音，也被淹没在人们的热情之下，　　<br>病人不配合怎么办？拉去做手术吧；　　<br>脾气太火爆怎么办？拉去做手术吧；　　<br>孩子不听话怎么办？拉去做手术吧；　　<br>……<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/bz2.jpg" alt=""><br>越来越多病人，甚至与精神病半点关系没有的人都被迫进行了这项恐怖手术。　　<br>噩梦疗法的存在，让那几十年内的精神病院，变得比监狱更为恐怖。在监狱你还能作为一个人活着，在精神病院，却只能成为一个白痴。<br>可能有点出乎我们的意料，但精神病药物，确实是从上世纪50年代中才开始出现的。精神病药物的出现吹响了人道主义的号角：过往的手术造成的后遗症大家都看在眼里，如今出现了只需服用便可以缓解病情的药物，落后的疗法又有何意义呢？随着反对的浪潮日益高涨，灭绝人性的前脑叶白质切除手术逐渐在各个国家被禁止使用。<br>而1975年上映的《飞越疯人院》，则成为了压垮骆驼的最后一根稻草。影片中对精神病院内部高压管制措施的揭露和对自由精神的歌颂，正式在全社会引起了对精神病院质量的关注。我们的故事舞台，沃尔泰拉精神病院也在1978年被意大利政府以“残忍对待病人”的理由关停，并在之后通过一项声明对其进行谴责。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/yy1.jpg" alt=""><br><em>精神病医院的内景，虽然已经荒废，但不能忘却这里曾发生过的残忍事件</em><br>自此，“疯人院”时代宣告结束，终于迈进到真正的“精神病院“时代，完善的心理咨询、病理检测和药物控制，让精神病患者最终可以抬起头来，在医疗体系的扶持下接受治疗，走出阴影。　　<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/yy3.jpg" alt=""><br>然而，在那噩梦般的40年里，受到伤害的无数人，又该找谁算账？又有谁关心过他们的遭遇？<br>所以说一代人的诺贝尔奖疗法可能是另一代人最恐怖的噩梦。</p><h1 id="光之镇"><a href="#光之镇" class="headerlink" title="光之镇"></a>光之镇</h1><p>光之镇的游戏就是诉说着这个事实。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">She is so young,just 23.But is lacking all vitality.她很年轻，只有23岁而已。但是已经完全丧失了活力。  </div><div class="line">Her life has been thrown away.她的人生，已不复存在。  </div><div class="line">Nobody did anything to try to avoid this.从没有人想过通过任何手段制止这场悲剧的发生。</div></pre></td></tr></table></figure></p><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl1.jpg" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl2.jpg" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl3.jpg" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl4.jpg" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl5.jpg" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/girl6.jpg" alt=""><br>这款游戏是真实的事情改编（以曝光当年血腥的现实），让人琢磨不透的人物，没有黑暗，没有俗套的突然冒出来的不知名物体，连回忆都是漫画形式，它的恐怖之处就在于，黑暗不可怕，鬼怪不可怕，真正可怕的只有同类的迫害，因为提示什么的扑朔迷离，她在和谁说话，和她自己，和身为玩家的我们，还是谁？人们以“治疗”为由，用各种反人道的手段让病人安静，难道安静比生命更重要？（女主和母亲之间未被通过的信件，医生对女主实施暴行等等）讽刺当时对待有精神问题的人的手段。更让我们体会到，他们的无助和崩溃。最后的镜头女主无神的双眼让人很心疼。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>以上的资料只是冰山一角，不仅仅对于精神病人，对于很多“不听话的人”，都被实施了这种手术，从而使她“死亡”。而被强制实施了这种手术的人，你只能看见他空洞的眼神，和被剥夺灵魂的躯体。这种来自地狱的手术却获得了诺贝尔医学奖，不由得让人心中一颤。每当我看见影片，游戏或书籍中，那被实施手术的人，“安静”的样子，就觉得一身寒意。</p>]]></content>
+      
+      <categories>
+          
+          <category> 百科 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 百科 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>5年的计划</title>
+      <link href="/2018/02/02/5%E5%B9%B4%E7%9A%84%E8%AE%A1%E5%88%92/"/>
+      <url>/2018/02/02/5%E5%B9%B4%E7%9A%84%E8%AE%A1%E5%88%92/</url>
+      <content type="html"><![CDATA[<h2 id="前文"><a href="#前文" class="headerlink" title="前文"></a>前文</h2><p>Quora有人提出一个问题：作为一个23岁的学生，现在开始做一些什么事情可以在5年之后觉得受益匪浅？<br>其中有一个6千多like的答案，觉得很有用，分享给大家~<br><a id="more"></a></p><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">There&apos;s already a lot here and you probably stopped reading,   </div><div class="line">but I couldn&apos;t resist writing a note to my 23 year old self:</div></pre></td></tr></table></figure><p>虽然很长你读不完，不过我真的很想把这些写给23岁的我：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">If you do anything,do this first one:learn how to work hard and stick with something.  </div><div class="line">Learn how to turn off Facebook and control your addiction to social media.    </div><div class="line">You&apos;ll instantly be ahead of 90% of your generation.</div></pre></td></tr></table></figure></p><p>先学会这一点：无论做什么事情，都努力，坚持的做完。<br>一旦你学会了控制自己不要去玩社交媒体，学会了不去刷Facebook，你就已经比你同辈90%的人都要进步了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Video games are a time sink.If you can play for an hour and say &quot;That was fun,  </div><div class="line">let&apos;s do something else&quot; then you&apos;re ok.Otherwise,just get rid of them.</div></pre></td></tr></table></figure></p><p>玩游戏就跟浪费时间没区别。除非你真能控制住只玩一个小时之后愉快的去干别的事情，不然还是戒了吧。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Pick up an athletic hobby that you can do through the years,</div><div class="line">or your sedentary academic lifestyle will do horrible things   </div><div class="line">to your posture,back,and gut.</div></pre></td></tr></table></figure></p><p>选一项运动当成兴趣，不然你的学术生涯会把你的身子毁掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Learn how to deal with interpersonal conflicts.  </div><div class="line">Read Crucial Conversations and practice - it&apos;s a lifechanger   </div><div class="line">(shameless plug:Crucial Conversations Tools for Talking  </div><div class="line">When Stakes Are High,Second Edition)</div></pre></td></tr></table></figure></p><p>学会处理人际冲突…上面的这本书就不错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Learn how to talk on the phone with people you don&apos;t know.  </div><div class="line">It still terrifies most people.Get a phone sales job and quit after a few weeks.</div></pre></td></tr></table></figure></p><p>学会怎么在电话上跟陌生人交流。去找一个电话销售的工作，干几个礼拜辞职就好。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Start some kind of little side ventrue to learn entrepreneurial principles.  </div><div class="line">Start a window washing business,buy   and sell stuff on Craigslist,do anything.  </div><div class="line">You might need them if you&apos;re in between jobs.</div></pre></td></tr></table></figure></p><p>做一些小活来学会创业。比如洗窗户啦，在Craigslist上卖点小玩意啦。以后工作中你会用得到这些技能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Take a course on statistics and how they&apos;re misused,  </div><div class="line">specifically how faulty causal arguments are made.  </div><div class="line">It will change the way you approach almost any discussion,quantitative or not.</div></pre></td></tr></table></figure></p><p>上一些统计学的课，知道他们是怎么被误用的。将来对于识别一些谬论很有帮助。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Always have a private place where you can talk out loud to God every day.  </div><div class="line">Even if you&apos;re not relligious or don&apos;t believe in God.  </div><div class="line">Talk out loud to the universe.Sort out your thoughts,verbalize them,  </div><div class="line">and then write down what comes to mind.  </div><div class="line">Something wiser than you is listening and responding,   </div><div class="line">even if it&apos;s just another side of you.</div></pre></td></tr></table></figure></p><p>找一个属于自己的可以大声跟上帝说话的地方。哪怕你不信教，你也可以试着大声跟宇宙说话吧。理清你的思绪，然后写下来。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Use http://Mint.com to track your expenses.  </div><div class="line">Make a budget and learn how to stick to it.  </div><div class="line">Learn to live lean how while you can,so you won&apos;t be forced to later on.</div></pre></td></tr></table></figure></p><p>用记录软件记录每天的开销，学会做预算。学会过一些简朴的生活。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Learn a foreign language,but only if you anticipate using it.</div></pre></td></tr></table></figure></p><p>学一门平常会用的外语。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Learn how to network.  </div><div class="line">Read &quot;Never Eat Alone.&quot;Hint:it&apos;s about doing things for other people.</div></pre></td></tr></table></figure></p><p>学会处理人际关系。这就是怎么跟人打交道的学问。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Learn how to cook tasty,cheap food.</div></pre></td></tr></table></figure></p><p>学会做一些简单又美味的饭。。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Find music that inspires you and makes you feel alive.  </div><div class="line">Listen to it every morning and if it&apos;s something embarrassing  </div><div class="line">just don&apos;t tell your friends about it.</div></pre></td></tr></table></figure></p><p>找一些能够激励你的音乐。每天早上起床后听着它。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Save up a few thousand dollars and go somewhere crazy with a few friends.  </div><div class="line">Live in a hostel for a few weeks.  </div><div class="line">It will change your life and you will think about it forever.</div></pre></td></tr></table></figure></p><p>攒个几千块钱，可以跟朋友一起出去疯狂一次。比如在青年旅店住上几个星期，会改变你整个人生的看法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">When someone promises you easy money,run the other way.Yes,it is a scam.</div></pre></td></tr></table></figure></p><p>如果有人给你很容易挣钱的方法，别信，基本都是骗子。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Read a book a week.When you get ridiculously wealthy,  </div><div class="line">read a book a day.Read fiction too.</div></pre></td></tr></table></figure></p><p>每周读一本书，等你称为富豪时，每天读一本。</p><h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h2><p>可能是最近我玩的太疯狂了，太堕落了。经常都能看见类似这样的文章。静下心来认真看，的确有道理。人的一生需要不停的学习再学习。<br>有一个场景我总记得，2005年，温家宝总理探望93岁高龄的钱学森，向他咨询教育方面的意见。在这次交流中，钱学森向温家宝发出了一个严峻的疑问：为什么我们的学校总是培养不出杰出人才？这就是著名的“钱学森之问”。钱学森说：我认为人不但要有科学技术，而且还要文化艺术跟音乐。<br>人的一生都需要来自各方面的学习，科学，艺术，生活，方方面面。向优秀的人学习优秀的品质。</p>]]></content>
+      
+      <categories>
+          
+          <category> 鸡汤 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>迷宫逃脱算法</title>
+      <link href="/2017/12/18/%E8%BF%B7%E5%AE%AB%E9%80%83%E8%84%B1%E7%AE%97%E6%B3%95/"/>
+      <url>/2017/12/18/%E8%BF%B7%E5%AE%AB%E9%80%83%E8%84%B1%E7%AE%97%E6%B3%95/</url>
+      <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>第一行输入 迷宫x轴，y轴，门几秒开一次。输入S为你的起点，小数点.为可以通过的地方。<br>D为门的位置，X是不能通过的位置。当输入 0 0 0时结束。<br><a id="more"></a></p><h3 id="示例输入"><a href="#示例输入" class="headerlink" title="示例输入"></a>示例输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">4 4 5</div><div class="line">S . X .</div><div class="line">. . X .</div><div class="line">. . X D</div><div class="line">. . . .</div><div class="line">3 4 5</div><div class="line">S . X .</div><div class="line">. . X .</div><div class="line">. . . D</div><div class="line">0 0 0</div></pre></td></tr></table></figure><h3 id="示例输出"><a href="#示例输出" class="headerlink" title="示例输出"></a>示例输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NO</div><div class="line">YES</div></pre></td></tr></table></figure><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;string.h&gt; </div><div class="line">#include &lt;stdlib.h&gt; </div><div class="line">using namespace std;//命名空间  </div><div class="line"></div><div class="line">char map[9][9]; </div><div class="line">int n,m,t,di,dj; </div><div class="line">bool escape; </div><div class="line">int dir[4][2]=&#123;&#123;0,-1&#125;,&#123;0,1&#125;,&#123;1,0&#125;,&#123;-1,0&#125;&#125;; </div><div class="line"></div><div class="line">void dfs(int si,int sj,int cnt) //起点以及行走的时间(可根据递归改变) </div><div class="line">&#123;    int i,temp; </div><div class="line">   if(si&gt;n||sj&gt;m||si&lt;=0||sj&lt;=0) return; //不能走出地图之外 </div><div class="line">   if(cnt==t&amp;&amp;si==di&amp;&amp;sj==dj)    escape=1;//如果起点的坐标和门的位置相同，并且此时行走的步数和门的开启时间吻合  就能逃脱 </div><div class="line">   if(escape) return; //逃脱退出循环 </div><div class="line">  </div><div class="line">   temp=(t-cnt)-abs(si-di)-abs(sj-dj); //</div><div class="line">   if(temp&lt;0||temp&amp;1) return;  </div><div class="line">   for(i=0;i&lt;4;i++)&#123; </div><div class="line">      if(map[si+dir[i][0]][sj+dir[i][1]]!=&apos;X&apos;)</div><div class="line">  &#123; </div><div class="line">         map[si+dir[i][0]][sj+dir[i][1]]=&apos;X&apos;; </div><div class="line">         dfs(si+dir[i][0],sj+dir[i][1],cnt+1); </div><div class="line">         map[si+dir[i][0]][sj+dir[i][1]]=&apos;.&apos;; //递归回溯 </div><div class="line">      &#125; </div><div class="line">   &#125; </div><div class="line">   return; </div><div class="line">&#125; </div><div class="line"></div><div class="line">int main() </div><div class="line">&#123; </div><div class="line">int i,j,si,sj; </div><div class="line">while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;t)//行列时间 </div><div class="line">&#123; </div><div class="line">  if(n==0&amp;&amp;m==0&amp;&amp;t==0) break; //输入000时退出 </div><div class="line">  int wall=0;//墙的个数 </div><div class="line">  for(i=1;i&lt;=n;i++) </div><div class="line">         for(j=1;j&lt;=m;j++) //输入地图 </div><div class="line"> &#123; </div><div class="line">            cin&gt;&gt;map[i][j]; </div><div class="line">            if(map[i][j]==&apos;S&apos;) &#123; si=i; sj=j; &#125; //起点位置  这里没有判断起点是否唯一 </div><div class="line">            else if(map[i][j]==&apos;D&apos;) &#123; di=i; dj=j; &#125; //门的坐标位置 </div><div class="line">            else if(map[i][j]==&apos;X&apos;) wall++; //墙的数量 </div><div class="line">         &#125; </div><div class="line">       if(n * m - wall &lt;= t) //如果行列个数  比墙还少 有误！ </div><div class="line">   &#123;</div><div class="line">   cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;</div><div class="line">   continue;</div><div class="line">   &#125;</div><div class="line">   escape=0; //逃脱标记 </div><div class="line">       map[si][sj]=&apos;X&apos;; //起点默认为X  因为起点走了 不可能在回来了！！而且必须从起点开始出发 相当于起点是必经点 </div><div class="line">       dfs(si,sj,0); //递归判断 </div><div class="line">       if(escape) cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl; //如果标记为1说明逃脱了 </div><div class="line">       else cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl; </div><div class="line">   &#125; </div><div class="line">   return 0; </div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>典型的迷宫问题，熟练此题，能够掌握递归回溯的搜索问题。</p>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>C++文件读入</title>
+      <link href="/2017/12/18/C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%85%A5/"/>
+      <url>/2017/12/18/C-%E6%96%87%E4%BB%B6%E8%AF%BB%E5%85%A5/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>C++文件流入流出，iostream流，fstream流。<br><a id="more"></a></p><h3 id="单行文件读入"><a href="#单行文件读入" class="headerlink" title="单行文件读入"></a>单行文件读入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">using namespace std;</div><div class="line"> </div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int cnt=0;</div><div class="line">    int i;</div><div class="line">    ifstream fin;</div><div class="line">    ofstream fout;</div><div class="line">    </div><div class="line">fin.open(&quot;D:\\homework--net\\test.txt&quot;, ios::in);</div><div class="line">    fout.open(&quot;D:\\homework--net\\test1.txt&quot;, ios::app);</div><div class="line">    </div><div class="line">    if(!fin)&#123;</div><div class="line">        printf(&quot;The file is not exist!&quot;);</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">    while(!fin.eof())</div><div class="line">    &#123;</div><div class="line">        fin &gt;&gt; i;</div><div class="line">        int sum = i;</div><div class="line">        fout&lt;&lt;sum&lt;&lt;&quot;\n&quot;;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    fin.close();</div><div class="line">    fout.close();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure><h3 id="多行文件流出"><a href="#多行文件流出" class="headerlink" title="多行文件流出"></a>多行文件流出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">#include &lt;iostream&gt;</div><div class="line">#include &lt;fstream&gt;</div><div class="line"> </div><div class="line">using namespace std;</div><div class="line"> </div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int cnt=0;</div><div class="line">    int a[20][3];</div><div class="line">    ifstream fin;</div><div class="line">    ofstream fout;</div><div class="line">    </div><div class="line">fin.open(&quot;D:\\test.txt&quot;, ios::in);</div><div class="line">    fout.open(&quot;D:\\test1.txt&quot;, ios::app);</div><div class="line">    </div><div class="line">    if(!fin)&#123;</div><div class="line">        printf(&quot;The file is not exist!&quot;);</div><div class="line">        return -1;</div><div class="line">    &#125;</div><div class="line">    while(!fin.eof())</div><div class="line">    &#123;</div><div class="line">        fin &gt;&gt; a[cnt][0]&gt;&gt;a[cnt][1]&gt;&gt;a[cnt][2];</div><div class="line">        int sum = a[cnt][0] + a[cnt][1] + a[cnt][2];</div><div class="line">        fout&lt;&lt;sum&lt;&lt;&quot;\n&quot;;</div><div class="line">        cnt++;</div><div class="line">    &#125;</div><div class="line">    fin.close();</div><div class="line">    fout.close();</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>美女购物(动态规划)</title>
+      <link href="/2017/12/07/%E7%BE%8E%E5%A5%B3%E8%B4%AD%E7%89%A9-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+      <url>/2017/12/07/%E7%BE%8E%E5%A5%B3%E8%B4%AD%E7%89%A9-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+      <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>一天，MM陪佳佳逛街，看到有许多漂亮的衣服，佳佳要让MM给她买衣服，但是MM发现衣服的价格实在高的令人胆寒，MM当然不愿意买这么贵的衣服。<br>因此她就想着从街头逛到街尾买到的衣服价格总要比前一件购买的价格低，绝不回头购买，但是他又想让佳佳高兴，所以他想尽可能的多买几件衣服，你能帮帮她吗？<br><a id="more"></a></p><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>测试数据包括两行:<br>第一行输入一个整数N（N&lt;10000）<br>第二行输入N个整数，表示从街头到街尾的衣服的价格（按从头到尾的顺序）。</p><h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>测试数据的输出只占一行，输出佳佳最多能买到多少件衣服。</p><h2 id="Example-Input"><a href="#Example-Input" class="headerlink" title="Example Input"></a>Example Input</h2><p>16<br>300 250 275 252 200 138 245 130 300 128 244 243 242 241 240 239</p><h2 id="Example-Output"><a href="#Example-Output" class="headerlink" title="Example Output"></a>Example Output</h2><p>10</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#include&lt;iostream&gt;</div><div class="line">#define N 100</div><div class="line">using namespace std;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    int a[N],b[N];</div><div class="line">    int n,i,j;</div><div class="line">    int max;</div><div class="line">    while(cin&gt;&gt;n)</div><div class="line">    &#123;</div><div class="line">        for(i=0;i&lt;n;i++)</div><div class="line">        cin&gt;&gt;a[i];</div><div class="line">        b[0]=1;//初始化，以a[0]结尾的最长递增子序列长度为1      </div><div class="line">for(i=1;i&lt;n;i++)</div><div class="line">        &#123;</div><div class="line">            b[i]=1;</div><div class="line">            for(j=0;j&lt;i;j++)</div><div class="line">            if(a[i]&lt;a[j]&amp;&amp;b[j]+1&gt;b[i])//关键算法，每次调用上一级的b[i];</div><div class="line">            b[i]=b[j]+1;</div><div class="line">        &#125;</div><div class="line">        for(i=max=0;i&lt;n;i++)//求出整个数列的最长递增子序列的长度       </div><div class="line">if(max&lt;b[i])</div><div class="line">        max=b[i];</div><div class="line">        cout&lt;&lt;max;</div><div class="line">        cout&lt;&lt;endl;</div><div class="line">    &#125;</div><div class="line">return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Php魔术方法</title>
+      <link href="/2017/12/04/Php%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/"/>
+      <url>/2017/12/04/Php%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>PHP在设计的时候，预先定义了9个超级全局变量、8个魔术变量和13个魔法方法，这些变量和函数可以在脚本任何地方不用声明就可以使用。<br>在PHP开发会频繁的使用这些变量和方法。会很方便的帮我们解决很多事情。<br><a id="more"></a></p><h2 id="PHP超级全局变量（9个）"><a href="#PHP超级全局变量（9个）" class="headerlink" title="PHP超级全局变量（9个）"></a>PHP超级全局变量（9个）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$GLOBALS        存储全局作用域中的变量</div><div class="line">$_SERVER        获取服务器相关信息</div><div class="line">$_REQUEST       获取POST和GET请求的参数</div><div class="line">$_POST          获取表单的POST请求参数</div><div class="line">$_GET           获取表单的GET请求参数</div><div class="line">$_FILES         获取上传文件的变量</div><div class="line">$_ENV           获取服务器端环境变量的数组</div><div class="line">$_COOKIE        浏览器cookie的操作</div><div class="line">    设置cookie    setcookie(name,value,expire,path,domain);</div><div class="line">    获取cookie    $_COOKIE[&quot;name&quot;];</div><div class="line">    删除cookie    setcookie(&quot;user&quot;,&quot;&quot;,time()-3600);//设置过期时间</div><div class="line">$_SESSION       服务器session的操作</div><div class="line">    启动session   session_start();</div><div class="line">    存储session   $_SESSION[&quot;name&quot;]=&quot;Li hua&quot;;</div><div class="line">    销毁session   unset($_SESSION[&quot;name&quot;]);</div><div class="line">    seesion_destroy()和unset($_SESSION);//销毁所有的session</div></pre></td></tr></table></figure><h2 id="PHP魔术变量（8个）"><a href="#PHP魔术变量（8个）" class="headerlink" title="PHP魔术变量（8个）"></a>PHP魔术变量（8个）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">__LINE__　　        文件中的当前行号。</div><div class="line">　　__FILE__　　        文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。</div><div class="line">　　__DIR__　　         文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。</div><div class="line">　　__FUNCTION__　　    常量返回该函数被定义时的名字</div><div class="line">　　__CLASS__　　       常量返回该类被定义时的名字（区分大小写）。</div><div class="line">　　__METHOD__　　      类的方法名（PHP 5.0.0 新加）。返回该方法被定义时的名字（区分大小写）。</div><div class="line">　　__NAMESPACE__　　   当前命名空间的名称（区分大小写）。此常量是在编译时定义的（PHP 5.3.0 新增）。</div></pre></td></tr></table></figure><h2 id="PHP魔术方法（13个）"><a href="#PHP魔术方法（13个）" class="headerlink" title="PHP魔术方法（13个）"></a>PHP魔术方法（13个）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">　  __construct()　　      实例化对象时被调用，当__construct和以类名为函数名的函数同时存在时，__construct将被调用，另一个不被调用</div><div class="line">　　__destruct()　　       当删除一个对象或对象操作终止时被调用。</div><div class="line">　　__call()　　　　　     对象调用某个方法，若方法存在，则直接调用；若不存在，则会去调用__call函数。</div><div class="line">　　__get()　　　　        读取一个对象的属性时，若属性存在，则直接返回属性值；若不存在，则会调用__get函数。</div><div class="line">　　__set()　　　　        设置一个对象的属性时，若属性存在，则直接赋值；若不存在，则会调用__set函数。</div><div class="line">　　__toString()　　      打印一个对象的时被调用。如echo $obj;或print $obj;</div><div class="line">　　__clone()　　　       克隆对象时被调用。如：$t=new Test();$t1=clone $t;</div><div class="line">　　__sleep()　　　       serialize之前被调用。若对象比较大，想删减一点东东再序列化，可考虑一下此函数。</div><div class="line">　　__wakeup()　　        unserialize时被调用，做些对象的初始化工作。</div><div class="line">　　__isset()　　　       检测一个对象的属性是否存在时被调用。如：isset($c-&gt;name)。</div><div class="line">　　__unset()　　　　     unset一个对象的属性时被调用。如：unset($c-&gt;name)。</div><div class="line">　　__set_state()　　     调用var_export时，被调用。用__set_state的返回值做为var_export的返回值。</div><div class="line">　　__autoload()　　      实例化一个对象时，如果对应的类不存在，则该方法被调用。</div></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> PHP魔法变量 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>一些我看的书</title>
+      <link href="/2017/12/02/%E4%B8%80%E4%BA%9B%E6%88%91%E7%9C%8B%E7%9A%84%E4%B9%A6/"/>
+      <url>/2017/12/02/%E4%B8%80%E4%BA%9B%E6%88%91%E7%9C%8B%E7%9A%84%E4%B9%A6/</url>
+      <content type="html"><![CDATA[<h2 id="前瞻"><a href="#前瞻" class="headerlink" title="前瞻"></a>前瞻</h2><p>The essence of all time in the past， in the book.<br>过去一切时代的精华尽在书中。<br>Books are a great talent for the heritage of mankind.<br>书籍是伟大的天才留给人类的遗产。<br>Reading is to build up your mind with the help of other people’s idea.<br>读书是在别人思想的帮助下，建立自己的思想.<br><a id="more"></a></p><h2 id="计算机综合书"><a href="#计算机综合书" class="headerlink" title="计算机综合书"></a>计算机综合书</h2><ol><li>《微软的梦工厂》</li></ol><h2 id="算法及数据结构"><a href="#算法及数据结构" class="headerlink" title="算法及数据结构"></a>算法及数据结构</h2><ol><li>《数据结构与算法分析–c语言描述第二版》  </li><li>《剑指offer》 </li></ol><h2 id="数据库相关"><a href="#数据库相关" class="headerlink" title="数据库相关"></a>数据库相关</h2><ol><li>《数据库系统原理及应用–第二版》</li></ol><h2 id="C，C-，C"><a href="#C，C-，C" class="headerlink" title="C，C++，C"></a>C，C++，C</h2><ol><li>《C Primer Plus–第6版》</li></ol><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ol><li>《疯狂Java讲义–第二版》</li></ol><h2 id="其他书籍"><a href="#其他书籍" class="headerlink" title="其他书籍"></a>其他书籍</h2><ol><li>《肖申克的救赎》</li><li>《瓦尔登湖》</li></ol><h2 id="待看的书"><a href="#待看的书" class="headerlink" title="待看的书"></a>待看的书</h2><ol><li>《硅谷之火》</li><li>《Unix编程艺术》</li><li>《代码整洁之道》</li><li>《我编程，我快乐：程序员职业规划之道》</li><li>《赢得朋友》</li><li>《Head First设计模式》</li><li>《口渴之前先挖井》</li><li>《邻家的百万富翁》</li><li>《牧羊少年奇幻之旅》</li><li>《设计模式之禅》</li><li>《编码:隐匿在计算机软硬件背后的语言》</li><li>《深入理解计算机系统》</li><li>《程序员的自我修养》</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> 书籍 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 书籍 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Thinkphp基于linux的坑</title>
+      <link href="/2017/12/01/Thinkphp%E5%9F%BA%E4%BA%8Elinux%E7%9A%84%E5%9D%91/"/>
+      <url>/2017/12/01/Thinkphp%E5%9F%BA%E4%BA%8Elinux%E7%9A%84%E5%9D%91/</url>
+      <content type="html"><![CDATA[<h2 id="关于Thinkphp的缓存"><a href="#关于Thinkphp的缓存" class="headerlink" title="关于Thinkphp的缓存"></a>关于Thinkphp的缓存</h2><p>因为thinkphp会有一个runtime的缓存文件，而linux的文件默认没有写的权限，所以我们需要将文件设置为777即读写的权限。</p><h2 id="关于Thinkphp的URL大小写敏感"><a href="#关于Thinkphp的URL大小写敏感" class="headerlink" title="关于Thinkphp的URL大小写敏感"></a>关于Thinkphp的URL大小写敏感</h2><p>Thinkphp5会默认将url转为小写，然后再linux系统中是区分大小写的url，这将会导致无法找到文件。<br>所以在config添加一句’url_convert’=&gt;false,就可以取消thinkphp的url自动转换为小写。</p>]]></content>
+      
+      <categories>
+          
+          <category> 填坑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Vue环境搭建</title>
+      <link href="/2017/11/28/Vue%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>/2017/11/28/Vue%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<h2 id="环境配置流程"><a href="#环境配置流程" class="headerlink" title="环境配置流程"></a>环境配置流程</h2><ol><li>安装Node.js</li><li>安装Vue-cli脚手架</li><li>初始化一个项目</li><li>模块依赖安装</li><li>启动<a id="more"></a></li></ol><h2 id="相关代码"><a href="#相关代码" class="headerlink" title="相关代码"></a>相关代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Node.js安装后，在cmd中输入node -v 和 npm -v 如果出现版本号即安装成功</div><div class="line">全局安装Vue  在cmd输入npm install -g vue </div><div class="line">全局安装脚手架 npm install -g vue-cli</div><div class="line">创建一个项目 到目录位置 vue init webpack 项目名</div><div class="line">创建模块依赖   npm install </div><div class="line">启动项目    npm run dev</div><div class="line">发布项目    npm run build</div></pre></td></tr></table></figure><p>ps.如果安装过慢，可以使用国内的镜像cnpm!</p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>设计模式</title>
+      <link href="/2017/11/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2017/11/27/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当一个项目的数据特别大时，如果我们还是将数据，页面，和操作混杂在一起使用时。<br>就会明显发现逻辑特别的混杂，不方便我们之后的扩展等操作！所以为了理清楚逻辑。<br>我们需要将数据，页面，操作分开处理！！这也就产生了各种的设计模式。</p><a id="more"></a><h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><p>MVC(Model-View-Controller)是最常见的软件架构之一。非常容易理解，就是分离三个部分。</p><ol><li>视图(View):用户界面</li><li>控制器(Controller):业务逻辑操作</li><li>模型(Model):数据处理</li></ol><p>各部分之间的通信方式如下。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/mvc.png" alt=""></p><ol><li>View传送指令到Controller</li><li>Controller完成业务逻辑后,让Model改变状态</li><li>Model传回数据到View,用户得到反馈</li></ol><p>ps.所有的通信都是单向的。<br>ps.Model的操作应该比Controller的重，我曾经就是所有东西都写在控制器中。。。没有理解到Model</p><p>优点：分层清晰，便于扩展<br>缺点：操作变得复杂，降低了性能<br>代表框架:Thinkphp</p><h2 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h2><p>MVP(Model-View-Presenter)是从MVC演变而来的，思想差不多。唯一的变化就是View不能直接访问Model！<br>View视图需通过Presenter来访问Model。<br>其实在MVC中，我们也不建议View直接访问Model,最好通过Presenter来访问Model!  </p><ol><li>视图(View):用户界面</li><li>控制器(Presenter):业务逻辑操作渲染视图</li><li>模型(Model):数据处理</li></ol><p>各部分之间的通信方式如下。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/mvp.png" alt="">  </p><ol><li>View传送指令到Presenter</li><li>Presenter处理逻辑调用Model</li><li>Model处理数据返回Presenter</li><li>Presenter返回数据到View</li></ol><p>ps.所有的通信都是双向的。</p><p>优点:模型视图分离，修改视图不影响模型,Presenter可以使用多个视图。<br>缺点:视图的渲染都放在了Presenter中，会导致视图和Presenter交互过于频繁。</p><h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p>MVVM(Model-View-ViewModel)与MVP模式完全一致(进化)，将Presenter改名为ViewModel。<br>唯一的区别是，它采用双向绑定。<br>View的变动，都会使ViewModel改变，反之亦然。</p><p><img src="https://github.com/yuhongjing/img-folder/raw/master/img/mvvm.png" alt=""></p><p>优点:简化了业务与页面的依赖关系，优化了数据更新频繁。<br>代表框架:Vue  Angular </p>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 设计模式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>hexo常用命令</title>
+      <link href="/2017/11/20/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2017/11/20/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h3 id="hexo配置命令"><a href="#hexo配置命令" class="headerlink" title="hexo配置命令"></a>hexo配置命令</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. npm install hexo -g #安装  </div><div class="line">2. npm update hexo -g  #升级  </div><div class="line">3. hexo init           #初始化</div></pre></td></tr></table></figure><a id="more"></a><h3 id="hexo基础命令"><a href="#hexo基础命令" class="headerlink" title="hexo基础命令"></a>hexo基础命令</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1. hexo new "文章名" == hexo n "文章名" #新建文章</div><div class="line">2. hexo generate == hexo g    #生成本地静态文件</div><div class="line">3. hexo server == hexo s #启动服务预览</div><div class="line">4. hexo deploy == hexo d #部署</div><div class="line">5. hexo clean #清除缓存</div></pre></td></tr></table></figure><h3 id="hexo模板"><a href="#hexo模板" class="headerlink" title="hexo模板"></a>hexo模板</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. hexo new "文章名" #新建文章</div><div class="line">2. hexo new page "pageName" #新建页面</div></pre></td></tr></table></figure><h3 id="推送到服务器"><a href="#推送到服务器" class="headerlink" title="推送到服务器"></a>推送到服务器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. hexo n #写文章</div><div class="line">2. hexo g #生成静态文件</div><div class="line">3. hexo d #部署  可与hexo g合并为 hexo d -g</div></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>单线程？多线程？</title>
+      <link href="/2017/11/20/%E7%BA%BF%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+      <url>/2017/11/20/%E7%BA%BF%E7%A8%8B%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+      <content type="html"><![CDATA[<p>作者：pansz<br>链接：<a href="https://www.zhihu.com/question/19901763/answer/13299543" target="_blank" rel="external">https://www.zhihu.com/question/19901763/answer/13299543</a></p><h2 id="来源：知乎-著作权归作者所有。"><a href="#来源：知乎-著作权归作者所有。" class="headerlink" title="来源：知乎 著作权归作者所有。"></a>来源：知乎 著作权归作者所有。</h2><h3 id="线程解释"><a href="#线程解释" class="headerlink" title="线程解释"></a>线程解释</h3><ol><li>单进程单线程：一个人在一个桌子上吃菜。</li><li>单进程多线程：多个人在同一个桌子上一起吃菜。</li><li>多进程单线程：多个人每个人在自己的桌子上吃菜。 </li></ol><a id="more"></a><h3 id="多线程的问题"><a href="#多线程的问题" class="headerlink" title="多线程的问题"></a>多线程的问题</h3><p>典型的银行家算法，哲学家进餐都是有关进程的问题。多线程的问题是多个人同时吃一道菜的时候容易发生争抢。<br>例如两个人同时夹一个菜，一个人刚伸出筷子，结果伸到的时候已经被夹走菜了。。。<br>此时就必须等一个人夹一口之后，在还给另外一个人夹菜，也就是说资源共享就会发生冲突争抢。</p><h3 id="windows与Linux的区别"><a href="#windows与Linux的区别" class="headerlink" title="windows与Linux的区别"></a>windows与Linux的区别</h3><ol><li>对于 Windows 系统来说,【开桌子】的开销很大,因此Windows鼓励大家在一个桌子上吃菜。<br>因此Windows多线程学习重点是要大量面对资源争抢与同步方面的问题。</li><li>对于 Linux 系统来说,【开桌子】的开销很小,因此Linux鼓励大家尽量每个人都开自己的桌子吃菜。  </li></ol><p>这带来新的问题是:坐在两张不同的桌子上说话不方便。因此Linux下的学习重点大家要学习进程间通讯的方法。</p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>开桌子的意思是指创建进程。开销这里主要指的是时间开销。<br>可以做个实验:创建一个进程,在进程中往内存写若干数据,然后读出该数据,然后退出.<br>此过程重复 1000 次，相当于创建/销毁进程1000次。<br>在我机器上的测试结果是:</p><ol><li>UbuntuLinux:耗时0.8秒</li><li>Windows7：耗时 79.8 秒  </li></ol><p>两者开销大约相差一百倍。这意味着,在Windows中,进程创建的开销不容忽视。<br>换句话说就是,Windows 编程中不建议你创建进程,如果你的程序架构需要大量创建进程,那么最好是切换到Linux系统。<br>大量创建进程的典型例子有两个,一个是gnu-autotools工具链，用于编译很多开源代码的。<br>他们在Windows下编译速度会很慢，因此软件开发人员最好是避免使用Windows.<br>另一个是服务器，某些服务器框架依靠大量创建进程来干活，甚至是对每个用户请求就创建一个进程，这些服务器在Windows下运行的效率就会很差。<br>这”可能”也是放眼全世界范围,Linux服务器远远多于Windows服务器的原因。</p><h3 id="再次补充"><a href="#再次补充" class="headerlink" title="再次补充"></a>再次补充</h3><p>如果你是写服务器端应用的，其实在现在的网络服务模型下，开桌子的开销是可以忽略不计的，<br>因为现在一般流行的是按照CPU核心数量开进程或者线程，开完之后在数量上一直保持。<br>进程与线程内部使用协程或者异步通信来处理多个并发连接，因而开进程与开线程的开销可以忽略了。<br>另外一种新的开销被提上日程：核心切换开销。现代的体系，一般CPU会有多个核心，而多个核心可以同时运行多个不同的线程或者进程。<br>当每个CPU核心运行一个进程的时候，由于每个进程的资源都独立，所以CPU核心之间切换的时候无需考虑上下文。<br>当每个CPU核心运行一个线程的时候，由于每个线程需要共享资源，所以这些资源必须从CPU的一个核心被复制到另外一个核心，才能继续运算，这占用了额外的开销。<br>换句话说，在CPU为多核的情况下，多线程在性能上不如多进程。因而，当前面向多核的服务器端编程中，需要习惯多进程而非多线程。</p><h3 id="一句话解释进程线程"><a href="#一句话解释进程线程" class="headerlink" title="一句话解释进程线程"></a>一句话解释进程线程</h3><ol><li>浏览器浏览一个页面，里面有很多图片，多线程，每个线程下载一副图片，他们相当于一个桌子上不同的菜。 </li><li>浏览器开了多个标签浏览不同网站，多进程，因为他们相当于“不同的桌子”</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>梅花落</title>
+      <link href="/2017/11/06/%E6%A2%85%E8%8A%B1%E8%90%BD/"/>
+      <url>/2017/11/06/%E6%A2%85%E8%8A%B1%E8%90%BD/</url>
+      <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">中庭多杂树,偏为梅咨嗟。</div><div class="line">问君何独然？念其霜中能作花，露中能作实。</div><div class="line">摇荡春风媚春日，念尔零落逐风飚，徒有霜华无霜质。</div><div class="line">                        ------鲍照 《梅零落》</div></pre></td></tr></table></figure><p>一夜风雨，桂花落满地。绿树已无零星，暗香仍残留。小雨淅淅，行客匆匆，何处为我安身处？<br>象牙塔内，皆随人流，而无一人同我行!  </p><p>昨夜梦他乡，泪湿满衣裳。寒窗残烛杯酒话星汉，酒不醉人人自醉；而今扶栏开绿帘，风雨飘摇人安笑。<br>呜呼！一人踏浪去，埋骨青山在。<br><a id="more"></a><br>无人共言书作伴，前途漫漫星为汉。若不使征途星辰，宁葬之大海。无意人言伤我身，乱我神。我亦不改！<br>仰天大笑出门去，燕雀安知我志哉。</p><p>羊者，草投之，足矣！狼也！非肉糜而不能驯之。奔袭千里，但使独狼耳，亦非肉糜而不食也。故狼行千里食肉！<br>每当孤独缠绕，寒冷便深入牙髓，我只能紧紧咬住双唇。忍住，再忍住。只要感到痛楚时，心中的梅花便落满南山。</p>]]></content>
+      
+      <categories>
+          
+          <category> 心情 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>int main还是void main</title>
+      <link href="/2017/11/05/int-main%E8%BF%98%E6%98%AFvoid-main/"/>
+      <url>/2017/11/05/int-main%E8%BF%98%E6%98%AFvoid-main/</url>
+      <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>从高一接触C语言开始到现在6年了，只是不停的重复学习基础的考试程序，从来<br>没有做过一个项目，所有的程序就是一个主函数main和几个被调函数组成。就连<br>主函数都没加过参数，因为坑爹的教科书也不写。<br> <a id="more"></a><br>直到大二学习C++才知道原来main前面有参数int,void等,然而我却一直写的是<br>void main，再次吐槽教科书坑爹啊，现在才知道int main才是标准的写法。<br>于是记录下来我搜集研究的东西。</p><h3 id="深入研究"><a href="#深入研究" class="headerlink" title="深入研究"></a>深入研究</h3><p>main函数，又称主函数,作为绝大多数C程序的唯一入口,是要求有返回值的，返回<br>给系统才能表明程序的执行状况。返回0表示正常执行成功。返回非0表示异常结束。<br>因此返回值的类型是int整型。于是有了int main是规范的写法,如果使用void main<br>没有返回值，那么操作系统不能判断程序状态，对于c程序构成的大型项目来说是致命的。<br>很多IDE在判断程序为int main时都会默认添加一句return 0;</p><h3 id="深入一点"><a href="#深入一点" class="headerlink" title="深入一点"></a>深入一点</h3><p>在最新的C99标准中只有以下两种方式是正确的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">int main(void)&#123;&#125;</div><div class="line"></div><div class="line">int main(int argc,char **argv)</div></pre></td></tr></table></figure></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol><li>void和int表明声明不同的主函数返回值，不声明默认返回为int整型。</li><li>int main可移植性强。</li><li>C语言不要声明为void main,最好声明为int main。</li><li>就算是测试小程序，也要摒弃使用void main的习惯，这不是单片机！</li></ol>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>本地项目与远程git仓库连接</title>
+      <link href="/2017/11/04/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8E%E8%BF%9C%E7%A8%8Bgit%E4%BB%93%E5%BA%93%E8%BF%9E%E6%8E%A5/"/>
+      <url>/2017/11/04/%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E4%B8%8E%E8%BF%9C%E7%A8%8Bgit%E4%BB%93%E5%BA%93%E8%BF%9E%E6%8E%A5/</url>
+      <content type="html"><![CDATA[<ol><li>打开项目文件夹,输git init新建仓库,创建完会有一个.git文件夹   </li><li>添加所有文件 git add .</li><li>提交到本地仓库 git commit -m -a “备注信息”</li><li>在远程仓库的项目下复制SSH</li><li>本地仓库输入 git remote add origin (远程仓库的ssh) 连接远程仓库</li><li>将本地项目推送到远程仓库 git push -u origin master</li></ol><p>ps. 如果弹出bug，多半是本地没有README.md pull下来就行了。</p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gitbash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>gitbash配置及连接github</title>
+      <link href="/2017/11/02/gitbash%E9%85%8D%E7%BD%AE/"/>
+      <url>/2017/11/02/gitbash%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h3 id="Git有什么用"><a href="#Git有什么用" class="headerlink" title="Git有什么用?"></a>Git有什么用?</h3><p>为什么要搭建Git环境? </p><blockquote><p>-因为要把本地文件提交到远程仓库(gitbash,码云等)   </p></blockquote><p>版本库有什么用?</p><blockquote><p>-类似一个目录，每个文件的修改，删除都能够记录，并且在以后以还原。</p></blockquote><a id="more"></a><h3 id="搭建Git环境"><a href="#搭建Git环境" class="headerlink" title="搭建Git环境"></a>搭建Git环境</h3><p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或大或小的项目。</p><h4 id="下载Git安装包"><a href="#下载Git安装包" class="headerlink" title="下载Git安装包"></a>下载Git安装包</h4><p>在Git官网：<a href="https://git-scm.com/" target="_blank" rel="external">https://git-scm.com/</a> 下载安装包 Git-2.15.0-64-bit.exe<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/download_git.png" alt=""><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/download_git_1.png" alt="">  </p><h4 id="测试安装正确"><a href="#测试安装正确" class="headerlink" title="测试安装正确"></a>测试安装正确</h4><p>桌面右键，打开 Git Bush Here，输入 git –version，出现版本号则说明 Git 环境配置成功，第二步完成！！！<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/git_version.png" alt="">  </p><h4 id="配置本机的Git"><a href="#配置本机的Git" class="headerlink" title="配置本机的Git"></a>配置本机的Git</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;你的名字&quot;</div><div class="line">$ git config --global user.email &quot;你的邮箱&quot;</div></pre></td></tr></table></figure><h4 id="生成密匙"><a href="#生成密匙" class="headerlink" title="生成密匙"></a>生成密匙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;邮箱同上&quot;</div></pre></td></tr></table></figure><h4 id="复制密匙"><a href="#复制密匙" class="headerlink" title="复制密匙"></a>复制密匙</h4><p>在ｃ盘用户.ssh文件下用文本编辑器打开id_rsa.pub并复制文件的内容。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/git_key.png" alt=""></p><h4 id="GitHub注册和配置"><a href="#GitHub注册和配置" class="headerlink" title="GitHub注册和配置"></a>GitHub注册和配置</h4><p>GitHub 是一个代码托管平台，因为只支持 Git 作为唯一的版本库格式进行托管，故名 GitHub。<br>Github注册：<a href="https://github.com/" target="_blank" rel="external">https://github.com/</a><br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/github.png" alt=""></p><h4 id="提交公匙"><a href="#提交公匙" class="headerlink" title="提交公匙"></a>提交公匙</h4><p>点击用户下Settings的SSH and GPG keys下New SSH key添加之前的密匙复制进内容就可以了。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/git_key_commit.png" alt=""></p><h3 id="连接完成测试"><a href="#连接完成测试" class="headerlink" title="连接完成测试"></a>连接完成测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ssh git@github.com</div></pre></td></tr></table></figure><p>输入代码如果不报错就说明配置完成!</p><p>Git使用教程可搜索廖雪峰教程！<br>廖雪峰:<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Gitbash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Java开发环境的搭建</title>
+      <link href="/2017/11/01/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/"/>
+      <url>/2017/11/01/Java%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E7%9A%84%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<h3 id="一、安装JDK"><a href="#一、安装JDK" class="headerlink" title="一、安装JDK"></a>一、安装JDK</h3><p>下载地址:<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><br>根据自己的平台下载适合的JDK版本<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/jdk.png" alt=""><br>大部分时候是无需选择Public JRE，因为Devepment Tools为JDK的核心。已经包含了<br>运行Java程序的JRE。<br><a id="more"></a></p><h3 id="二、设置PATH环境变量"><a href="#二、设置PATH环境变量" class="headerlink" title="二、设置PATH环境变量"></a>二、设置PATH环境变量</h3><p>对于Java程序开发而言，主要使用两个JDK的命令:javac.exe和java.exe。<br>因为这些命令不是windows自己的命令，所以要使用就得进行路径配置。<br>win10系统:  </p><ol><li>右键”计算机”-&gt;”高级系统设置”-&gt;”高级”-&gt;”环境变量”</li><li>新建-&gt;变量名”JAVA_HOME”，变量值”C:\Java\jdk1.8.0_05”（即JDK的安装路径） </li><li>编辑-&gt;变量名”Path”，在原变量值的最后面加上“;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin” </li><li><code>新建-&gt;变量名&quot;CLASSPATH&quot;,变量值&quot;.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar&quot;</code></li><li>变量可以添加在用户变量里，也可以添加在系统变量中(后者全用户都可以用)。<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/hjbl.png" alt=""><h3 id="三、确认环境是否正确"><a href="#三、确认环境是否正确" class="headerlink" title="三、确认环境是否正确"></a>三、确认环境是否正确</h3>在控制台分别输入java,javac,java -version命令，出现如下信息说明成功<br>java命令:<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/java.png" alt=""><br>javac命令:<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/javac.png" alt=""><br>java -version命令:<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/java_version.png" alt="">  <h3 id="四、在控制器写下一个java程序"><a href="#四、在控制器写下一个java程序" class="headerlink" title="四、在控制器写下一个java程序"></a>四、在控制器写下一个java程序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public static void main(String[] args) &#123;    </div><div class="line">    System.out.println(&quot;Hello Java&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li></ol><p>用记事本写好保存,文件名为Test，将后缀改为.java。<br>首先使用 javac Test.java编译文件<br>再使用java Test运行程序<br>打印结果为”hello Java”<br>至此恭喜你Java环境配置完成，当然你也可以使用一些IDE例如:eclipse，就可以<br>不用配置环境也可以编程。</p><p>ps:JRE和JDK不能再同一级目录，否则环境变量会出错。。。本人在此就踩坑了。JRE可以和JDK各自<br>存放在一个文件夹，也可以放在另一个子文件夹，但切不可放在同一个文件夹！！不过最好不用选择<br>Public JRE直接配置就Ok了！</p>]]></content>
+      
+      <categories>
+          
+          <category> 环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>js文件应该放置于何处</title>
+      <link href="/2017/10/29/js%E8%84%9A%E6%9C%AC%E4%BD%8D%E7%BD%AE/"/>
+      <url>/2017/10/29/js%E8%84%9A%E6%9C%AC%E4%BD%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="如何使用js代码"><a href="#如何使用js代码" class="headerlink" title="如何使用js代码"></a>如何使用js代码</h2><p>一般来说使用js代码可以通过两种方式<br>    1.通过外部js文件引入<br>    2.html页面上直接写入脚本</p><h2 id="在哪里放置js代码"><a href="#在哪里放置js代码" class="headerlink" title="在哪里放置js代码"></a>在哪里放置js代码</h2><p>通常情况下，js代码是和html代码一起使用，可以将js代码放入html文档中的任何地方。<br>但是放置的地方会对js的正常执行产生不同的反应和影响。具体如下。<br><a id="more"></a></p><h3 id="放置于head之间"><a href="#放置于head之间" class="headerlink" title="放置于head之间"></a>放置于head之间</h3><p>将js代码放置于html文档的head之间是比较常见的做法。因为html文档是由浏览器从上至下<br>依次载入。这样即可确保脚本是在内容加载之前载入。<br>代码如下:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">        ....</span></div><div class="line"><span class="undefined">        javaScript代码</span></div><div class="line"><span class="undefined">        ....</span></div><div class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        .... </div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>      </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p><h3 id="放置于body之间"><a href="#放置于body之间" class="headerlink" title="放置于body之间"></a>放置于body之间</h3><p>也有部分情况下，需将js代码放于body之间，例如当js代码需要操作一个元素，而html文档<br>是从上往下依次载入，所以此时元素未加载，便会报错。所以这种情况下，我们需将js的代码<br>放在元素的后面，待元素加载完毕时，才使用js代码。代码如下。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        ....</div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">           document.getElementById('div1').innerHTML = "test";</span></div><div class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p><h3 id="放置于body后面"><a href="#放置于body后面" class="headerlink" title="放置于body后面"></a>放置于body后面</h3><p>js代码放在body之后有一个好处就是可以dom的生成就不会因为长时间执行script脚本而延迟阻塞，<br>从而加快了页面的加载速度。但是又不能将所有的script放在body之后，因为有一些页面的效果的<br>实现，是需要预先动态的加载一些js脚本。所以需依情况而定。代码如下。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        ....</div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        .... </div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">                ....</span></div><div class="line"><span class="undefined">                javaScript 代码</span></div><div class="line"><span class="undefined">                ....</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p><h3 id="放置于html之外"><a href="#放置于html之外" class="headerlink" title="放置于html之外"></a>放置于html之外</h3><p>虽然js代码可以放置在html之外。但通常情况下，我们不建议将javascript的代码写到html之外。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        ....</div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        .... </div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"> <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">        ....</span></div><div class="line"><span class="undefined">        javaScript 代码  </span></div><div class="line"><span class="undefined">        ....</span></div><div class="line"><span class="undefined"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p><h3 id="放置于head-body之间"><a href="#放置于head-body之间" class="headerlink" title="放置于head body之间"></a>放置于head body之间</h3><p>一般来说“页面效果实现类的js应该放在body之前”而“动作，交互，事件驱动，需要访问dom属性的js都可以放在body之后”。<br>这样就既不会导致网页加载时间过长，也不会出现dom元素未加载，所以这种放置的方法还算比较科学。不过还是得依情况而定。<br>具体代码如下。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        ....</div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">         ....</span></div><div class="line"><span class="undefined">         javaScript 代码  </span></div><div class="line"><span class="undefined">         .....</span></div><div class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">        .... </div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>    </div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>当你的js文件代码引用了其他jquery文件时，一定要将被引用的文件放在你的代码或者文件之前,否则会报错！<br>例如:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jq文件"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"你的文件"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    你的js代码中有引用jq的代码时，jq的文件必须在你的文件之前加载</span></div><div class="line"><span class="undefined">    否则提示不能找到！！！</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我个人喜欢将js的代码写入body之后，为了速度快。当然还是得依情况而定。</p>]]></content>
+      
+      <categories>
+          
+          <category> 研究 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WEB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>markdown使用github添加图片</title>
+      <link href="/2017/10/25/markdown%E4%BD%BF%E7%94%A8github%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/"/>
+      <url>/2017/10/25/markdown%E4%BD%BF%E7%94%A8github%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/</url>
+      <content type="html"><![CDATA[<h3 id="github-markdown-readme-md-添加图片"><a href="#github-markdown-readme-md-添加图片" class="headerlink" title="github markdown(readme.md)添加图片"></a>github markdown(readme.md)添加图片</h3><p><strong>步骤:</strong><br>1.将图片上传至github仓库中(先建立一个项目,专门用来存放图片)<br>2.复制图片在github的地址<br>例如:<br><a href="https://github.com/yuhongjing/img-folder/blob/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png" target="_blank" rel="external">https://github.com/yuhongjing/img-folder/blob/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png</a><br><a id="more"></a><br>3.注意将地址中的blob改为raw(github解析图片的方式，否则不显示图片)<br>例如:<a href="https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png" target="_blank" rel="external">https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3%40T9%7DVCXDPO9Y522F.png</a><br>4.在readme.md中输入! [] (图片地址)    —中间没有空格     </p><p>试试效果吧!</p>]]></content>
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>BAT fighting</title>
+      <link href="/2017/10/24/BAT-fighting/"/>
+      <url>/2017/10/24/BAT-fighting/</url>
+      <content type="html"><![CDATA[<h1 id="第一篇文章"><a href="#第一篇文章" class="headerlink" title="第一篇文章"></a>第一篇文章</h1><p><strong>hexo搭建的博客第一篇文章</strong>  </p><h2 id="以此明志"><a href="#以此明志" class="headerlink" title="以此明志   "></a><strong>以此明志 </strong>  </h2><blockquote><p>坚持努力到明年今日进入自己的梦想的公司(BAT)fighting!!!  </p><blockquote><p>为此定几个小目标  </p></blockquote></blockquote><pre><code>time:2017-10-24(程序员节)   </code></pre><p>1.熟练几门前端语言(html5+javascript+css3)<br>2.熟练几门后台语言(php7+python5)<br>3.熟练几门框架(vue.js+bootstrap3+Thinkphp5+laravel5.4)<br>4.数据库设计(mysql)<br><a id="more"></a><br>5.看《数据结构及算法分析第二版》《剑指offer》《编码:隐匿在计算机软硬件背后的语言》<br>《深入理解计算机系统》<br>6.了解(Jquery,sass,微信,Go语言,Java,C++,.net)<br>7.有多的时间就看看TCP/IP还有操作系统的死锁，银行家算法，哲学家思想什么的<br>8.嗯哼。。。。就这样吧！！加油吧!!<br><img src="https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png" alt="image"></p>]]></content>
+      
+      <categories>
+          
+          <category> 鸡汤 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
+</search>
