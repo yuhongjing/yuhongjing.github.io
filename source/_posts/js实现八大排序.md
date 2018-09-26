@@ -136,6 +136,30 @@ categories: "算法"
 ### 堆排序 
 ### 桶排序
 ### 归并排序
+将数组一直拆分，直到拆分为1个元素。然后合并排序。  	
+```
+	function merge(left, right){
+		let result = [];
+		while(left.length>0 && right.length>0){
+			if(left[0] < right[0]){
+				result.push(left.shift());
+			}else{
+				result.push(right.shift());
+			}
+		}
+		return result.concat(left, right);
+	}
+
+	function mergeSort(arr){
+		if(arr.length == 1){
+			return arr;
+		}
+		let mid = Math.floor(arr.length/2);
+		let left_arr = arr.slice(0, mid);
+		let right_arr = arr.slice(mid);
+		return merge(mergeSort(left_arr), mergeSort(right_arr));
+	}
+```
 ### 基数排序
 ### 总结
 剩下的慢慢补全，努力吧。秋招伤人心。唉。唉。唉。
