@@ -24,6 +24,8 @@ categories: "鸡汤"
 6.了解(Jquery,sass,微信,Go语言,Java,C++,.net)  
 7.有多的时间就看看TCP/IP还有操作系统的死锁，银行家算法，哲学家思想什么的 
 8.嗯哼。。。。就这样吧！！加油吧!!  
-![image](https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png)
+![image](https://github.com/yuhongjing/img-folder/raw/master/img/%5BGIRAP3@T9%7DVCXDPO9Y522F.png)  
+# 还愿(2018/09/28)
+正好一年！！我完成了我的愿望了！！！！！！！
   
          
