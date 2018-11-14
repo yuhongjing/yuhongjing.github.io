@@ -3,7 +3,7 @@ title: 解决Linux重启后DNS被重写
 date: 2018-05-30 21:37:35
 tags: linux
 keywords: ubuntn网络,lunux,DNS
-categories: "填坑"
+categories: "操作系统"
 ---
 ### 前言
 本人的系统是'Ubuntu18.04 LTS'，而网上的教程一般是16.X之前的版本，所以说按照网上的办法修改什么base,tail,head，都是不可以的。  

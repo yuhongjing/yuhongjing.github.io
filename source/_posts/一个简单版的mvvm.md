@@ -1,26 +1,28 @@
 ---
-title: 一个简单版的mvvm
+title: MVVM框架实现探究
 date: 2018-08-06 21:31:22
-tags: Vue
-keywords: mvvm,Vue
-categories: "研究"
+tags: VUE
+keywords: mvvm实现
+categories: "JavaScript"
 ---
-### 优雅的双向绑定
-想当初，只接触过jquery的我，第一次遇见vue，它的双向绑定功能就深深的吸引住了我。  
-所以现在就研究一下这样魔法般的功能是如何实现的。
+### 前摘
+2018-11-01在原文基础上，新添加一些东西，随着之后的深入会添加更多的内容。
 <!--more-->
-### Object.defineproperty
-vue的双向绑定是基于属性拦截器实现的，设计是基于订阅/发布模式开发的。  
-该API是双向绑定的核心，通过重写数据的get，set方法。从而实现双向绑定。
-### 实现思路
-1. 实现数据监听器Observer,用Object.defineproperty重写数据的set和get，值更新就通知订阅者更新数据。
-2. 模板编译Complie，深度遍历dom树，对每一个元素节点文本节点进行替换数据和订阅数据。
-3. 使用watch连接Observer和Complie，订阅每一个元素的属性变动，执行指令绑定的回调函数从而更新视图。
-4. mvvm的入口函数，整合以上。
-
-### 流程图
+### MVVM框架的要点
+目前前端js框架三巨头是Vue.js, React, AngularJs。共同点都是以数据为中心，摆脱了操作Dom节点的困恼。  
+因为我本人目前主要是以Vue.js为主,React为辅，所以目前的内容主要是以Vue.js设计模式和代码作为参考，React作为对比。
+### 数据的双向绑定
+说起Vue，值得一提的就是数据双向绑定了。  
+其实现原理就是通过属性拦截器+订阅发布模式。  
+前段时间Vue作者尤雨溪表示对Proxy很感兴趣，但是至少Vue3之前是通过Object.defineproperty实现的。  
+其设计原理图如下:
 ![](https://github.com/yuhongjing/img-folder/raw/master/img/mvvm.jpg)
-### 源码
+### 单页面应用
+我们可以使用Vue-router来实现SPA(单页面web应用),其原理是通过H5的history和hash欺骗路由来实现的。  
+单页面应用的优点在于，让用户在webapp能够感受到nativeapp的流畅，能够构建mvc的开发模式。  
+但是其缺点也非常明显，首页加载缓慢，首屏数据无法被SEO检测，Ajax相关，所以一般还需要SSR(服务端渲染)来解决。  
+
+### 小demo实现Vue.js数据双向绑定，自定义属性等。
 ```html
 <!DOCTYPE html>
 <html lang="en">

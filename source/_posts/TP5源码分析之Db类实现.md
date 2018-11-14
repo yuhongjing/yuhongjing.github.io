@@ -3,7 +3,7 @@ title: TP5源码分析之Db类实现
 date: 2018-08-10 22:20:38
 tags:  PHP
 keywords: TP5源码分析
-categories: "技术"
+categories: "PHP"
 ---
 ### 前言
 从TP3.2到TP5，已经使用了TP框架快两年了。自认为使用TP处理一般的业务不成问题了。  

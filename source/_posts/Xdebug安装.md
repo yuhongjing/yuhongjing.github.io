@@ -3,7 +3,7 @@ title: PHPstorm Xdebug工具安装
 date: 2018-05-16 00:22:17
 tags: PHP工具
 keywords: Xdebug,PHP调试工具,PHPStorm工具安装
-categories: "环境"
+categories: "环境配置"
 ---
 ### Xdebug介绍
 Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。  

@@ -3,7 +3,7 @@ title: 单电脑管理多github账户
 date: 2018-05-26 15:17:39
 tags: SSH
 keywords: SSH,github,多用户管理
-categories: "环境"
+categories: "环境配置"
 ---
 ### 前言
 有些时候，可能需要一台电脑连接两个github的账号，或者一台电脑同时需要连接两个平台，例如码云，github等。所以这个时候我们需要在一台电脑上配置多个SSH-Key。

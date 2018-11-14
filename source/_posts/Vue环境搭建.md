@@ -3,7 +3,7 @@ title: Vue环境搭建
 date: 2017-11-28 22:26:24
 tags: Vue
 keywords: Vue,Vue.js环境配置,Vue.js
-categories: "环境"
+categories: "环境配置"
 ---
 ## 环境配置流程
 1. 安装Node.js

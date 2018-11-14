@@ -1,9 +1,9 @@
 ---
 title: js正则表达式
 date: 2018-03-09 13:23:30
-tags: WEB
+tags: 正则表达式
 keywords: js,javascript,正则表达式
-categories: "技术"
+categories: "JavaScript"
 ---
 本文主要记录js正则表达式中的难点:惰性匹配，贪婪匹配，分组组合，反向引用符。
 # 贪婪匹配与非贪婪匹配

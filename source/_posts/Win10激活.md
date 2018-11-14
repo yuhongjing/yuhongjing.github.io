@@ -3,7 +3,7 @@ title: Win10激活
 date: 2018-05-31 21:57:34
 tags: Windows
 keywords: Windows,Windows系统激活
-categories: "环境"
+categories: "操作系统"
 ---
 ### Windows10家庭版和专业版的激活方法
 几句命令即可，谁用谁知道

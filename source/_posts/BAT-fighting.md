@@ -1,9 +1,9 @@
 ---
 title: BAT fighting
 date: 2017-10-24 18:56:51
-tags: 随笔
+tags: 励志鸡汤
 keywords: 个人博文
-categories: "鸡汤"
+categories: "个人文章"
 ---
 # 第一篇文章
 
