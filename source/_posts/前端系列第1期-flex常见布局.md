@@ -1,9 +1,9 @@
 ---
-title: 使用flex常用的布局
+title: 前端系列第1期-flex常见布局
 date: 2018-11-14 12:08:19
 tags: flex
 keywords: flex布局
-categories: "CSS"
+categories: "前端系列"
 ---
 ### Sticky Footer
 经典的上-中-下布局。
