@@ -36,7 +36,7 @@ js的一个难点就是隐式转换，因为js在一些操作符下会做出一�
 3、将值转为字符串，ToString()。
 #### 通过ToPrimitive将值转换为原始值
 js引擎内部的抽象操作ToPrimitive有着这样的签名:  
-```
+```js
     ToPrimitive(input, PreferredType?)
 ```
 input是要转换的值，PreferredType是可选参数，可以是Number或String类型。  
@@ -76,7 +76,7 @@ PreferredType的值会按照这样的规则来自动设置：
     对于js的常见内置对象：Date, Array, Math, Number, Boolean, String, Array, RegExp, Function。
 ```
 1、Number、Boolean、String这三种构造函数生成的基础值的对象形式，通过valueOf转换后会变成相应的原始值。如:  
-```
+```js
     var num = new Number('123');
     num.valueOf(); // 123
     var str = new String('12df');
@@ -85,12 +85,12 @@ PreferredType的值会按照这样的规则来自动设置：
     bool.valueOf(); // true
 ```
 2、Date这种特殊的对象，其原型Date.prototype上内置的valueOf函数将日期转换为日期的毫秒的形式的数值。
-```
+```js
     var a = new Date();
     a.valueOf(); // 1515143895500
 ```
 3、除此之外返回的都为this，即对象本身：
-```
+```js
     var a = new Array();
     a.valueOf() === a; // true
     var b = new Object({});
@@ -103,7 +103,7 @@ PreferredType的值会按照这样的规则来自动设置：
 ```
 1、Number、Boolean、String、Array、Date、RegExp、Function这几种构造函数生成的对象，  
 通过toString转换后会变成相应的字符串的形式，因为这些构造函数上封装了自己的toString方法。如：
-```
+```js
     Number.prototype.hasOwnProperty('toString'); // true
     Boolean.prototype.hasOwnProperty('toString'); // true
     String.prototype.hasOwnProperty('toString'); // true
@@ -126,7 +126,7 @@ PreferredType的值会按照这样的规则来自动设置：
     func.toString(); // "function () {}"
 ```
 除这些对象及其实例化对象之外，其他对象返回的都是该对象的类型，都是继承的Object.prototype.toString方法。
-```
+```js
     var obj = new Object({});
     obj.toString(); // "[object Object]"
     Math.toString(); // "[object Math]"
@@ -219,7 +219,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
 4、一个Object类型，一个String或Number类型，将Object类型进行原始转换后，按上面流程进行原始值比较。
 #### ==例子解析
 所以类型不相同时，可以会进行上面几条的比较，比如：
-```
+```js
     var a = {
         valueOf: function () {
             return1;
@@ -229,10 +229,10 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
         }
     }
     true == a // true;
-    首先，x与y类型不同，x为boolean类型，则进行ToNumber转换为1,为number类型。
-    接着，x为number，y为object类型，对y进行原始转换，ToPrimitive(a, ?),没有指定转换类型，默认number类型。
-    而后，ToPrimitive(a, Number)首先调用valueOf方法，返回1，得到原始类型1。
-    最后 1 == 1， 返回true。
+    // 首先，x与y类型不同，x为boolean类型，则进行ToNumber转换为1,为number类型。
+    // 接着，x为number，y为object类型，对y进行原始转换，ToPrimitive(a, ?),没有指定转换类型，默认number类型。
+    // 而后，ToPrimitive(a, Number)首先调用valueOf方法，返回1，得到原始类型1。
+    // 最后 1 == 1， 返回true。
 ```
 我们再看一段很复杂的比较，如下：
 ```
@@ -248,7 +248,7 @@ PreferredType没有设置时，Date类型的对象，PreferredType默认设置�
         所以结果变为： 0 == 0，返回true，比较结束。
 ```
 最后我们看看文章开头说的那道题目：
-```
+```js
     const a = {
         i: 1,
         toString: function () {

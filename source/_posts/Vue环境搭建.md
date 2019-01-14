@@ -14,7 +14,7 @@ categories: "环境配置"
 <!--more-->
 
 ## 相关代码
-```html
+```
     Node.js安装后，在cmd中输入node -v 和 npm -v 如果出现版本号即安装成功
     全局安装Vue  在cmd输入npm install -g vue 
     全局安装脚手架 npm install -g vue-cli

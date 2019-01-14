@@ -11,7 +11,7 @@ categories: "前端系列"
 ### 引子
 首先举一个例子：
 模拟在输入框输入后做ajax查询请求，没有加入防抖和节流的效果，这里附上完整可执行代码：
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@ categories: "前端系列"
 
 <body>
     <div>
-        1.没有防抖的输入：
+        <!-- 1.没有防抖的输入：-->
         <input type="text" name="normal" id="normal">
     </div>
 </body>
@@ -62,7 +62,7 @@ categories: "前端系列"
 
 #### 实现
 还是上述列子，这里加入防抖来优化一下，完整代码如下：
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,7 +99,7 @@ categories: "前端系列"
 
 <body>
     <div>
-        2.加入防抖后的输入：
+        <!-- 2.加入防抖后的输入： -->
         <input type="text" name="debounce" id="debounce">
     </div>
 </body>
@@ -132,7 +132,7 @@ categories: "前端系列"
 
 #### 实现
 还是上述列子，这里加入节流来优化一下，完整代码如下：
-```
+```html
     <!DOCTYPE html>
 <html lang="en">
 
@@ -177,7 +177,7 @@ categories: "前端系列"
 
 <body>
     <div>
-        3.加入节流后的输入：
+        <!-- 3.加入节流后的输入： -->
         <input type="text" name="throttle" id="throttle">
     </div>
 </body>

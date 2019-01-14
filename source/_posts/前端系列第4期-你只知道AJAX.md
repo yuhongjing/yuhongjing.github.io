@@ -29,7 +29,7 @@ npm install axios
 ```
   
 #### 示例--执行GET请求：
-```
+```js
 // axios
 axios.get('/getData', {
     params: {
@@ -52,7 +52,7 @@ npm install whatwg-fetch --save
 ```
   
 #### 示例--执行GET请求：
-```
+```js
 // use 'whatwg-fetch'
 import 'whatwg-fetch'
 

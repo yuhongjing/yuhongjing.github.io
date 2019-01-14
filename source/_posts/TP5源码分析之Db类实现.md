@@ -49,7 +49,7 @@ TP5的Db类文件夹目录为:thinkphp\think\db
 ```
 ### Db入口类分析
 一般我们调用Db类是需要`use thinkphp\Db`,这文件就是我们的入口文件，所以我们看看他的代码    
-```
+```php
    namespace think; 
    
    use think\db\Connection; 
@@ -87,8 +87,8 @@ TP5的Db类文件夹目录为:thinkphp\think\db
 首先分析头部,命名空间为think,class为Db说明我们的入口没错。然后use两个类，一个连接器类，一个Query类。  
 看一看此类的各个方法，发现主要是初始化+解析config的配置。  
 #### 首先看看Db入口类是如何获取到database里面的参数的
-```
-    database的配置是通过parseConfig方法获取到的，代码如下
+```php
+    // database的配置是通过parseConfig方法获取到的，代码如下
     private static function parseConfig($config)
         {
             if (empty($config)) {
@@ -107,7 +107,7 @@ TP5的Db类文件夹目录为:thinkphp\think\db
 ```
 这里是通过了一个助手函数config把database里面的参数返回了，这样我们就得到了database的参数。  
 #### 那我们看看database里面是什么样的呢?  
-```
+```php
 database在application目录下有，当然每一个模块下面也可以新建。
 return [
     // 数据库类型
@@ -152,8 +152,8 @@ return [
 ```
 可以看见database文件把数据return了回来，所以可以获取到里面配置的所有内容，这样的解耦使我们的配置更加简便，不错！  
 #### 然后看看最核心的连接类是如何执行的呢？
-```
-    如何通过配置文件即可连接相对于的数据库类呢？
+```php
+    // 如何通过配置文件即可连接相对于的数据库类呢？
     public static function connect($config = [], $name = false)
         {
             if (false === $name) {
@@ -183,8 +183,8 @@ return [
 到目前为止已经能够获取database的参数了，也能初始化不同的连接器了，还差一个查询方法了。  
 是的，还有一个`use think\db\Query`还没使用呢！对吧。
 #### 驱动类的实现
-```
-    TP5把所有的SQL都通过PDO封装了，意思是无论你是什么数据库，查询的关键字都是这些！方便吧。
+```php
+    // TP5把所有的SQL都通过PDO封装了，意思是无论你是什么数据库，查询的关键字都是这些！方便吧。
      // 调用驱动类的方法
      public static function __callStatic($method, $params)
      {
@@ -197,14 +197,14 @@ return [
 这样就可以实现封装所有数据库的查询方法了！   
 ***接下来看看那两个use分别是什么吧***
 ### Connection连接类
-```
-    db文件下有connector文件夹，封装了每一种数据库的连接方式，他们都继承于connection
-    他们绑定了相对于的构建器。例如： 
-    connector下的Mysql.php
+```php
+    // db文件下有connector文件夹，封装了每一种数据库的连接方式，他们都继承于connection
+    // 他们绑定了相对于的构建器。例如： 
+    // connector下的Mysql.php
     protected $builder = '\\think\\db\\builder\\Mysql';
-    所以只需要连接的时候判断类型，就会获得相对于的builder构建器
-    然后主要看它们的父类Connection连接器
-    代码很多，截取最主要的吧
+    // 所以只需要连接的时候判断类型，就会获得相对于的builder构建器
+    // 然后主要看它们的父类Connection连接器
+    // 代码很多，截取最主要的吧
     abstract class Connection
     {
         protected $config = [
@@ -270,7 +270,7 @@ return [
 ```
 有很多很多代码，上面主要是默认的config和PDO连接参数的初始化。 因为是抽象类所以实例化的是他们的各个子类。
 #### builder的工厂模式
-```
+```php
  public function getBuilder()
     {
         if (!empty($this->builder)) {

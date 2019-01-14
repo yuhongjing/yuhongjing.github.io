@@ -37,7 +37,7 @@ void 运算符告诉解析器后面的代码是函数表达式。因此，我们
 ### with语句
 JavaScript 也支持 with 块？with 实际上是 JS 的一个关键字。with 块的语法如下：
 
-```
+```js
     with (object)
         statement 
     // for multiple statements add a block
@@ -108,7 +108,7 @@ Getter 和 Setter 并不是 ES5 的新增功能，它们一直都存在。ES5 �
 ### 逗号运算符
 JavaScript 提供了一个逗号运算符，我们可以用它在一行中编写由逗号分隔的多个表达式，并返回最后一个表达式的结果。
 
-```
+```js
     let result = expression1, expression2,... expressionN
 ```
 
@@ -116,13 +116,13 @@ JavaScript 提供了一个逗号运算符，我们可以用它在一行中编写
 
 你可能已经在 for 循环中使用了逗号运算符：
 
-```
+```js
     for (var a = 0, b = 10; a <= 10; a++, b--)
 ```
 
 有时候，在一行中编写多个语句会有所帮助：
 
-```
+```js
     function getNextValue() {
         return counter++, console.log(counter), counter
     }
@@ -130,7 +130,7 @@ JavaScript 提供了一个逗号运算符，我们可以用它在一行中编写
 
 或者用它编写很短的 lamda 表达式：
 
-```
+```js
     const getSquare = x => (console.log (x), x * x)
 ```
 ### 加号运算符

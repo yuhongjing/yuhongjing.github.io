@@ -11,7 +11,7 @@ categories: "前端系列"
 <!--more-->
 ### 文件准备
 `node`端的睡眠函数，使用setTimeout模拟。
-```
+```js
 function sleep(time) {
   return new Promise(function(res) {
     setTimeout(() => {
@@ -23,7 +23,7 @@ function sleep(time) {
 其实就是一个延时函数，如果`CSS`或者`JS`文件名有`sleep4000`之类的前缀时，意思就是延迟4000毫秒才会返回这个文件。
 
 下面使用的`HTML`文件如下：
-```
+```html
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -45,7 +45,7 @@ function sleep(time) {
 我们将会在其中插入不同的`CSS`和`JS`。  
 
 而使用的`common.css`,不论有没有前缀，内容都如下：
-```
+```css
 div {
   background: lightblue;
 }
@@ -60,7 +60,7 @@ div {
 #### CSS不会阻塞DOM的解析
 一定注意是解析！证明如下，首先在头部插入`<script src="/js/logDiv.js"></script>`。  
 `JS`文件的内容如下:
-```
+```js
 const div = document.querySelector('div');
 console.log(div);
 ```
@@ -76,7 +76,7 @@ console.log(div);
 因此，基于性能与用户体验的考虑，浏览器会尽量减少渲染的次数，`CSS`顺理成章地阻塞页面渲染。
 
 然而，事情总有奇怪的，请看这例子，`HTML`头部结构如下：
-```
+```html
 <header>
     <link rel="stylesheet" href="/css/sleep3000-common.css">
     <script src="/js/logDiv.js"></script>
@@ -95,7 +95,7 @@ console.log(div);
 
 #### JS阻塞DOM解析
 首先我们需要一个新的`JS`文件名为`blok.js`，内容如下：
-```
+```js
 const arr = [];
 for (let i = 0; i < 10000000; i++) {
   arr.push(i);
@@ -114,7 +114,7 @@ console.log(div);
 
 #### 浏览器遇到`<script>`标签时，会触发页面渲染
 这个细节可能大家并不清楚，其实这才是解释上面为何`JS`执行会等待`CSS`下载的原因。先上例子,`HTML`内`body`的结构如下：
-```
+```html
 <body>
 	<div></div>
 	<script src="/js/sleep3000-logDiv.js"></script>
