@@ -1,8 +1,13 @@
 ---
 title: windows以太坊Dapp开发环境
 date: 2019-02-19 17:16:35
-tags:
+tags: DApp
+keywords: 以太坊,Dapp
+categories: "环境配置"
 ---
+### Zombies Game
+[DApp僵尸游戏](https://github.com/yuhongjing/ChainBlock_Zombies),不断更新中。
+<!--more-->
 
 ### windows搭建以太坊的开发环境
 #### 安装Node.js
@@ -17,7 +22,7 @@ C:\Users\Administrator> npm -v
 6.8.0
 ```
 出现版本号即表示安装成功。
-<!--more-->
+
 
 #### 安装节点仿真器
 为了快速开发和测试以太坊DApp，我们通常使用以太坊节点仿真器来模拟区块链，最流行的节点仿真器就是Ganache，之前被称为TeseRPC。
