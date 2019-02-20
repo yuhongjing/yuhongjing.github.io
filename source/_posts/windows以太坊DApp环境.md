@@ -12,6 +12,9 @@ tags:
 ```cmd
 C:\Users\Administrator> node -v
 v10.14.2
+
+C:\Users\Administrator> npm -v
+6.8.0
 ```
 出现版本号即表示安装成功。
 <!--more-->
@@ -49,13 +52,20 @@ C:\Users\Administrator> solcjs --version
 出现信息即表示安装成功。
 
 #### 安装web3
+[web3.js library](http://web3.tryblockchain.org/)可以与任何暴露了RPC接口的以太坊节点连接,从而让我们可以连接智能合约。
 
 ```cmd
 C:\Users\Administrator> npm install –g web3
 ```
 
-#### 安装truffle框架
+> 注意: 
+  web3.js只能通过CMD模块引入
+  如果仍无法引入,则安装`npm install –g web3@0.20.2`
+  如果还是无法安装,则`npm cache verify`,重新安装即可
 
+
+#### 安装Truffle框架
+[Truffle](http://truffle.tryblockchain.org/)是针对基于以太坊的Solidity语言的一套开发框架。
 ```cmd
 C:\Users\Administrator> npm install –g truffle
 ```
@@ -70,7 +80,7 @@ Node v10.14.2
 出现信息即表示安装成功。
 
 #### 安装webpack
-
+[webpack](https://www.webpackjs.com/)是模块打包器,可以将模块打包成bundle。
 ```cmd 
 C:\Users\Administrator> npm install –g webpack
 ```
@@ -94,7 +104,6 @@ Unbox successful. Sweet!
 ```
 
 #### 安装项目依赖的NPM包
-
 ```cmd 
 d:\demo> npm install
 ```
@@ -104,28 +113,43 @@ d:\demo> npm install
 ```js
 module.exports = {
   networks:{
-    development: {
-      port: 8545
-    }
+     development: {
+     host: "127.0.0.1",     // Localhost (default: none)
+     port: 8545,            // Standard Ethereum port (default: none)
+     network_id: "*",       // Any network (default: none)
+    },
   }
 }
 ```
 
+> 注意:
+  节点仿真器的端口
+  此文件的port
+  以及后面的js文件的端口
+  三者都需要一致
+ 
 #### 启动节点仿真器
 ```cmd
 C:\Users\Administrator> ganache-cli
 ```
+> 注意:
+  关闭节点仿真器后,所有的合约就没有了
+  再次开启后,需要重新部署合约
 
 #### 编译合约
+将我们的`.sol`文件编译成`json`文件
 ```cmd
 d:\demo> truffle.cmd compile
 ```
 
 #### 部署合约
-注意: 必须先开启节点,才能在节点上部署合约。
+将合约部署到区块链上(必须先开启区块链)
 ```cmd
 d:\demo> truffle.cmd migrate
 ```
+
+> 注意: 
+  必须先开启节点,才能在节点上部署合约。
 
 #### 启动DApp
 ```cmd
