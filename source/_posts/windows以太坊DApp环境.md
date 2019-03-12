@@ -58,6 +58,7 @@ C:\Users\Administrator> solcjs --version
 
 #### 安装web3
 [web3.js library](http://web3.tryblockchain.org/)可以与任何暴露了RPC接口的以太坊节点连接,从而让我们可以连接智能合约。
+注意: 这里需要python,而win10里需要下载补丁才能正确安装。
 
 ```cmd
 C:\Users\Administrator> npm install –g web3
