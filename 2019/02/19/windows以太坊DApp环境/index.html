@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="以太坊,Dapp">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Zombies GameDApp僵尸游戏,不断更新中。">
+<meta name="keywords" content="以太坊,Dapp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows以太坊Dapp开发环境">
+<meta property="og:url" content="https://yuhongjing.github.io/2019/02/19/windows以太坊DApp环境/index.html">
+<meta property="og:site_name" content="余鸿靖博客">
+<meta property="og:description" content="Zombies GameDApp僵尸游戏,不断更新中。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-10-28T08:36:04.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="windows以太坊Dapp开发环境">
+<meta name="twitter:description" content="Zombies GameDApp僵尸游戏,不断更新中。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://yuhongjing.github.io/2019/02/19/windows以太坊DApp环境/">
+
+
+
+
+
+  <title>windows以太坊Dapp开发环境 | 余鸿靖博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">余鸿靖博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个菜鸟程序员的小空间</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuhongjing.github.io/2019/02/19/windows以太坊DApp环境/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="余鸿靖">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="余鸿靖博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">windows以太坊Dapp开发环境</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-19T17:16:35+08:00">
+                2019-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/环境配置/" itemprop="url" rel="index">
+                    <span itemprop="name">环境配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2019/02/19/windows以太坊DApp环境/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2019/02/19/windows以太坊DApp环境/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  942 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </span></div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Zombies-Game"><a href="#Zombies-Game" class="headerlink" title="Zombies Game"></a>Zombies Game</h3><p><a href="https://github.com/yuhongjing/ChainBlock_Zombies" target="_blank" rel="noopener">DApp僵尸游戏</a>,不断更新中。<br><a id="more"></a></p>
+<h3 id="windows搭建以太坊的开发环境"><a href="#windows搭建以太坊的开发环境" class="headerlink" title="windows搭建以太坊的开发环境"></a>windows搭建以太坊的开发环境</h3><h4 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><p><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">官网</a>下载并安装即可。  </p>
+<p>打开cmd执行以下命令:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">node</span> -<span class="title">v</span></span></span><br><span class="line"><span class="function"><span class="title">v10</span>.14.2</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">C</span>:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> -<span class="title">v</span></span></span><br><span class="line"><span class="function">6.8.0</span></span><br></pre></td></tr></table></figure></p>
+<p>出现版本号即表示安装成功。</p>
+<h4 id="安装节点仿真器"><a href="#安装节点仿真器" class="headerlink" title="安装节点仿真器"></a>安装节点仿真器</h4><p>为了快速开发和测试以太坊DApp，我们通常使用以太坊节点仿真器来模拟区块链，最流行的节点仿真器就是Ganache，之前被称为TeseRPC。</p>
+<p>安装Ganache的命令:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> <span class="title">install</span> -<span class="title">g</span> <span class="title">ganache</span>-<span class="title">cli</span></span></span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令验证是否安装成功:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">ganache</span>-<span class="title">cli</span></span></span><br><span class="line"><span class="function"><span class="title">Ganache</span> <span class="title">CLI</span> <span class="title">v7</span>.0.0-<span class="title">beta</span>.0 (<span class="title">ganache</span>-<span class="title">core</span>: 3.0.0-<span class="title">beta</span>.0)</span></span><br></pre></td></tr></table></figure></p>
+<p>默认会开启节点,并打印出很多的信息即表示安装成功。</p>
+<p>要了解ganache命令行的详细用法,可以查看<a href="https://my.oschina.net/u/3794778/blog/1799768" target="_blank" rel="noopener">以太坊ganache CLI命令行参数详解</a></p>
+<h4 id="安装solidity编译器"><a href="#安装solidity编译器" class="headerlink" title="安装solidity编译器"></a>安装solidity编译器</h4><p>solidity是开发以太坊智能合约的编程语言,不熟悉的话可以查看<a href="https://my.oschina.net/u/3794778/blog/1799912" target="_blank" rel="noopener">以太坊solidity开发语言简介</a>。</p>
+<p>安装solidity编译器命令:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> <span class="title">install</span> –<span class="title">g</span> <span class="title">solc</span></span></span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令验证是否安装成功:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">solcjs</span> --<span class="title">version</span></span></span><br><span class="line"><span class="function">0.5.4+<span class="title">commit</span>.9549<span class="title">d8ff.Emscripten.clang</span></span></span><br></pre></td></tr></table></figure></p>
+<p>出现信息即表示安装成功。</p>
+<h4 id="安装web3"><a href="#安装web3" class="headerlink" title="安装web3"></a>安装web3</h4><p><a href="http://web3.tryblockchain.org/" target="_blank" rel="noopener">web3.js library</a>可以与任何暴露了RPC接口的以太坊节点连接,从而让我们可以连接智能合约。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> <span class="title">install</span> –<span class="title">g</span> <span class="title">web3</span></span></span><br></pre></td></tr></table></figure>
+<p>注意: 这里需要python,而win10里需要下载补丁才能正确安装。<br>而python可以需要两个依赖<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --global --production windows-build-tools</span><br><span class="line">或者</span><br><span class="line">npm install node-gyp -global</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意:<br>  web3.js只能通过CMD模块引入<br>  如果仍无法引入,则安装<code>npm install –g web3@0.20.2</code><br>  如果还是无法安装,则<code>npm cache verify</code>,重新安装即可</p>
+</blockquote>
+<h4 id="安装Truffle框架"><a href="#安装Truffle框架" class="headerlink" title="安装Truffle框架"></a>安装Truffle框架</h4><p><a href="http://truffle.tryblockchain.org/" target="_blank" rel="noopener">Truffle</a>是针对基于以太坊的Solidity语言的一套开发框架。<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> <span class="title">install</span> –<span class="title">g</span> <span class="title">truffle</span></span></span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令验证是否安装成功:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">truffle.cmd</span> <span class="title">version</span></span></span><br><span class="line"><span class="function"><span class="title">Truffle</span> <span class="title">v5</span>.0.4 (<span class="title">core</span>: 5.0.4)</span></span><br><span class="line"><span class="function"><span class="title">Solidity</span> <span class="title">v0</span>.5.0 (<span class="title">solc</span>-<span class="title">js</span>)</span></span><br><span class="line"><span class="function"><span class="title">Node</span> <span class="title">v10</span>.14.2</span></span><br></pre></td></tr></table></figure></p>
+<p>出现信息即表示安装成功。</p>
+<h4 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h4><p><a href="https://www.webpackjs.com/" target="_blank" rel="noopener">webpack</a>是模块打包器,可以将模块打包成bundle。<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">npm</span> <span class="title">install</span> –<span class="title">g</span> <span class="title">webpack</span></span></span><br></pre></td></tr></table></figure></p>
+<p>执行以下命令验证是否安装成功:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">webpack</span> –<span class="title">v</span></span></span><br><span class="line"><span class="function">3.11.0</span></span><br></pre></td></tr></table></figure></p>
+<p>出现信息即表示安装成功。</p>
+<h3 id="构建示例项目"><a href="#构建示例项目" class="headerlink" title="构建示例项目"></a>构建示例项目</h3><h4 id="新建DApp项目"><a href="#新建DApp项目" class="headerlink" title="新建DApp项目"></a>新建DApp项目</h4><p>通过webpack模板初始化项目骨架架构:<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">d:\<span class="title">demo</span>&gt; <span class="title">truffle.cmd</span> <span class="title">unbox</span> <span class="title">webpack</span></span></span><br><span class="line"><span class="function"><span class="title">Downloading</span>…</span></span><br><span class="line"><span class="function"><span class="title">Unpacking</span>…</span></span><br><span class="line"><span class="function"><span class="title">Setting</span> <span class="title">up</span>…</span></span><br><span class="line"><span class="function"><span class="title">Unbox</span> <span class="title">successful</span>. <span class="title">Sweet</span>!</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="安装项目依赖的NPM包"><a href="#安装项目依赖的NPM包" class="headerlink" title="安装项目依赖的NPM包"></a>安装项目依赖的NPM包</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">d:\<span class="title">demo</span>&gt; <span class="title">npm</span> <span class="title">install</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="修改truffle配置"><a href="#修改truffle配置" class="headerlink" title="修改truffle配置"></a>修改truffle配置</h4><p>在truffle.js文件中,开启如下代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  networks:&#123;</span><br><span class="line">     development: &#123;</span><br><span class="line">     host: <span class="string">"127.0.0.1"</span>,     <span class="comment">// Localhost (default: none)</span></span><br><span class="line">     port: <span class="number">8545</span>,            <span class="comment">// Standard Ethereum port (default: none)</span></span><br><span class="line">     network_id: <span class="string">"*"</span>,       <span class="comment">// Any network (default: none)</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意:<br>  节点仿真器的端口<br>  此文件的port<br>  以及后面的js文件的端口<br>  三者都需要一致</p>
+</blockquote>
+<h4 id="启动节点仿真器"><a href="#启动节点仿真器" class="headerlink" title="启动节点仿真器"></a>启动节点仿真器</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Users</span>\<span class="title">Administrator</span>&gt; <span class="title">ganache</span>-<span class="title">cli</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:<br>  关闭节点仿真器后,所有的合约就没有了<br>  再次开启后,需要重新部署合约</p>
+</blockquote>
+<h4 id="编译合约"><a href="#编译合约" class="headerlink" title="编译合约"></a>编译合约</h4><p>将我们的<code>.sol</code>文件编译成<code>json</code>文件<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">d:\<span class="title">demo</span>&gt; <span class="title">truffle.cmd</span> <span class="title">compile</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="部署合约"><a href="#部署合约" class="headerlink" title="部署合约"></a>部署合约</h4><p>将合约部署到区块链上(必须先开启区块链)<br><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">d:\<span class="title">demo</span>&gt; <span class="title">truffle.cmd</span> <span class="title">migrate</span></span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>注意:<br>  必须先开启节点,才能在节点上部署合约。</p>
+</blockquote>
+<h4 id="启动DApp"><a href="#启动DApp" class="headerlink" title="启动DApp"></a>启动DApp</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">d:\<span class="title">demo</span>&gt; <span class="title">cd</span> <span class="title">app</span></span></span><br><span class="line"><span class="function"><span class="title">d</span>:\<span class="title">demo</span>\<span class="title">app</span>&gt; <span class="title">npm</span> <span class="title">run</span> <span class="title">dev</span></span></span><br></pre></td></tr></table></figure>
+<p>浏览器访问<a href="http://localhost:8080即可。" target="_blank" rel="noopener">http://localhost:8080即可。</a></p>
+<p>如果希望别人访问我们的DApp应用,需要修改package.json:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  scripts:&#123;</span><br><span class="line">    "dev": "webpack-dev-server –-host 0.0.0.0"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>添加<code>--host 0.0.0.0</code>。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DApp/" rel="tag"># DApp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/29/win10配置bash/" rel="next" title="win10配置bash">
+                <i class="fa fa-chevron-left"></i> win10配置bash
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/08/Vue使用less并配置全局变量/" rel="prev" title="Vue使用less并配置全局变量">
+                Vue使用less并配置全局变量 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="余鸿靖">
+            
+              <p class="site-author-name" itemprop="name">余鸿靖</p>
+              <p class="site-description motion-element" itemprop="description">个人文章</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yuhongjing" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://yuhongjing.github.io/library" target="_blank" title="Handbook">
+                    
+                      <i class="fa fa-fw fa-globe"></i>Handbook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://pxy1996.github.io" target="_blank" title="GirlFriend">
+                    
+                      <i class="fa fa-fw fa-globe"></i>GirlFriend</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zombies-Game"><span class="nav-number">1.</span> <span class="nav-text">Zombies Game</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows搭建以太坊的开发环境"><span class="nav-number">2.</span> <span class="nav-text">windows搭建以太坊的开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Node-js"><span class="nav-number">2.1.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装节点仿真器"><span class="nav-number">2.2.</span> <span class="nav-text">安装节点仿真器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装solidity编译器"><span class="nav-number">2.3.</span> <span class="nav-text">安装solidity编译器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装web3"><span class="nav-number">2.4.</span> <span class="nav-text">安装web3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Truffle框架"><span class="nav-number">2.5.</span> <span class="nav-text">安装Truffle框架</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装webpack"><span class="nav-number">2.6.</span> <span class="nav-text">安装webpack</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建示例项目"><span class="nav-number">3.</span> <span class="nav-text">构建示例项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建DApp项目"><span class="nav-number">3.1.</span> <span class="nav-text">新建DApp项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装项目依赖的NPM包"><span class="nav-number">3.2.</span> <span class="nav-text">安装项目依赖的NPM包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改truffle配置"><span class="nav-number">3.3.</span> <span class="nav-text">修改truffle配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动节点仿真器"><span class="nav-number">3.4.</span> <span class="nav-text">启动节点仿真器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译合约"><span class="nav-number">3.5.</span> <span class="nav-text">编译合约</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#部署合约"><span class="nav-number">3.6.</span> <span class="nav-text">部署合约</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动DApp"><span class="nav-number">3.7.</span> <span class="nav-text">启动DApp</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">余鸿靖</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytCyhAyu';
+      var conf = '285cc914d652d41d6d42f4df495436f1';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+  <script type="text/javascript" color="0,0,255" opacity="0.5" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+</body>
+</html>
